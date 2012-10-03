@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @product.title %>
+</p>
+
+<p>
+  <b>Start price:</b>
+  <%= @product.start_price %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @product.description %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @product.owner_id %>
+</p>
+
+<p>
+  <b>Time left:</b>
+  <%= @product.time_left %>
+</p>
+
+<p>
+  <b>Current price:</b>
+  <%= @product.current_price %>
+</p>
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

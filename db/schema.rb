@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20121003174013) do
 
   create_table "products", :force => true do |t|
@@ -31,5 +32,22 @@ ActiveRecord::Schema.define(:version => 20121003174013) do
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+=======
+ActiveRecord::Schema.define(:version => 20121003163219) do
+
+  create_table "products", :force => true do |t|
+    t.string   "title"
+    t.float    "start_price"
+    t.string   "description"
+    t.integer  "owner_id"
+    t.integer  "time_left"
+    t.float    "current_price"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'array' for column 'selling_products'
+>>>>>>> f1b922cb4efd213aea0c4e6ebcfcad22c487350b
 
 end
