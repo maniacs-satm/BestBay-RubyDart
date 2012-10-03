@@ -2,11 +2,6 @@
 
 FactoryGirl.define do
   factory :product do
-<<<<<<< HEAD
-    name "MyString"
-    description "MyString"
-    min_price 1.5
-=======
     title "MyString"
     start_price ""
     description "MyString"
@@ -14,6 +9,5 @@ FactoryGirl.define do
     time_left "MyString"
     integer "MyString"
     current_price ""
->>>>>>> f1b922cb4efd213aea0c4e6ebcfcad22c487350b
   end
 end
