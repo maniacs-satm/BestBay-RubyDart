@@ -27,15 +27,9 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   private
-<<<<<<< HEAD
 
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
 
-=======
-    def create_remember_token
-      self.remember_token = SecureRandom.urlsafe_base64
-    end
->>>>>>> 43a627f0ddc186b3c6c0ad4ac2396223991f307e
 end
