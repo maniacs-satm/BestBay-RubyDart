@@ -5,8 +5,12 @@
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>
+<<<<<<< HEAD
             <li><%= link_to "Sign in", signin_path %></li>
             <li><%= link_to "Users", '#' %></li>
+=======
+            <li class="header-text">Welcome <%= current_user.name %></li>
+>>>>>>> 43a627f0ddc186b3c6c0ad4ac2396223991f307e
             <li id="fat-menu" class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                 Account <b class="caret"></b>
