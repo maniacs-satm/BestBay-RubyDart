@@ -29,6 +29,9 @@
   <b>Current price:</b>
   <%= @product.current_price %>
 </p>
+<% if @product.image.exists? then %>
+    <%= image_tag @product.image.url(:small) %> </br>
+<% end %>
 
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
