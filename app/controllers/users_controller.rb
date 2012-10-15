@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if @user.save
       sign_in @user
       flash[:success] = 'Welcome to BestBay!'
-      redirect_to root_url
+      redirect_to @user
     else
       render 'new'
     end
@@ -19,4 +19,7 @@ class UsersController < ApplicationController
 
   end
 
+  def destroy
+    redirect_to root_path
+  end
 end
