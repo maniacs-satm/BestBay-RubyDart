@@ -2,11 +2,15 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    if signed_in?
+      @products = current_user.products
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @products }
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @products }
+      end
+    else
+      redirect_to root_url
     end
   end
 
@@ -47,7 +51,7 @@ class ProductsController < ApplicationController
       respond_to do |format|
         if @product.save
           flash[:success] = 'Success Post a Product on BestBay!'
-          format.html { redirect_to @product, notice: 'Product was successfully created.' }
+          format.html redirect_to @product
           format.json { render json: @product, status: :created, location: @product }
         else
           flash[notice] = 'Unable to Post a Product on BestBay!'
