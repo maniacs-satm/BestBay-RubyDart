@@ -40,17 +40,23 @@ class ProductsController < ApplicationController
   # POST /products
   # POST /products.json
   def create
-    @product = Product.new(params[:product])
-    @product.current_price = 0;
-    @product.owner_id = 1; #TODO: hard coding now
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'Product was successfully created.' }
-        format.json { render json: @product, status: :created, location: @product }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+    if signed_in?
+      @product = current_user.products.build(params[:product])
+      @product.current_price = 0;
+      @product.user_name = current_user.name
+      respond_to do |format|
+        if @product.save
+          flash[:success] = 'Success Post a Product on BestBay!'
+          format.html { redirect_to @product, notice: 'Product was successfully created.' }
+          format.json { render json: @product, status: :created, location: @product }
+        else
+          flash[notice] = 'Unable to Post a Product on BestBay!'
+          format.html { render action: "new" }
+          format.json { render json: @product.errors, status: :unprocessable_entity }
+        end
       end
+    else
+      redirect_to root_url
     end
   end
 

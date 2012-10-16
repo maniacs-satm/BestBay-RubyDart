@@ -20,3 +20,7 @@ coverage/*
 doc/coverage/*
 *DS_Store
 .rspec
+
+# Ignore images saved in the system
+
+public/system/products/images/*

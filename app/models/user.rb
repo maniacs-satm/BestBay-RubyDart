@@ -26,6 +26,9 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }
   validates :password_confirmation, presence: true
 
+  has_many :products, :dependent => :destroy #we will say this is the selling product array for now
+  #TODO: distinguish between selling and bought products.
+
   private
 
     def create_remember_token

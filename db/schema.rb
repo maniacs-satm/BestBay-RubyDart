@@ -10,13 +10,14 @@
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
 # It's strongly recommended to check this file into your version control system.
-ActiveRecord::Schema.define(:version => 20121011184115) do
+
+ActiveRecord::Schema.define(:version => 20121016063022) do
 
   create_table "products", :force => true do |t|
     t.string   "title"
     t.float    "start_price"
     t.string   "description"
-    t.integer  "owner_id"
+    t.integer  "user_id"
     t.integer  "time_left"
     t.float    "current_price"
     t.datetime "created_at",         :null => false
@@ -25,16 +26,10 @@ ActiveRecord::Schema.define(:version => 20121011184115) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-end
-  create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
-    t.string   "password_digest"
-    t.string   "remember_token"
+    t.string   "user_name"
   end
 
-  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'array' for column 'selling_products'
 
 end
