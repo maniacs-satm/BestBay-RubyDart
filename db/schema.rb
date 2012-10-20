@@ -25,7 +25,6 @@ ActiveRecord::Schema.define(:version => 20121016063022) do
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
-    t.datetime "image_updated_at"
     t.string   "user_name"
   end
 
