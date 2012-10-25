@@ -4,14 +4,14 @@ describe "User Pages" do
 
   subject { page }
 
-  describe "signup page" do
+  describe "signup" do
     before { visit signup_path }
 
     let(:submit) { 'Create my account' }
 
-    describe "page should have h1 as Sign up" do
-      it { should have_selector('h1', text: 'Sign up') }
-    end
+    #describe "page should have h1 as Sign up" do
+      #it { should have_selector('h1', text: 'Sign up') }
+    #end
 
     describe "with invalid information" do
       it "should not create a user" do
@@ -32,6 +32,7 @@ describe "User Pages" do
       end
     end
   end
+
   describe User do
     before do
      @user = User.new(name: "Example User", email: "user@example.com", 
