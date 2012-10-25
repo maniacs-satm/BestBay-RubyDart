@@ -37,4 +37,7 @@ ActiveRecord::Schema.define(:version => 20121018191934) do
     t.string   "user_name"
   end
 
+# Could not dump table "users" because of following StandardError
+#   Unknown type 'array' for column 'selling_products'
+
 end

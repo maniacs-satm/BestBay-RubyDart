@@ -5,10 +5,10 @@ class Product < ActiveRecord::Base
       :small  => "400x400>" }
 
   belongs_to :user
-
+  has_many   :bids
+  
   validates :title, presence: true, length: { maximum: 200,
                                               too_long: "title must have at most %{count} characters"}
-
 
   validates :start_price, presence: true
 

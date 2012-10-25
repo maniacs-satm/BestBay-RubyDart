@@ -28,6 +28,7 @@ class User < ActiveRecord::Base
 
   has_many :products, :dependent => :destroy #we will say this is the selling product array for now
   #TODO: distinguish between selling and bought products.
+  has_many :bids
 
   private
 
