@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016063022) do
+ActiveRecord::Schema.define(:version => 20121018191934) do
+
+  create_table "bids", :force => true do |t|
+    t.datetime "bidding_time"
+    t.float    "bidding_price"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "user_id"
+    t.integer  "product_id"
+  end
 
   create_table "products", :force => true do |t|
     t.string   "title"
@@ -28,8 +37,5 @@ ActiveRecord::Schema.define(:version => 20121016063022) do
     t.datetime "image_updated_at"
     t.string   "user_name"
   end
-
-# Could not dump table "users" because of following StandardError
-#   Unknown type 'array' for column 'selling_products'
 
 end
