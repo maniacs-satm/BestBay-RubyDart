@@ -49,6 +49,9 @@ class ProductsController < ApplicationController
       @product = current_user.products.build(params[:product])
       @product.current_price = 0;
       @product.user_name = current_user.name
+   
+
+
       respond_to do |format|
         if @product.save
           flash[:success] = 'Success Post a Product on BestBay!'
@@ -93,4 +96,6 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end
