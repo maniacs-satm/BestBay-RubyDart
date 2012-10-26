@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @productOwner = User.find(@product.user_id)
-
+    @bid = Bid.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
   def create
     if signed_in?
       @product = current_user.products.build(params[:product])
-      @product.current_price = 0;
+      @product.current_price = @product.start_price;
       @product.user_name = current_user.name
       respond_to do |format|
         if @product.save
