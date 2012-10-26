@@ -60,6 +60,13 @@
 </div>
 </br>
 
+<div>
+  <h3>
+    <span class="badge badge-inverse">7</span><strong>Category</strong>
+  </h3>
+</div>
+</br>
+
 <% @products.each do |product| %>
       <div class="progress progress-danger progress-striped active">
         <div class="bar" style="width: 100%;"></div>
@@ -72,6 +79,7 @@
     <td><%= product.user_name %></td>
     <td><%= product.time_left %></td>
     <td><%= product.current_price %></td>
+    <td><%= Category.find(product.category_id).content %></td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -45,6 +45,10 @@
         <b>Time left:</b>
         <%= @product.time_left %>
       </p>
+      <p>
+        <b>Category:</b>
+        <%= Category.find(@product.category_id).content%>
+      </p>
     </td>
   </tr>
 </table>
