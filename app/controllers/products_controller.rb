@@ -49,6 +49,9 @@ class ProductsController < ApplicationController
       @product = current_user.products.build(params[:product])
       @product.current_price = @product.start_price;
       @product.user_name = current_user.name
+   
+
+
       respond_to do |format|
         if @product.save
           flash[:success] = 'Success Post a Product on BestBay!'
@@ -110,5 +113,6 @@ class ProductsController < ApplicationController
     end
     render 'index'
   end
+
 
 end

@@ -28,6 +28,10 @@
     <%= f.text_field :time_left %>
   </div>
   <div class="field">
+    <%= f.label :category_id %>
+    <%= collection_select(:product, :category_id, Category.all, :id, :content) %>
+  </div>
+  <div class="field">
     <%= f.label :image %><br />
     <%= f.file_field :image %>
   </div>
