@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   def index
     if signed_in?
       @products = current_user.products
-
+      @search = Hash.new
       respond_to do |format|
         format.html # index.html.erb
         format.json { render json: @products }
@@ -93,4 +93,22 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def search
+    q = params[:query]
+
+    if q
+      all = current_user.products
+      if !all.empty?
+        @products = Array.new
+        all.each do |p|
+          if p[:description] =~ /#{q}/i
+            @products << p
+          end
+        end
+      end
+    end
+    render 'index'
+  end
+
 end

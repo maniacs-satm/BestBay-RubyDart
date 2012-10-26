@@ -27,6 +27,14 @@
   </tr>
 <% end %>
 </table>
+<br />
+
+<p>
+  <%= form_tag 'search-product' do %>
+    <%= text_field_tag :query, nil, :placeholder => 'Search here ...' %>
+    <%= submit_tag "Search" %>
+  <% end %>
+</p>
 
 <br />
 
