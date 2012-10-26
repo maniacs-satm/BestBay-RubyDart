@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121025201528) do
+ActiveRecord::Schema.define(:version => 20121018191934) do
 
   create_table "bids", :force => true do |t|
     t.datetime "bidding_time"
@@ -50,3 +50,4 @@ ActiveRecord::Schema.define(:version => 20121025201528) do
 #   Unknown type 'array' for column 'selling_products'
 
 end
+

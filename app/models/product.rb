@@ -7,11 +7,10 @@ class Product < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :category
-
+  has_many   :bids
+  
   validates :title, presence: true, length: { maximum: 200,
                                               too_long: "title must have at most %{count} characters"}
-
-
   validates :start_price, presence: true
   validates :category_id, presence:true
 

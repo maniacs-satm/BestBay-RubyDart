@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   def index
     if signed_in?
       @products = current_user.products
-
+      @search = Hash.new
       respond_to do |format|
         format.html # index.html.erb
         format.json { render json: @products }
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @productOwner = User.find(@product.user_id)
-
+    @bid = Bid.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
@@ -47,7 +47,7 @@ class ProductsController < ApplicationController
   def create
     if signed_in?
       @product = current_user.products.build(params[:product])
-      @product.current_price = 0;
+      @product.current_price = @product.start_price;
       @product.user_name = current_user.name
    
 
@@ -95,6 +95,23 @@ class ProductsController < ApplicationController
       format.html { redirect_to products_url }
       format.json { head :no_content }
     end
+  end
+
+  def search
+    q = params[:query]
+
+    if q
+      all = current_user.products
+      if !all.empty?
+        @products = Array.new
+        all.each do |p|
+          if p[:description] =~ /#{q}/i
+            @products << p
+          end
+        end
+      end
+    end
+    render 'index'
   end
 
 

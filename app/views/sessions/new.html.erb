@@ -1,6 +1,16 @@
 <% provide(:title, "Sign in") %>
-<h1>Sign in</h1>
-
+<head>
+  <style type = "text/css">
+      body {background-color: #20b2aa;}
+  </style>
+</head>
+<body>
+<div class="row">
+  <aside class="span4">
+    <section></section>
+  </aside>
+</div>
+<h1><i class="  icon-thumbs-up"></i><em>Sign in</em></h1>
 <div class="row">
   <div class="span6 offset3">
     <%= form_for(:session, url: sessions_path) do |f| %>
@@ -17,3 +27,4 @@
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
 </div>
+</body>
