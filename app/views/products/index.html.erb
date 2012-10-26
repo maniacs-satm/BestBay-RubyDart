@@ -1,21 +1,72 @@
-<h1>Listing products</h1>
+<head xmlns="http://www.w3.org/1999/html">
+  <style type = "text/css">
+      body {background-color: #ffc40d;}
+  </style>
+</head>
+<body>
+<div class="left hero-unit">
+  <div class="row">
+    <aside class="span4">
+      <section></section>
+    </aside>
+  </div>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Start price</th>
-    <th>Description</th>
-    <th>Owner</th>
-    <th>Time left</th>
-    <th>Current price</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1><i>Listing products</i></h1>
+  </br>
+  <div class="progress progress-danger progress-striped active">
+    <div class="bar" style="width: 100%;"></div>
+  </div>
+ <br />
+
+<div>
+  <h3>
+    <span class="badge">1</span><strong>Title</strong>
+  </h3>
+</div>
+</br>
+
+<div>
+  <h3>
+    <span class="badge badge-success">2</span><strong>Start price</strong>
+  </h3>
+</div>
+</br>
+
+<div>
+  <h3>
+    <span class="badge badge-warning">3</span><strong>Description</strong>
+  </h3>
+</div>
+</br>
+
+<div>
+  <h3>
+    <span class="badge badge-important">4</span><strong>Owner </strong>
+  </h3>
+</div>
+</br>
+
+<div>
+  <h3>
+    <span class="badge badge-info">5</span><strong>Time left</strong>
+  </h3>
+</div>
+</br>
+
+<div>
+  <h3>
+    <span class="badge badge-inverse">6</span><strong>Current Price</strong>
+  </h3>
+</div>
+</br>
 
 <% @products.each do |product| %>
+      <div class="progress progress-danger progress-striped active">
+        <div class="bar" style="width: 100%;"></div>
+      </div>
+<table>
   <tr>
-    <td><%= product.title %></td>
+    <td><i class="icon-shopping-cart"></i><%= product.title %></td>
     <td><%= product.start_price %></td>
     <td><%= product.description %></td>
     <td><%= product.user_name %></td>
@@ -30,4 +81,6 @@
 
 <br />
 
-<%= link_to 'New Product', new_product_path %>
+<%= link_to 'New Product', new_product_path, class: "btn btn-large btn-danger" %>
+</div>
+</body>
