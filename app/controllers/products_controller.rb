@@ -99,11 +99,11 @@ class ProductsController < ApplicationController
 
   def search
     q = params[:query]
+    @products = Array.new
 
     if q
       all = current_user.products
       if !all.empty?
-        @products = Array.new
         all.each do |p|
           if p[:description] =~ /#{q}/i
             @products << p
