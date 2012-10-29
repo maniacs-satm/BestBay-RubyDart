@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>module Paperclip::Interpolations - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="../rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="../js/darkfish.js"></script>
+
+
+<body id="top" class="module">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="../index.html">Home</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>vendor/plugins/paperclip/lib/paperclip/interpolations.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    
+    
+    <!-- Method Quickref -->
+<nav id="method-list-section" class="section">
+  <h3 class="section-header">Methods</h3>
+
+  <ul class="link-list">
+    
+    <li><a href="#method-c-5B-5D">::[]</a>
+    
+    <li><a href="#method-c-5B-5D-3D">::[]=</a>
+    
+    <li><a href="#method-c-all">::all</a>
+    
+    <li><a href="#method-c-interpolate">::interpolate</a>
+    
+    <li><a href="#method-i-attachment">#attachment</a>
+    
+    <li><a href="#method-i-basename">#basename</a>
+    
+    <li><a href="#method-i-class">#class</a>
+    
+    <li><a href="#method-i-content_type_extension">#content_type_extension</a>
+    
+    <li><a href="#method-i-extension">#extension</a>
+    
+    <li><a href="#method-i-filename">#filename</a>
+    
+    <li><a href="#method-i-fingerprint">#fingerprint</a>
+    
+    <li><a href="#method-i-hash">#hash</a>
+    
+    <li><a href="#method-i-id">#id</a>
+    
+    <li><a href="#method-i-id_partition">#id_partition</a>
+    
+    <li><a href="#method-i-param">#param</a>
+    
+    <li><a href="#method-i-rails_env">#rails_env</a>
+    
+    <li><a href="#method-i-rails_root">#rails_root</a>
+    
+    <li><a href="#method-i-style">#style</a>
+    
+    <li><a href="#method-i-timestamp">#timestamp</a>
+    
+    <li><a href="#method-i-updated_at">#updated_at</a>
+    
+    <li><a href="#method-i-url">#url</a>
+    
+  </ul>
+</nav>
+
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="../Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../public/robots_txt.html">robots</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/Appraisals.html">Appraisals</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/NEWS.html">NEWS</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/UPGRADING.html">UPGRADING</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/features/support/fixtures/boot_config_txt.html">boot_config</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/features/support/fixtures/gemfile_txt.html">gemfile</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/features/support/fixtures/preinitializer_txt.html">preinitializer</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/lib/generators/paperclip/USAGE.html">USAGE</a>
+  
+    <li class="file"><a href="../vendor/plugins/paperclip/test/fixtures/text_txt.html">text</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Paperclip.html">Paperclip</a>
+  
+    <li><a href="../Paperclip/AbstractAdapter.html">Paperclip::AbstractAdapter</a>
+  
+    <li><a href="../Paperclip/AdapterRegistry.html">Paperclip::AdapterRegistry</a>
+  
+    <li><a href="../Paperclip/AdapterRegistry/NoHandlerError.html">Paperclip::AdapterRegistry::NoHandlerError</a>
+  
+    <li><a href="../Paperclip/Attachment.html">Paperclip::Attachment</a>
+  
+    <li><a href="../Paperclip/AttachmentAdapter.html">Paperclip::AttachmentAdapter</a>
+  
+    <li><a href="../Paperclip/AttachmentOptions.html">Paperclip::AttachmentOptions</a>
+  
+    <li><a href="../Paperclip/Callbacks.html">Paperclip::Callbacks</a>
+  
+    <li><a href="../Paperclip/Callbacks/Defining.html">Paperclip::Callbacks::Defining</a>
+  
+    <li><a href="../Paperclip/Callbacks/Running.html">Paperclip::Callbacks::Running</a>
+  
+    <li><a href="../Paperclip/ClassMethods.html">Paperclip::ClassMethods</a>
+  
+    <li><a href="../Paperclip/ContentTypeDetector.html">Paperclip::ContentTypeDetector</a>
+  
+    <li><a href="../Paperclip/Error.html">Paperclip::Error</a>
+  
+    <li><a href="../Paperclip/Errors.html">Paperclip::Errors</a>
+  
+    <li><a href="../Paperclip/Errors/CommandNotFoundError.html">Paperclip::Errors::CommandNotFoundError</a>
+  
+    <li><a href="../Paperclip/Errors/InfiniteInterpolationError.html">Paperclip::Errors::InfiniteInterpolationError</a>
+  
+    <li><a href="../Paperclip/Errors/NotIdentifiedByImageMagickError.html">Paperclip::Errors::NotIdentifiedByImageMagickError</a>
+  
+    <li><a href="../Paperclip/Errors/StorageMethodNotFound.html">Paperclip::Errors::StorageMethodNotFound</a>
+  
+    <li><a href="../Paperclip/FileAdapter.html">Paperclip::FileAdapter</a>
+  
+    <li><a href="../Paperclip/Geometry.html">Paperclip::Geometry</a>
+  
+    <li><a href="../Paperclip/Glue.html">Paperclip::Glue</a>
+  
+    <li><a href="../Paperclip/Helpers.html">Paperclip::Helpers</a>
+  
+    <li><a href="../Paperclip/IdentityAdapter.html">Paperclip::IdentityAdapter</a>
+  
+    <li><a href="../Paperclip/Interpolations.html">Paperclip::Interpolations</a>
+  
+    <li><a href="../Paperclip/Logger.html">Paperclip::Logger</a>
+  
+    <li><a href="../Paperclip/NilAdapter.html">Paperclip::NilAdapter</a>
+  
+    <li><a href="../Paperclip/Processor.html">Paperclip::Processor</a>
+  
+    <li><a href="../Paperclip/ProcessorHelpers.html">Paperclip::ProcessorHelpers</a>
+  
+    <li><a href="../Paperclip/Railtie.html">Paperclip::Railtie</a>
+  
+    <li><a href="../Paperclip/Schema.html">Paperclip::Schema</a>
+  
+    <li><a href="../Paperclip/Schema/CommandRecorder.html">Paperclip::Schema::CommandRecorder</a>
+  
+    <li><a href="../Paperclip/Schema/Statements.html">Paperclip::Schema::Statements</a>
+  
+    <li><a href="../Paperclip/Schema/TableDefinition.html">Paperclip::Schema::TableDefinition</a>
+  
+    <li><a href="../Paperclip/Shoulda.html">Paperclip::Shoulda</a>
+  
+    <li><a href="../Paperclip/Shoulda/Matchers.html">Paperclip::Shoulda::Matchers</a>
+  
+    <li><a href="../Paperclip/Shoulda/Matchers/HaveAttachedFileMatcher.html">Paperclip::Shoulda::Matchers::HaveAttachedFileMatcher</a>
+  
+    <li><a href="../Paperclip/Shoulda/Matchers/ValidateAttachmentContentTypeMatcher.html">Paperclip::Shoulda::Matchers::ValidateAttachmentContentTypeMatcher</a>
+  
+    <li><a href="../Paperclip/Shoulda/Matchers/ValidateAttachmentPresenceMatcher.html">Paperclip::Shoulda::Matchers::ValidateAttachmentPresenceMatcher</a>
+  
+    <li><a href="../Paperclip/Shoulda/Matchers/ValidateAttachmentSizeMatcher.html">Paperclip::Shoulda::Matchers::ValidateAttachmentSizeMatcher</a>
+  
+    <li><a href="../Paperclip/Storage.html">Paperclip::Storage</a>
+  
+    <li><a href="../Paperclip/Storage/Filesystem.html">Paperclip::Storage::Filesystem</a>
+  
+    <li><a href="../Paperclip/Storage/Fog.html">Paperclip::Storage::Fog</a>
+  
+    <li><a href="../Paperclip/Storage/S3.html">Paperclip::Storage::S3</a>
+  
+    <li><a href="../Paperclip/StringioAdapter.html">Paperclip::StringioAdapter</a>
+  
+    <li><a href="../Paperclip/Style.html">Paperclip::Style</a>
+  
+    <li><a href="../Paperclip/Tempfile.html">Paperclip::Tempfile</a>
+  
+    <li><a href="../Paperclip/TempfileEncoding.html">Paperclip::TempfileEncoding</a>
+  
+    <li><a href="../Paperclip/TempfileFactory.html">Paperclip::TempfileFactory</a>
+  
+    <li><a href="../Paperclip/TempfileFactoryTest.html">Paperclip::TempfileFactoryTest</a>
+  
+    <li><a href="../Paperclip/Thumbnail.html">Paperclip::Thumbnail</a>
+  
+    <li><a href="../Paperclip/UploadedFileAdapter.html">Paperclip::UploadedFileAdapter</a>
+  
+    <li><a href="../Paperclip/UriAdapter.html">Paperclip::UriAdapter</a>
+  
+    <li><a href="../Paperclip/UrlGenerator.html">Paperclip::UrlGenerator</a>
+  
+    <li><a href="../Paperclip/Validators.html">Paperclip::Validators</a>
+  
+    <li><a href="../Paperclip/Validators/AttachmentContentTypeValidator.html">Paperclip::Validators::AttachmentContentTypeValidator</a>
+  
+    <li><a href="../Paperclip/Validators/AttachmentPresenceValidator.html">Paperclip::Validators::AttachmentPresenceValidator</a>
+  
+    <li><a href="../Paperclip/Validators/AttachmentSizeValidator.html">Paperclip::Validators::AttachmentSizeValidator</a>
+  
+    <li><a href="../Paperclip/Validators/ClassMethods.html">Paperclip::Validators::ClassMethods</a>
+  
+    <li><a href="../Paperclip/Validators/HelperMethods.html">Paperclip::Validators::HelperMethods</a>
+  
+    <li><a href="../AttachmentTest.html">AttachmentTest</a>
+  
+    <li><a href="../AttachmentTest/AttachmentTest.html">AttachmentTest::AttachmentTest</a>
+  
+    <li><a href="../AttachmentTest/AttachmentTest/Paperclip.html">AttachmentTest::AttachmentTest::Paperclip</a>
+  
+    <li><a href="../AttachmentTest/AttachmentTest/Paperclip/Test.html">AttachmentTest::AttachmentTest::Paperclip::Test</a>
+  
+    <li><a href="../Test.html">Test</a>
+  
+    <li><a href="../Test/Unit.html">Test::Unit</a>
+  
+    <li><a href="../Test/Unit/TestCase.html">Test::Unit::TestCase</a>
+  
+    <li><a href="../AbstractAdapterTest.html">AbstractAdapterTest</a>
+  
+    <li><a href="../AbstractAdapterTest/TestAdapter.html">AbstractAdapterTest::TestAdapter</a>
+  
+    <li><a href="../ActionController.html">ActionController</a>
+  
+    <li><a href="../ActionController/Integration.html">ActionController::Integration</a>
+  
+    <li><a href="../AdapterRegistryTest.html">AdapterRegistryTest</a>
+  
+    <li><a href="../AdapterRegistryTest/AdapterTest.html">AdapterRegistryTest::AdapterTest</a>
+  
+    <li><a href="../BestBay.html">BestBay</a>
+  
+    <li><a href="../BestBay/Application.html">BestBay::Application</a>
+  
+    <li><a href="../FactoryGirl.html">FactoryGirl</a>
+  
+    <li><a href="../FactoryGirl/Factory.html">FactoryGirl::Factory</a>
+  
+    <li><a href="../FakeWeb.html">FakeWeb</a>
+  
+    <li><a href="../FakeWeb/StubSocket.html">FakeWeb::StubSocket</a>
+  
+    <li><a href="../One.html">One</a>
+  
+    <li><a href="../One/Two.html">One::Two</a>
+  
+    <li><a href="../PaperclipTest.html">PaperclipTest</a>
+  
+    <li><a href="../PaperclipTest/Dummy2.html">PaperclipTest::Dummy2</a>
+  
+    <li><a href="../UploadedFileAdapterTest.html">UploadedFileAdapterTest</a>
+  
+    <li><a href="../UploadedFileAdapterTest/UploadedFile.html">UploadedFileAdapterTest::UploadedFile</a>
+  
+    <li><a href="../AddImageToProducts.html">AddImageToProducts</a>
+  
+    <li><a href="../AddPasswordDigestToUsers.html">AddPasswordDigestToUsers</a>
+  
+    <li><a href="../AddRememberTokenToUsers.html">AddRememberTokenToUsers</a>
+  
+    <li><a href="../AddSellingProductsToUsers.html">AddSellingProductsToUsers</a>
+  
+    <li><a href="../AddUserIdProductIdToBid.html">AddUserIdProductIdToBid</a>
+  
+    <li><a href="../AddUserNameToProducts.html">AddUserNameToProducts</a>
+  
+    <li><a href="../ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="../ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="../AttachmentAdapterTest.html">AttachmentAdapterTest</a>
+  
+    <li><a href="../AttachmentContentTypeValidatorTest.html">AttachmentContentTypeValidatorTest</a>
+  
+    <li><a href="../AttachmentHelpers.html">AttachmentHelpers</a>
+  
+    <li><a href="../AttachmentOptionsTest.html">AttachmentOptionsTest</a>
+  
+    <li><a href="../AttachmentPresenceValidatorTest.html">AttachmentPresenceValidatorTest</a>
+  
+    <li><a href="../AttachmentSizeValidatorTest.html">AttachmentSizeValidatorTest</a>
+  
+    <li><a href="../Bid.html">Bid</a>
+  
+    <li><a href="../Book.html">Book</a>
+  
+    <li><a href="../ContentTypeDetectorTest.html">ContentTypeDetectorTest</a>
+  
+    <li><a href="../CreateBids.html">CreateBids</a>
+  
+    <li><a href="../CreateProducts.html">CreateProducts</a>
+  
+    <li><a href="../CreateUsers.html">CreateUsers</a>
+  
+    <li><a href="../Dummy.html">Dummy</a>
+  
+    <li><a href="../Factory.html">Factory</a>
+  
+    <li><a href="../FakeModel.html">FakeModel</a>
+  
+    <li><a href="../FileAdapterTest.html">FileAdapterTest</a>
+  
+    <li><a href="../FileHelpers.html">FileHelpers</a>
+  
+    <li><a href="../FileSystemTest.html">FileSystemTest</a>
+  
+    <li><a href="../FixColumNameOfProductUserId.html">FixColumNameOfProductUserId</a>
+  
+    <li><a href="../FogTest.html">FogTest</a>
+  
+    <li><a href="../Four.html">Four</a>
+  
+    <li><a href="../GeneratorTest.html">GeneratorTest</a>
+  
+    <li><a href="../GeometryTest.html">GeometryTest</a>
+  
+    <li><a href="../HaveAttachedFileMatcherTest.html">HaveAttachedFileMatcherTest</a>
+  
+    <li><a href="../HtmlSelectorsHelpers.html">HtmlSelectorsHelpers</a>
+  
+    <li><a href="../IdentityAdapterTest.html">IdentityAdapterTest</a>
+  
+    <li><a href="../IntegrationTest.html">IntegrationTest</a>
+  
+    <li><a href="../InterpolationsTest.html">InterpolationsTest</a>
+  
+    <li><a href="../MetaClassTest.html">MetaClassTest</a>
+  
+    <li><a href="../MockAttachment.html">MockAttachment</a>
+  
+    <li><a href="../MockInterpolator.html">MockInterpolator</a>
+  
+    <li><a href="../MockModel.html">MockModel</a>
+  
+    <li><a href="../MockUrlGeneratorBuilder.html">MockUrlGeneratorBuilder</a>
+  
+    <li><a href="../NavigationHelpers.html">NavigationHelpers</a>
+  
+    <li><a href="../NilAdapterTest.html">NilAdapterTest</a>
+  
+    <li><a href="../Object.html">Object</a>
+  
+    <li><a href="../PaperclipGenerator.html">PaperclipGenerator</a>
+  
+    <li><a href="../PaperclipMissingAttachmentStylesTest.html">PaperclipMissingAttachmentStylesTest</a>
+  
+    <li><a href="../ProcessorTest.html">ProcessorTest</a>
+  
+    <li><a href="../Product.html">Product</a>
+  
+    <li><a href="../ProductsController.html">ProductsController</a>
+  
+    <li><a href="../ProductsHelper.html">ProductsHelper</a>
+  
+    <li><a href="../RailsCommandHelpers.html">RailsCommandHelpers</a>
+  
+    <li><a href="../S3LiveTest.html">S3LiveTest</a>
+  
+    <li><a href="../S3Test.html">S3Test</a>
+  
+    <li><a href="../SchemaTest.html">SchemaTest</a>
+  
+    <li><a href="../SessionsController.html">SessionsController</a>
+  
+    <li><a href="../SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="../StaticPagesController.html">StaticPagesController</a>
+  
+    <li><a href="../StringioFileProxyTest.html">StringioFileProxyTest</a>
+  
+    <li><a href="../StyleTest.html">StyleTest</a>
+  
+    <li><a href="../SubDummy.html">SubDummy</a>
+  
+    <li><a href="../Three.html">Three</a>
+  
+    <li><a href="../ThumbnailTest.html">ThumbnailTest</a>
+  
+    <li><a href="../UriProxyTest.html">UriProxyTest</a>
+  
+    <li><a href="../UrlGeneratorTest.html">UrlGeneratorTest</a>
+  
+    <li><a href="../User.html">User</a>
+  
+    <li><a href="../UsersController.html">UsersController</a>
+  
+    <li><a href="../UsersHelper.html">UsersHelper</a>
+  
+    <li><a href="../ValidateAttachmentContentTypeMatcherTest.html">ValidateAttachmentContentTypeMatcherTest</a>
+  
+    <li><a href="../ValidateAttachmentPresenceMatcherTest.html">ValidateAttachmentPresenceMatcherTest</a>
+  
+    <li><a href="../ValidateAttachmentSizeMatcherTest.html">ValidateAttachmentSizeMatcherTest</a>
+  
+    <li><a href="../ValidatorsTest.html">ValidatorsTest</a>
+  
+    <li><a href="../WelcomeHelper.html">WelcomeHelper</a>
+  
+    <li><a href="../WithinHelpers.html">WithinHelpers</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="module">module Paperclip::Interpolations</h1>
+
+  <div id="description" class="description">
+    
+<p>This module contains all the methods that are available for interpolation
+in paths and urls. To add your own (or override an existing one), you can
+either open this module and define it, or call the Paperclip.interpolates
+method.</p>
+
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <!-- Constants -->
+    <section id="constants-list" class="section">
+      <h3 class="section-header">Constants</h3>
+      <dl>
+      
+        <dt id="RIGHT_HERE">RIGHT_HERE
+        
+        <dd class="description"><p>Returns the interpolated URL. Will raise an error if the url itself
+contains “:url” to prevent infinite recursion. This interpolation is used
+in the default :path to ease default specifications.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    <!-- Methods -->
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Class Methods</h3>
+
+    
+      <div id="method-c-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hash access of interpolations. Included only for compatibility, and is not
+intended for normal use.</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-operator">[]</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">method</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-method -->
+
+    
+      <div id="method-c-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(name, block)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hash assignment of interpolations. Included only for compatibility, and is
+not intended for normal use.</p>
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 11</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-operator">[]=</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">name</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- 5B-5D-3D-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- 5B-5D-3D-method -->
+
+    
+      <div id="method-c-all" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all</span><span
+            class="method-args">()</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a sorted list of all interpolations.</p>
+          
+
+          
+          <div class="method-source-code" id="all-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">all</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_methods</span>(<span class="ruby-keyword">false</span>).<span class="ruby-identifier">sort</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- all-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- all-method -->
+
+    
+      <div id="method-c-interpolate" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">interpolate</span><span
+            class="method-args">(pattern, *args)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Perform the actual interpolation. Takes the pattern to interpolate and the
+arguments to pass, which are the attachment and style name. You can pass a
+method name on your record as a symbol, which should turn an interpolation
+pattern for <a href="../Paperclip.html">Paperclip</a> to use.</p>
+          
+
+          
+          <div class="method-source-code" id="interpolate-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">interpolate</span> <span class="ruby-identifier">pattern</span>, *<span class="ruby-identifier">args</span>
+  <span class="ruby-identifier">pattern</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">pattern</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">pattern</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Symbol</span>
+  <span class="ruby-identifier">all</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-identifier">pattern</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">result</span>, <span class="ruby-identifier">tag</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">%r:#{tag}/</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">send</span>( <span class="ruby-identifier">tag</span>, *<span class="ruby-identifier">args</span> )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- interpolate-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- interpolate-method -->
+
+    
+    </section><!-- public-class-method-details -->
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section section">
+      <h3 class="section-header">Public Instance Methods</h3>
+
+    
+      <div id="method-i-attachment" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">attachment</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the pluralized form of the attachment name. e.g. “avatars” for an
+attachment of :avatar</p>
+          
+
+          
+          <div class="method-source-code" id="attachment-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">attachment</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">pluralize</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- attachment-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- attachment-method -->
+
+    
+      <div id="method-i-basename" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">basename</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the basename of the file. e.g. “file” for “file.jpg”</p>
+          
+
+          
+          <div class="method-source-code" id="basename-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">basename</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">original_filename</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">%r#{Regexp.escape(File.extname(attachment.original_filename))}$/</span>, <span class="ruby-string">&quot;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- basename-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- basename-method -->
+
+    
+      <div id="method-i-class" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">class</span><span
+            class="method-args">(attachment = nil, style_name = nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the underscored, pluralized version of the class name. e.g. “users”
+for the <a href="../User.html">User</a> class. NOTE: The arguments need to
+be optional, because some tools fetch all class names. Calling <a
+href="Interpolations.html#method-i-class">class</a> will return the
+expected class.</p>
+          
+
+          
+          <div class="method-source-code" id="class-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">class</span> <span class="ruby-identifier">attachment</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">style_name</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">super</span>() <span class="ruby-keyword">if</span> <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">style_name</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">underscore</span>.<span class="ruby-identifier">pluralize</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- class-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- class-method -->
+
+    
+      <div id="method-i-content_type_extension" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">content_type_extension</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an extension based on the content type. e.g. “jpeg” for
+“image/jpeg”. If the style has a specified format, it will override the
+content-type detection.</p>
+
+<p>Each mime type generally has multiple extensions associated with it, so if
+the extension from the original filename is one of these extensions, that
+extension is used, otherwise, the first in the list is used.</p>
+          
+
+          
+          <div class="method-source-code" id="content_type_extension-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">content_type_extension</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">mime_type</span> = <span class="ruby-constant">MIME</span><span class="ruby-operator">::</span><span class="ruby-constant">Types</span>[<span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">content_type</span>]
+  <span class="ruby-identifier">extensions_for_mime_type</span> = <span class="ruby-keyword">unless</span> <span class="ruby-identifier">mime_type</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">mime_type</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">extensions</span>
+  <span class="ruby-keyword">else</span>
+    []
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">original_extension</span> = <span class="ruby-identifier">extension</span>(<span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>)
+  <span class="ruby-identifier">style</span> = <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">styles</span>[<span class="ruby-identifier">style_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">to_sym</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">style</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">style</span>[<span class="ruby-value">:format</span>]
+    <span class="ruby-identifier">style</span>[<span class="ruby-value">:format</span>].<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">extensions_for_mime_type</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">original_extension</span>
+    <span class="ruby-identifier">original_extension</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">extensions_for_mime_type</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">extensions_for_mime_type</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># It's possible, though unlikely, that the mime type is not in the</span>
+    <span class="ruby-comment"># database, so just use the part after the '/' in the mime type as the</span>
+    <span class="ruby-comment"># extension.</span>
+    <span class="ruby-regexp">%r{/([^/]*)$}</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">content_type</span>)[<span class="ruby-value">1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- content_type_extension-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- content_type_extension-method -->
+
+    
+      <div id="method-i-extension" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">extension</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the extension of the file. e.g. “jpg” for “file.jpg” If the style
+has a format defined, it will return the format instead of the actual
+extension.</p>
+          
+
+          
+          <div class="method-source-code" id="extension-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">extension</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  ((<span class="ruby-identifier">style</span> = <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">styles</span>[<span class="ruby-identifier">style_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">to_sym</span>]) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">style</span>[<span class="ruby-value">:format</span>]) <span class="ruby-operator">||</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">original_filename</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r^\.+/</span>, <span class="ruby-string">&quot;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- extension-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- extension-method -->
+
+    
+      <div id="method-i-filename" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">filename</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the filename, the same way as “:basename.:extension” would.</p>
+          
+
+          
+          <div class="method-source-code" id="filename-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">filename</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  [ <span class="ruby-identifier">basename</span>(<span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>), <span class="ruby-identifier">extension</span>(<span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>) ].<span class="ruby-identifier">reject</span>(&amp;<span class="ruby-value">:blank?</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- filename-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- filename-method -->
+
+    
+      <div id="method-i-fingerprint" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fingerprint</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the fingerprint of the instance.</p>
+          
+
+          
+          <div class="method-source-code" id="fingerprint-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">fingerprint</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">fingerprint</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- fingerprint-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- fingerprint-method -->
+
+    
+      <div id="method-i-hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">(attachment=nil, style_name=nil)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a the attachment hash.  See <a
+href="Attachment.html#method-i-hash_key">Paperclip::Attachment#hash_key</a>
+for more details.</p>
+          
+
+          
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">hash</span> <span class="ruby-identifier">attachment</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">style_name</span>=<span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attachment</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">style_name</span>
+    <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">hash_key</span>(<span class="ruby-identifier">style_name</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>()
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- hash-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- hash-method -->
+
+    
+      <div id="method-i-id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">id</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the id of the instance.</p>
+          
+
+          
+          <div class="method-source-code" id="id-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">id</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- id-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- id-method -->
+
+    
+      <div id="method-i-id_partition" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">id_partition</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the id of the instance in a split path form. e.g. returns
+000/001/234 for an id of 1234.</p>
+          
+
+          
+          <div class="method-source-code" id="id_partition-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">id_partition</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">id</span> = <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">id</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">Integer</span>
+    (<span class="ruby-string">&quot;%09d&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">id</span>).<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r\d{3}/</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;/&quot;</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+    <span class="ruby-identifier">id</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r.{3}/</span>).<span class="ruby-identifier">first</span>(<span class="ruby-value">3</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;/&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- id_partition-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- id_partition-method -->
+
+    
+      <div id="method-i-param" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">param</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the to_param of the instance.</p>
+          
+
+          
+          <div class="method-source-code" id="param-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">param</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">to_param</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- param-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- param-method -->
+
+    
+      <div id="method-i-rails_env" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rails_env</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the Rails.env constant.</p>
+          
+
+          
+          <div class="method-source-code" id="rails_env-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rails_env</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-constant">Rails</span>.<span class="ruby-identifier">env</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rails_env-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rails_env-method -->
+
+    
+      <div id="method-i-rails_root" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rails_root</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the Rails.root constant.</p>
+          
+
+          
+          <div class="method-source-code" id="rails_root-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">rails_root</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-constant">Rails</span>.<span class="ruby-identifier">root</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- rails_root-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- rails_root-method -->
+
+    
+      <div id="method-i-style" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">style</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the style, or the default style if nil is supplied.</p>
+          
+
+          
+          <div class="method-source-code" id="style-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">style</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">style_name</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">default_style</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- style-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- style-method -->
+
+    
+      <div id="method-i-timestamp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">timestamp</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the timestamp as defined by the &lt;attachment&gt;_updated_at field
+in the server default time zone unless :use_global_time_zone is set to
+false.  Note that a Rails.config.time_zone change will still invalidate any
+path or URL that uses :timestamp.  For a time_zone-agnostic timestamp, use
+<a href="Interpolations.html#method-i-updated_at">updated_at</a>.</p>
+          
+
+          
+          <div class="method-source-code" id="timestamp-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">timestamp</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">instance_read</span>(<span class="ruby-value">:updated_at</span>).<span class="ruby-identifier">in_time_zone</span>(<span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">time_zone</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- timestamp-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- timestamp-method -->
+
+    
+      <div id="method-i-updated_at" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">updated_at</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an integer timestamp that is time zone-neutral, so that paths
+remain valid even if a server’s time zone changes.</p>
+          
+
+          
+          <div class="method-source-code" id="updated_at-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">updated_at</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">updated_at</span>
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- updated_at-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- updated_at-method -->
+
+    
+      <div id="method-i-url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">url</span><span
+            class="method-args">(attachment, style_name)</span>
+          <span class="method-click-advice">click to toggle source</span>
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+
+          
+          <div class="method-source-code" id="url-source">
+            <pre><span class="ruby-comment"># File vendor/plugins/paperclip/lib/paperclip/interpolations.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">url</span> <span class="ruby-identifier">attachment</span>, <span class="ruby-identifier">style_name</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">InfiniteInterpolationError</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">caller</span>.<span class="ruby-identifier">any?</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">index</span>(<span class="ruby-constant">RIGHT_HERE</span>) }
+  <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">url</span>(<span class="ruby-identifier">style_name</span>, <span class="ruby-value">:timestamp</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">:escape</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div><!-- url-source -->
+          
+        </div>
+
+        
+
+        
+      </div><!-- url-method -->
+
+    
+    </section><!-- public-instance-method-details -->
+  
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

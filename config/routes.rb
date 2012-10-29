@@ -1,8 +1,4 @@
 BestBay::Application.routes.draw do
-  resources :products
-  resources :users
-  resources :sessions, only: [:new, :create, :destroy]
-
   root to: 'static_pages#home'
 
   match '/help',    to: 'static_pages#help'
@@ -11,7 +7,13 @@ BestBay::Application.routes.draw do
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
   match '/post_product', to: 'products#new'
+  match '/bids/:id', to: 'bids#create', as: 'bid_path'
+  match '/search-product', to: 'products#search', as: 'search_path'
 
+  resources :products
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :bids
 
 
   # The priority is based upon order of creation:

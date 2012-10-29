@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+
+<title>class Factory - RDoc Documentation</title>
+
+<link type="text/css" media="screen" href="./rdoc.css" rel="stylesheet">
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+</script>
+
+<script type="text/javascript" charset="utf-8" src="./js/jquery.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/navigation.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search_index.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/search.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/searcher.js"></script>
+<script type="text/javascript" charset="utf-8" src="./js/darkfish.js"></script>
+
+
+<body id="top" class="class">
+<nav id="metadata">
+  <nav id="home-section" class="section">
+  <h3 class="section-header">
+    <a href="./index.html">Home</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </h3>
+</nav>
+
+
+  <nav id="search-section" class="section project-section" class="initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <h3 class="section-header">
+      <input type="text" name="search" placeholder="Search" id="search-field"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </h3>
+  </form>
+
+  <ul id="search-results" class="initially-hidden"></ul>
+</nav>
+
+
+  <div id="file-metadata">
+    <nav id="file-list-section" class="section">
+  <h3 class="section-header">Defined In</h3>
+  <ul>
+    <li>vendor/plugins/paperclip/shoulda_macros/paperclip.rb
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="class-metadata">
+    
+    <nav id="parent-class-section" class="section">
+  <h3 class="section-header">Parent</h3>
+  
+  <p class="link"><a href="Object.html">Object</a>
+  
+</nav>
+
+    <!-- Included Modules -->
+<nav id="includes-section" class="section">
+  <h3 class="section-header">Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><a class="include" href="Paperclip/Shoulda.html">Paperclip::Shoulda</a>
+  
+  
+  </ul>
+</nav>
+
+    
+  </div>
+
+  <div id="project-metadata">
+    <nav id="fileindex-section" class="section project-section">
+  <h3 class="section-header">Pages</h3>
+
+  <ul>
+  
+    <li class="file"><a href="./Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./public/robots_txt.html">robots</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/Appraisals.html">Appraisals</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/Gemfile.html">Gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/LICENSE.html">LICENSE</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/NEWS.html">NEWS</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/Rakefile.html">Rakefile</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/UPGRADING.html">UPGRADING</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/features/support/fixtures/boot_config_txt.html">boot_config</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/features/support/fixtures/gemfile_txt.html">gemfile</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/features/support/fixtures/preinitializer_txt.html">preinitializer</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/lib/generators/paperclip/USAGE.html">USAGE</a>
+  
+    <li class="file"><a href="./vendor/plugins/paperclip/test/fixtures/text_txt.html">text</a>
+  
+  </ul>
+</nav>
+
+    <nav id="classindex-section" class="section project-section">
+  <h3 class="section-header">Class and Module Index</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./Paperclip.html">Paperclip</a>
+  
+    <li><a href="./Paperclip/AbstractAdapter.html">Paperclip::AbstractAdapter</a>
+  
+    <li><a href="./Paperclip/AdapterRegistry.html">Paperclip::AdapterRegistry</a>
+  
+    <li><a href="./Paperclip/AdapterRegistry/NoHandlerError.html">Paperclip::AdapterRegistry::NoHandlerError</a>
+  
+    <li><a href="./Paperclip/Attachment.html">Paperclip::Attachment</a>
+  
+    <li><a href="./Paperclip/AttachmentAdapter.html">Paperclip::AttachmentAdapter</a>
+  
+    <li><a href="./Paperclip/AttachmentOptions.html">Paperclip::AttachmentOptions</a>
+  
+    <li><a href="./Paperclip/Callbacks.html">Paperclip::Callbacks</a>
+  
+    <li><a href="./Paperclip/Callbacks/Defining.html">Paperclip::Callbacks::Defining</a>
+  
+    <li><a href="./Paperclip/Callbacks/Running.html">Paperclip::Callbacks::Running</a>
+  
+    <li><a href="./Paperclip/ClassMethods.html">Paperclip::ClassMethods</a>
+  
+    <li><a href="./Paperclip/ContentTypeDetector.html">Paperclip::ContentTypeDetector</a>
+  
+    <li><a href="./Paperclip/Error.html">Paperclip::Error</a>
+  
+    <li><a href="./Paperclip/Errors.html">Paperclip::Errors</a>
+  
+    <li><a href="./Paperclip/Errors/CommandNotFoundError.html">Paperclip::Errors::CommandNotFoundError</a>
+  
+    <li><a href="./Paperclip/Errors/InfiniteInterpolationError.html">Paperclip::Errors::InfiniteInterpolationError</a>
+  
+    <li><a href="./Paperclip/Errors/NotIdentifiedByImageMagickError.html">Paperclip::Errors::NotIdentifiedByImageMagickError</a>
+  
+    <li><a href="./Paperclip/Errors/StorageMethodNotFound.html">Paperclip::Errors::StorageMethodNotFound</a>
+  
+    <li><a href="./Paperclip/FileAdapter.html">Paperclip::FileAdapter</a>
+  
+    <li><a href="./Paperclip/Geometry.html">Paperclip::Geometry</a>
+  
+    <li><a href="./Paperclip/Glue.html">Paperclip::Glue</a>
+  
+    <li><a href="./Paperclip/Helpers.html">Paperclip::Helpers</a>
+  
+    <li><a href="./Paperclip/IdentityAdapter.html">Paperclip::IdentityAdapter</a>
+  
+    <li><a href="./Paperclip/Interpolations.html">Paperclip::Interpolations</a>
+  
+    <li><a href="./Paperclip/Logger.html">Paperclip::Logger</a>
+  
+    <li><a href="./Paperclip/NilAdapter.html">Paperclip::NilAdapter</a>
+  
+    <li><a href="./Paperclip/Processor.html">Paperclip::Processor</a>
+  
+    <li><a href="./Paperclip/ProcessorHelpers.html">Paperclip::ProcessorHelpers</a>
+  
+    <li><a href="./Paperclip/Railtie.html">Paperclip::Railtie</a>
+  
+    <li><a href="./Paperclip/Schema.html">Paperclip::Schema</a>
+  
+    <li><a href="./Paperclip/Schema/CommandRecorder.html">Paperclip::Schema::CommandRecorder</a>
+  
+    <li><a href="./Paperclip/Schema/Statements.html">Paperclip::Schema::Statements</a>
+  
+    <li><a href="./Paperclip/Schema/TableDefinition.html">Paperclip::Schema::TableDefinition</a>
+  
+    <li><a href="./Paperclip/Shoulda.html">Paperclip::Shoulda</a>
+  
+    <li><a href="./Paperclip/Shoulda/Matchers.html">Paperclip::Shoulda::Matchers</a>
+  
+    <li><a href="./Paperclip/Shoulda/Matchers/HaveAttachedFileMatcher.html">Paperclip::Shoulda::Matchers::HaveAttachedFileMatcher</a>
+  
+    <li><a href="./Paperclip/Shoulda/Matchers/ValidateAttachmentContentTypeMatcher.html">Paperclip::Shoulda::Matchers::ValidateAttachmentContentTypeMatcher</a>
+  
+    <li><a href="./Paperclip/Shoulda/Matchers/ValidateAttachmentPresenceMatcher.html">Paperclip::Shoulda::Matchers::ValidateAttachmentPresenceMatcher</a>
+  
+    <li><a href="./Paperclip/Shoulda/Matchers/ValidateAttachmentSizeMatcher.html">Paperclip::Shoulda::Matchers::ValidateAttachmentSizeMatcher</a>
+  
+    <li><a href="./Paperclip/Storage.html">Paperclip::Storage</a>
+  
+    <li><a href="./Paperclip/Storage/Filesystem.html">Paperclip::Storage::Filesystem</a>
+  
+    <li><a href="./Paperclip/Storage/Fog.html">Paperclip::Storage::Fog</a>
+  
+    <li><a href="./Paperclip/Storage/S3.html">Paperclip::Storage::S3</a>
+  
+    <li><a href="./Paperclip/StringioAdapter.html">Paperclip::StringioAdapter</a>
+  
+    <li><a href="./Paperclip/Style.html">Paperclip::Style</a>
+  
+    <li><a href="./Paperclip/Tempfile.html">Paperclip::Tempfile</a>
+  
+    <li><a href="./Paperclip/TempfileEncoding.html">Paperclip::TempfileEncoding</a>
+  
+    <li><a href="./Paperclip/TempfileFactory.html">Paperclip::TempfileFactory</a>
+  
+    <li><a href="./Paperclip/TempfileFactoryTest.html">Paperclip::TempfileFactoryTest</a>
+  
+    <li><a href="./Paperclip/Thumbnail.html">Paperclip::Thumbnail</a>
+  
+    <li><a href="./Paperclip/UploadedFileAdapter.html">Paperclip::UploadedFileAdapter</a>
+  
+    <li><a href="./Paperclip/UriAdapter.html">Paperclip::UriAdapter</a>
+  
+    <li><a href="./Paperclip/UrlGenerator.html">Paperclip::UrlGenerator</a>
+  
+    <li><a href="./Paperclip/Validators.html">Paperclip::Validators</a>
+  
+    <li><a href="./Paperclip/Validators/AttachmentContentTypeValidator.html">Paperclip::Validators::AttachmentContentTypeValidator</a>
+  
+    <li><a href="./Paperclip/Validators/AttachmentPresenceValidator.html">Paperclip::Validators::AttachmentPresenceValidator</a>
+  
+    <li><a href="./Paperclip/Validators/AttachmentSizeValidator.html">Paperclip::Validators::AttachmentSizeValidator</a>
+  
+    <li><a href="./Paperclip/Validators/ClassMethods.html">Paperclip::Validators::ClassMethods</a>
+  
+    <li><a href="./Paperclip/Validators/HelperMethods.html">Paperclip::Validators::HelperMethods</a>
+  
+    <li><a href="./AttachmentTest.html">AttachmentTest</a>
+  
+    <li><a href="./AttachmentTest/AttachmentTest.html">AttachmentTest::AttachmentTest</a>
+  
+    <li><a href="./AttachmentTest/AttachmentTest/Paperclip.html">AttachmentTest::AttachmentTest::Paperclip</a>
+  
+    <li><a href="./AttachmentTest/AttachmentTest/Paperclip/Test.html">AttachmentTest::AttachmentTest::Paperclip::Test</a>
+  
+    <li><a href="./Test.html">Test</a>
+  
+    <li><a href="./Test/Unit.html">Test::Unit</a>
+  
+    <li><a href="./Test/Unit/TestCase.html">Test::Unit::TestCase</a>
+  
+    <li><a href="./AbstractAdapterTest.html">AbstractAdapterTest</a>
+  
+    <li><a href="./AbstractAdapterTest/TestAdapter.html">AbstractAdapterTest::TestAdapter</a>
+  
+    <li><a href="./ActionController.html">ActionController</a>
+  
+    <li><a href="./ActionController/Integration.html">ActionController::Integration</a>
+  
+    <li><a href="./AdapterRegistryTest.html">AdapterRegistryTest</a>
+  
+    <li><a href="./AdapterRegistryTest/AdapterTest.html">AdapterRegistryTest::AdapterTest</a>
+  
+    <li><a href="./BestBay.html">BestBay</a>
+  
+    <li><a href="./BestBay/Application.html">BestBay::Application</a>
+  
+    <li><a href="./FactoryGirl.html">FactoryGirl</a>
+  
+    <li><a href="./FactoryGirl/Factory.html">FactoryGirl::Factory</a>
+  
+    <li><a href="./FakeWeb.html">FakeWeb</a>
+  
+    <li><a href="./FakeWeb/StubSocket.html">FakeWeb::StubSocket</a>
+  
+    <li><a href="./One.html">One</a>
+  
+    <li><a href="./One/Two.html">One::Two</a>
+  
+    <li><a href="./PaperclipTest.html">PaperclipTest</a>
+  
+    <li><a href="./PaperclipTest/Dummy2.html">PaperclipTest::Dummy2</a>
+  
+    <li><a href="./UploadedFileAdapterTest.html">UploadedFileAdapterTest</a>
+  
+    <li><a href="./UploadedFileAdapterTest/UploadedFile.html">UploadedFileAdapterTest::UploadedFile</a>
+  
+    <li><a href="./AddImageToProducts.html">AddImageToProducts</a>
+  
+    <li><a href="./AddPasswordDigestToUsers.html">AddPasswordDigestToUsers</a>
+  
+    <li><a href="./AddRememberTokenToUsers.html">AddRememberTokenToUsers</a>
+  
+    <li><a href="./AddSellingProductsToUsers.html">AddSellingProductsToUsers</a>
+  
+    <li><a href="./AddUserIdProductIdToBid.html">AddUserIdProductIdToBid</a>
+  
+    <li><a href="./AddUserNameToProducts.html">AddUserNameToProducts</a>
+  
+    <li><a href="./ApplicationController.html">ApplicationController</a>
+  
+    <li><a href="./ApplicationHelper.html">ApplicationHelper</a>
+  
+    <li><a href="./AttachmentAdapterTest.html">AttachmentAdapterTest</a>
+  
+    <li><a href="./AttachmentContentTypeValidatorTest.html">AttachmentContentTypeValidatorTest</a>
+  
+    <li><a href="./AttachmentHelpers.html">AttachmentHelpers</a>
+  
+    <li><a href="./AttachmentOptionsTest.html">AttachmentOptionsTest</a>
+  
+    <li><a href="./AttachmentPresenceValidatorTest.html">AttachmentPresenceValidatorTest</a>
+  
+    <li><a href="./AttachmentSizeValidatorTest.html">AttachmentSizeValidatorTest</a>
+  
+    <li><a href="./Bid.html">Bid</a>
+  
+    <li><a href="./Book.html">Book</a>
+  
+    <li><a href="./ContentTypeDetectorTest.html">ContentTypeDetectorTest</a>
+  
+    <li><a href="./CreateBids.html">CreateBids</a>
+  
+    <li><a href="./CreateProducts.html">CreateProducts</a>
+  
+    <li><a href="./CreateUsers.html">CreateUsers</a>
+  
+    <li><a href="./Dummy.html">Dummy</a>
+  
+    <li><a href="./Factory.html">Factory</a>
+  
+    <li><a href="./FakeModel.html">FakeModel</a>
+  
+    <li><a href="./FileAdapterTest.html">FileAdapterTest</a>
+  
+    <li><a href="./FileHelpers.html">FileHelpers</a>
+  
+    <li><a href="./FileSystemTest.html">FileSystemTest</a>
+  
+    <li><a href="./FixColumNameOfProductUserId.html">FixColumNameOfProductUserId</a>
+  
+    <li><a href="./FogTest.html">FogTest</a>
+  
+    <li><a href="./Four.html">Four</a>
+  
+    <li><a href="./GeneratorTest.html">GeneratorTest</a>
+  
+    <li><a href="./GeometryTest.html">GeometryTest</a>
+  
+    <li><a href="./HaveAttachedFileMatcherTest.html">HaveAttachedFileMatcherTest</a>
+  
+    <li><a href="./HtmlSelectorsHelpers.html">HtmlSelectorsHelpers</a>
+  
+    <li><a href="./IdentityAdapterTest.html">IdentityAdapterTest</a>
+  
+    <li><a href="./IntegrationTest.html">IntegrationTest</a>
+  
+    <li><a href="./InterpolationsTest.html">InterpolationsTest</a>
+  
+    <li><a href="./MetaClassTest.html">MetaClassTest</a>
+  
+    <li><a href="./MockAttachment.html">MockAttachment</a>
+  
+    <li><a href="./MockInterpolator.html">MockInterpolator</a>
+  
+    <li><a href="./MockModel.html">MockModel</a>
+  
+    <li><a href="./MockUrlGeneratorBuilder.html">MockUrlGeneratorBuilder</a>
+  
+    <li><a href="./NavigationHelpers.html">NavigationHelpers</a>
+  
+    <li><a href="./NilAdapterTest.html">NilAdapterTest</a>
+  
+    <li><a href="./Object.html">Object</a>
+  
+    <li><a href="./PaperclipGenerator.html">PaperclipGenerator</a>
+  
+    <li><a href="./PaperclipMissingAttachmentStylesTest.html">PaperclipMissingAttachmentStylesTest</a>
+  
+    <li><a href="./ProcessorTest.html">ProcessorTest</a>
+  
+    <li><a href="./Product.html">Product</a>
+  
+    <li><a href="./ProductsController.html">ProductsController</a>
+  
+    <li><a href="./ProductsHelper.html">ProductsHelper</a>
+  
+    <li><a href="./RailsCommandHelpers.html">RailsCommandHelpers</a>
+  
+    <li><a href="./S3LiveTest.html">S3LiveTest</a>
+  
+    <li><a href="./S3Test.html">S3Test</a>
+  
+    <li><a href="./SchemaTest.html">SchemaTest</a>
+  
+    <li><a href="./SessionsController.html">SessionsController</a>
+  
+    <li><a href="./SessionsHelper.html">SessionsHelper</a>
+  
+    <li><a href="./StaticPagesController.html">StaticPagesController</a>
+  
+    <li><a href="./StringioFileProxyTest.html">StringioFileProxyTest</a>
+  
+    <li><a href="./StyleTest.html">StyleTest</a>
+  
+    <li><a href="./SubDummy.html">SubDummy</a>
+  
+    <li><a href="./Three.html">Three</a>
+  
+    <li><a href="./ThumbnailTest.html">ThumbnailTest</a>
+  
+    <li><a href="./UriProxyTest.html">UriProxyTest</a>
+  
+    <li><a href="./UrlGeneratorTest.html">UrlGeneratorTest</a>
+  
+    <li><a href="./User.html">User</a>
+  
+    <li><a href="./UsersController.html">UsersController</a>
+  
+    <li><a href="./UsersHelper.html">UsersHelper</a>
+  
+    <li><a href="./ValidateAttachmentContentTypeMatcherTest.html">ValidateAttachmentContentTypeMatcherTest</a>
+  
+    <li><a href="./ValidateAttachmentPresenceMatcherTest.html">ValidateAttachmentPresenceMatcherTest</a>
+  
+    <li><a href="./ValidateAttachmentSizeMatcherTest.html">ValidateAttachmentSizeMatcherTest</a>
+  
+    <li><a href="./ValidatorsTest.html">ValidatorsTest</a>
+  
+    <li><a href="./WelcomeHelper.html">WelcomeHelper</a>
+  
+    <li><a href="./WithinHelpers.html">WithinHelpers</a>
+  
+  </ul>
+</nav>
+
+  </div>
+</nav>
+
+<div id="documentation">
+  <h1 class="class">class Factory</h1>
+
+  <div id="description" class="description">
+    
+  </div><!-- description -->
+
+  
+  
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    <!-- Methods -->
+    
+  </section><!-- 5Buntitled-5D -->
+
+</div><!-- documentation -->
+
+
+<footer id="validator-badges">
+  <p><a href="http://validator.w3.org/check/referer">[Validate]</a>
+  <p>Generated by <a href="https://github.com/rdoc/rdoc">RDoc</a> 3.12.
+  <p>Generated with the <a href="http://deveiate.org/projects/Darkfish-Rdoc/">Darkfish Rdoc Generator</a> 3.
+</footer>
+

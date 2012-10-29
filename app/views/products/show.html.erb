@@ -29,6 +29,14 @@
       </p>
 
       <p>
+      <%= form_for @bid, :url => bid_path  do |f| %>
+          <%= f.label :bidding_price %>
+          <%= f.text_field :bidding_price %>
+          <%= f.submit "Bid" %>
+        <% end %>
+      </p>
+
+      <p>
         <b>Description:</b>
         <%= @product.description %>
       </p>
@@ -36,6 +44,10 @@
       <p>
         <b>Time left:</b>
         <%= @product.time_left %>
+      </p>
+      <p>
+        <b>Category:</b>
+        <%= Category.find(@product.category_id).content%>
       </p>
     </td>
   </tr>

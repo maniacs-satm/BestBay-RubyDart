@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121016063022) do
+ActiveRecord::Schema.define(:version => 20121025201528) do
+
+  create_table "bids", :force => true do |t|
+    t.datetime "bidding_time"
+    t.float    "bidding_price"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.integer  "user_id"
+    t.integer  "product_id"
+  end
+
+  create_table "categories", :force => true do |t|
+    t.string   "content"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "categories", ["created_at"], :name => "index_categories_on_product_id_and_created_at"
 
   create_table "products", :force => true do |t|
     t.string   "title"
@@ -26,6 +43,7 @@ ActiveRecord::Schema.define(:version => 20121016063022) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.string   "user_name"
+    t.integer  "category_id"
   end
 
 # Could not dump table "users" because of following StandardError
