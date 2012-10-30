@@ -15,7 +15,6 @@ group :development, :test do
    gem 'sqlite3'
    gem 'annotate', '2.5.0'
    gem 'aws-sdk'
-   gem 'pg'
 end
 
 group :production do
@@ -61,3 +60,4 @@ gem 'devise'
 #gem 'ruby-debug-ide' #'0.4.6'
 
 gem 'paperclip'
+gem 'pg'
