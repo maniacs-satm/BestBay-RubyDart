@@ -34,4 +34,16 @@ BestBay::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Config the connection between paperclip and S3 on AWS.
+  # Please do not release following part to anyone else.
+  # B/c the following information is bundled with my payment info.
+  config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['bestBay'],
+    :access_key_id => ENV['AKIAINRZPE3EWRSRWNFA'],
+    :secret_access_key => ENV['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']
+  }
+}
 end

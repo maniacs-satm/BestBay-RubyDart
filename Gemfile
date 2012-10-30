@@ -14,6 +14,8 @@ end
 group :development, :test do
    gem 'sqlite3'
    gem 'annotate', '2.5.0'
+   gem 'aws-sdk'
+   gem 'pg'
 end
 
 group :production do
