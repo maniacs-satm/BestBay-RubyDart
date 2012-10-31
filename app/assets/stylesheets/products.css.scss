@@ -18,16 +18,16 @@ img.productLargeImg:hover {
 }
 
 
-.productSmallImg {
+img.productSmallImg {
   border: 1px solid #d3d3d3;
   padding: 0px;
-  min-height: 100px;
+  min-height: 200px;
 }
 
-.productSmallImg:hover {
+img.productSmallImg:hover {
   border: 1px solid #d3d3d3;
   padding: 0px;
-  min-height: 100px;
+  min-height: 200px;
 }
 
 #productTable tr,td {
