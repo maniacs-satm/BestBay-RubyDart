@@ -7,7 +7,7 @@
 
           <li> <%= link_to "Home", root_path, class: "btn btn-small btn-primary" %></li>
 
-          <li><%= link_to "Listing All Products", "/search-product", class: "btn btn-small btn-primary"%></li>
+          <li><%= link_to "Listing All Products", '#', class: "btn btn-small btn-primary"%></li>
 
           <% if signed_in? %>
 
@@ -19,6 +19,7 @@
                 <ul class="dropdown-menu">
                   <li><%= link_to "Profile", current_user %></li>
                   <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+                  <li><%= link_to "My Products", "/products"%></li>
                   <li class="divider"></li>
                   <li>
                     <%= link_to "Sign out", signout_path,method: "delete" %>
