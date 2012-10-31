@@ -5028,42 +5028,42 @@ a.label:hover, a.badge:hover {
 
 /* mixins, variables, etc. */
 /* universal */
-/* line 15, ../../app/assets/stylesheets/custom.css.scss */
+/* line 16, ../../app/assets/stylesheets/custom.css.scss */
 html {
   overflow-y: scroll;
 }
 
-/* line 19, ../../app/assets/stylesheets/custom.css.scss */
+/* line 20, ../../app/assets/stylesheets/custom.css.scss */
 body {
   padding-top: 100px;
 }
 
-/* line 23, ../../app/assets/stylesheets/custom.css.scss */
+/* line 24, ../../app/assets/stylesheets/custom.css.scss */
 section {
   overflow: auto;
 }
 
-/* line 27, ../../app/assets/stylesheets/custom.css.scss */
+/* line 28, ../../app/assets/stylesheets/custom.css.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 31, ../../app/assets/stylesheets/custom.css.scss */
+/* line 32, ../../app/assets/stylesheets/custom.css.scss */
 .center {
   text-align: center;
 }
-/* line 33, ../../app/assets/stylesheets/custom.css.scss */
+/* line 34, ../../app/assets/stylesheets/custom.css.scss */
 .center h1 {
   margin-bottom: 20px;
 }
 
 /*typography */
-/* line 42, ../../app/assets/stylesheets/custom.css.scss */
+/* line 43, ../../app/assets/stylesheets/custom.css.scss */
 h1, h2, h3, h4, h5, h6 {
   line-height: 2;
 }
 
-/* line 48, ../../app/assets/stylesheets/custom.css.scss */
+/* line 49, ../../app/assets/stylesheets/custom.css.scss */
 h1 {
   font-size: 250%;
   letter-spacing: -2px;
@@ -5071,7 +5071,7 @@ h1 {
   text-align: center;
 }
 
-/* line 55, ../../app/assets/stylesheets/custom.css.scss */
+/* line 56, ../../app/assets/stylesheets/custom.css.scss */
 h2 {
   font-size: 150%;
   letter-spacing: -1px;
@@ -5081,14 +5081,14 @@ h2 {
   color: #c3325f;
 }
 
-/* line 64, ../../app/assets/stylesheets/custom.css.scss */
+/* line 65, ../../app/assets/stylesheets/custom.css.scss */
 p {
   font-size: 100%;
   line-height: 1.7em;
 }
 
 /* header */
-/* line 71, ../../app/assets/stylesheets/custom.css.scss */
+/* line 72, ../../app/assets/stylesheets/custom.css.scss */
 #logo {
   float: left;
   margin-right: 10px;
@@ -5100,13 +5100,13 @@ p {
   font-weight: bold;
   line-height: 1;
 }
-/* line 81, ../../app/assets/stylesheets/custom.css.scss */
+/* line 82, ../../app/assets/stylesheets/custom.css.scss */
 #logo:hover {
   color: #c3325f;
   text-decoration: none;
 }
 
-/* line 87, ../../app/assets/stylesheets/custom.css.scss */
+/* line 88, ../../app/assets/stylesheets/custom.css.scss */
 .header-text {
   padding-top: 9px;
   margin-right: 20px;
@@ -5114,52 +5114,52 @@ p {
 }
 
 /* footer */
-/* line 96, ../../app/assets/stylesheets/custom.css.scss */
+/* line 97, ../../app/assets/stylesheets/custom.css.scss */
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: lightGray;
 }
-/* line 101, ../../app/assets/stylesheets/custom.css.scss */
+/* line 102, ../../app/assets/stylesheets/custom.css.scss */
 footer a {
   color: #555;
   color: #ffc40d;
   background-color: white;
 }
-/* line 108, ../../app/assets/stylesheets/custom.css.scss */
+/* line 109, ../../app/assets/stylesheets/custom.css.scss */
 footer small {
   float: left;
 }
-/* line 111, ../../app/assets/stylesheets/custom.css.scss */
+/* line 112, ../../app/assets/stylesheets/custom.css.scss */
 footer ul {
   float: right;
   list-style: none;
 }
-/* line 114, ../../app/assets/stylesheets/custom.css.scss */
+/* line 115, ../../app/assets/stylesheets/custom.css.scss */
 footer ul li {
   float: left;
   margin-left: 10px;
 }
 
-/* line 121, ../../app/assets/stylesheets/custom.css.scss */
+/* line 122, ../../app/assets/stylesheets/custom.css.scss */
 .welcome {
   overflow: auto;
   width: 100%;
 }
-/* line 125, ../../app/assets/stylesheets/custom.css.scss */
+/* line 126, ../../app/assets/stylesheets/custom.css.scss */
 .welcome .left-panel {
   float: left;
   width: 45%;
 }
-/* line 129, ../../app/assets/stylesheets/custom.css.scss */
+/* line 130, ../../app/assets/stylesheets/custom.css.scss */
 .welcome .right-panel {
   float: left;
   width: 45%;
 }
 
 /* miscellaneous */
-/* line 137, ../../app/assets/stylesheets/custom.css.scss */
+/* line 138, ../../app/assets/stylesheets/custom.css.scss */
 .debug_dump {
   clear: both;
   float: left;
@@ -5171,23 +5171,23 @@ footer ul li {
 }
 
 /* sidebar */
-/* line 148, ../../app/assets/stylesheets/custom.css.scss */
+/* line 149, ../../app/assets/stylesheets/custom.css.scss */
 aside section {
   padding: 10px 0;
   border-top: 1px solid #eeeeee;
 }
-/* line 151, ../../app/assets/stylesheets/custom.css.scss */
+/* line 152, ../../app/assets/stylesheets/custom.css.scss */
 aside section:first-child {
   border: 0;
   padding-top: 0;
 }
-/* line 155, ../../app/assets/stylesheets/custom.css.scss */
+/* line 156, ../../app/assets/stylesheets/custom.css.scss */
 aside section span {
   display: block;
   margin-bottom: 3px;
   line-height: 1;
 }
-/* line 160, ../../app/assets/stylesheets/custom.css.scss */
+/* line 161, ../../app/assets/stylesheets/custom.css.scss */
 aside section h1 {
   font-size: 1.6em;
   text-align: left;
@@ -5195,14 +5195,14 @@ aside section h1 {
   margin-bottom: 3px;
 }
 
-/* line 169, ../../app/assets/stylesheets/custom.css.scss */
+/* line 170, ../../app/assets/stylesheets/custom.css.scss */
 .gravatar {
   float: left;
   margin-right: 10px;
 }
 
 /* forms */
-/* line 176, ../../app/assets/stylesheets/custom.css.scss */
+/* line 177, ../../app/assets/stylesheets/custom.css.scss */
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -5214,11 +5214,11 @@ input, textarea, select, .uneditable-input {
   box-sizing: border-box;
 }
 
-/* line 185, ../../app/assets/stylesheets/custom.css.scss */
+/* line 186, ../../app/assets/stylesheets/custom.css.scss */
 #error_explanation {
   color: #f00;
 }
-/* line 187, ../../app/assets/stylesheets/custom.css.scss */
+/* line 188, ../../app/assets/stylesheets/custom.css.scss */
 #error_explanation ul {
   list-style: none;
 }
