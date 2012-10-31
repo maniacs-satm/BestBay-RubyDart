@@ -3,41 +3,87 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-img {
-  transition: height 2s;
-  -moz-transition: height 2s; /* Firefox 4 */
+img.productLargeImg {
+  transition: min-height 2s;
+  -moz-transition: min-height 2s; /* Firefox 4 */
   -webkit-transition: min-height 2s; /* Safari and Chrome */
-  -o-transition:height 2s; /* Opera */
+  -o-transition:min-height 2s; /* Opera */
   min-height: 200px;
   border-right: 2px solid #d3d3d3;
   padding-right: 10px;
 }
 
-img:hover {
-  min-height: 400px;
+img.productLargeImg:hover {
+  min-height: 200px;
 }
 
-table tr td {
+
+.productSmallImg {
+  border: 1px solid #d3d3d3;
+  padding: 0px;
+  min-height: 100px;
+}
+
+.productSmallImg:hover {
+  border: 1px solid #d3d3d3;
+  padding: 0px;
+  min-height: 100px;
+}
+
+#productTable tr,td {
   vertical-align: bottom;
 }
 
-.price {
+#productTable .price {
   color: #900;
 }
 
-.price b{
+#productTable .price b{
   font-size: 13px;
+  font-family: Georgia;
+  font-style: italic;
+  font-weight: normal;
 }
 
-.title {
+#productTable .title {
   font-size: 1.7em;
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-#currentPrice {
+#productTable #currentPrice {
   padding-bottom: 3px;
   font-family: verdana,arial,helvetica,sans-serif;
   font-size: 30px;
   border-bottom: 2px solid #e3e3e3;
+}
+
+.productIndexDiv {
+  display: inline-block;
+  width: 250px;
+  border-bottom: 1px dashed #e3e3e3;
+  position:relative;
+  background-color: rgba(235, 235, 235, 0.6);
+  padding: 5px;
+  margin: 10px;
+}
+
+p.pricePrev {
+  color: #969696;
+  font-size: 15px;
+  text-decoration: line-through;
+}
+
+.editBox {
+  font-size: 20px;
+  position:absolute;
+  top:0px;
+  right:5px;
+}
+
+p.price {
+  font-size: 18px;
+  font-family: Georgia;
+  font-style: italic;
+  font-weight: normal;
 }

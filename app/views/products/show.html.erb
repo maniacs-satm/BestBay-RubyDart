@@ -1,11 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 
-<table>
+<div id='productTable'>
+  <table>
   <tr>
     <td id="productImage">
       <% if @product.image.exists? then %>
-          <%= image_tag @product.image.url(:small) %> </br>
+          <%= image_tag @product.image.url(:small), :class => 'productLargeImg'%> </br>
       <% end %>
     </td>
     <td id="productInfo">
@@ -53,6 +54,6 @@
   </tr>
 </table>
 
-
+</div>
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

@@ -1,8 +1,8 @@
 class Product < ActiveRecord::Base
   attr_accessible :current_price, :description, :owner_id, :start_price, :time_left, :title, :image, :user_name, :category_id
   has_attached_file :image, :styles => {
-      :thumb=> "100x100#",
-      :small  => "400x400>" }
+      :thumb=> "250x300#",
+      :small  => "600x600>" }
 
 
   belongs_to :user
