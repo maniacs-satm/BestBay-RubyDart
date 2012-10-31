@@ -19,14 +19,12 @@
 </div>
 
 <div id="myCarousel" class="carousel slide">
-  <!-- Carousel items -->
   <div class="carousel-inner">
-    <div class="active item"><h3><em>Hot Product Images</em></h3></div>
-    <div class="item"><h3><em>Hot Product Images</em></h3></div>
-    <div class="item"><h3><em>Hot Product Images</em></h3></div>
+    <div class="active item"><%= link_to image_tag "image.jpg", alt: "Rails", :size=>"50*40" %></div>
+    <div class="item"><%= link_to image_tag "rails.png", alt: "Rails1", :size=>"100*40" %></div>
+    <div class="item"><%= link_to image_tag "favicon.ico", alt: "Rails2", :size=>"50*40" %></div>
   </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" href="rails.png" data-slide="prev">&lsaquo;</a>
+  <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
   <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
 </div>
 </body>
