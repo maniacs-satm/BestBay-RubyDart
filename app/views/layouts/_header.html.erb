@@ -1,11 +1,18 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "BestBay", root_path, id: "logo" %>
+      <%= link_to "BestBay", 'http://localhost:3000', id: "logo" %>
       <nav>
         <ul class="nav pull-right">
+
+          <li> <%= link_to "Home", root_path, class: "btn btn-small btn-primary" %></li>
+          <li><%= link_to "Help", help_path, class: "btn btn-small btn-primary" %></li>
+
+
           <% if signed_in? %>
+
               <li class="header-text">Welcome <%= current_user.name %></li>
+
               <li id="fat-menu" class="dropdown">
               <a class="dropdown-toggle btn btn-primary" href="#">
                 <i class="icon-user icon-white"></i> My Account <b class="caret""></b>
@@ -15,7 +22,7 @@
                   <li><%= link_to "Settings", edit_user_path(current_user) %></li>
                   <li class="divider"></li>
                   <li>
-                    <%= link_to "Sign out", signout_path, method: "delete" %>
+                    <%= link_to "Sign out", signout_path,method: "delete" %>
                   </li>
                 </ul>
               </li>
