@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       redirect_to :controller => 'products', :action => 'index'
     else
       flash[:notice] = "Invalid Email/Password combination"
-      redirect_to :controller => 'users', :action => 'new'
+      render 'new'
     end
   end
 
