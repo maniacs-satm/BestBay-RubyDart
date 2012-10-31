@@ -13,7 +13,6 @@
 <div class="progress progress-danger progress-striped active">
   <div class="bar" style="width: 100%;"></div>
 </div>
-<div class="center hero-unit">
 <h1><i>Listing products</i></h1>
 <% @products.each do |product| %>
   <div class="productIndexDiv">
@@ -30,7 +29,7 @@
   </div>
 <% end %>
 <br />
-
+<div class="center hero-unit">
 <p>
   <%= form_tag 'search-product' do %>
     <%= text_field_tag :query, nil, :placeholder => 'Search here ...' %>
