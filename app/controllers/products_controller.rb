@@ -54,7 +54,7 @@ class ProductsController < ApplicationController
 
       respond_to do |format|
         if @product.save
-          flash[:success] = 'Success Post a Product on BestBay!'
+          #flash[:success] = 'Success Post a Product on BestBay!'
           format.html redirect_to @product
           format.json { render json: @product, status: :created, location: @product }
         else
