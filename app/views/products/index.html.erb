@@ -17,69 +17,22 @@
     <div class="bar" style="width: 100%;"></div>
   </div>
  <br />
-
-<div>
-  <h3>
-    <span class="badge">1</span><strong>Title</strong>
-  </h3>
-</div>
-</br>
-
-<div>
-  <h3>
-    <span class="badge badge-success">2</span><strong>Start price</strong>
-  </h3>
-</div>
-</br>
-
-<div>
-  <h3>
-    <span class="badge badge-warning">3</span><strong>Description</strong>
-  </h3>
-</div>
-</br>
-
-<div>
-  <h3>
-    <span class="badge badge-important">4</span><strong>Owner </strong>
-  </h3>
-</div>
-</br>
-
-<div>
-  <h3>
-    <span class="badge badge-info">5</span><strong>Time left</strong>
-  </h3>
-</div>
-</br>
-
-<div>
-  <h3>
-    <span class="badge badge-inverse">6</span><strong>Current Price</strong>
-  </h3>
-</div>
-</br>
-
-<div>
-  <h3>
-    <span class="badge badge-inverse">7</span><strong>Category</strong>
-  </h3>
-</div>
-</br>
-
 <% @products.each do |product| %>
-      <div class="progress progress-success progress-striped active">
-        <div class="bar" style="width: 50%;"></div>
-      </div>
 <table>
   <tr>
-    <td><i class="icon-shopping-cart"></i><%= product.title %></td>
-    <td><%= product.start_price %></td>
-    <td><%= product.description %></td>
-    <td><%= product.user_name %></td>
-    <td><%= product.time_left %></td>
-    <td><%= product.current_price %></td>
-    <td><%= Category.find(product.category_id).content %></td>
+    <td>
+      <% if @product.image.exists? then %>
+        <%= image_tag @product.image.url(:small) %> </br>
+      <% end %>
+    </td>
+    <td>
+        <p><%= product.title %></p>
+        <p><td><%= product.description %></p>
+    </td>
+    <td>
+        <p><%= product.current_price %></p>
+        <p><%= product.time_left %> days left</p>
+    </td>
     <td><%= link_to 'Show', product %></td>
     <td><%= link_to 'Edit', edit_product_path(product) %></td>
     <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
