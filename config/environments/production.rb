@@ -68,9 +68,9 @@ BestBay::Application.configure do
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['bestBay'],
-    :access_key_id => ENV['AKIAINRZPE3EWRSRWNFA'],
-    :secret_access_key => ENV['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']
+    :bucket => ENV['AWS_BUCKET'],
+    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
   }
 }
 end
