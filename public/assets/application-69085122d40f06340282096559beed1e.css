@@ -1580,7 +1580,7 @@ table .span12 {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/assets/glyphicons-halflings.png);
+  background-image: url(/assets/glyphicons-halflings-ce73c8428d8606e5cc8e4dbb66b33c4f.png);
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -1591,7 +1591,7 @@ table .span12 {
 
 /* line 28, ../../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194@cmucourse/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
 .icon-white {
-  background-image: url(/assets/glyphicons-halflings-white.png);
+  background-image: url(/assets/glyphicons-halflings-white-427bd9263e7d0e1d15c5052261363409.png);
 }
 
 /* line 32, ../../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194@cmucourse/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -5274,7 +5274,7 @@ img.productSmallImg:hover {
 }
 
 /* line 48, ../../app/assets/stylesheets/products.css.scss */
-.title {
+#productTable .title {
   font-size: 1.7em;
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
@@ -5320,7 +5320,6 @@ p.price {
   font-family: Georgia;
   font-style: italic;
   font-weight: normal;
-  color: #900;
 }
 /* line 1, ../../app/assets/stylesheets/scaffolds.css.scss */
 body {
