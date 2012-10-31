@@ -8,4 +8,6 @@
 #
 
 # initialize Category table
-Category.create([{content: "Art"}, {content: "Books"}, {content: "Electronics"}])
+if Category.count == 0
+  Category.create([{content: "Art"}, {content: "Books"}, {content: "Electronics"}])
+end
