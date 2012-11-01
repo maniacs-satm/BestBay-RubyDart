@@ -13,13 +13,13 @@ BestBay::Application.routes.draw do
   match '/watchlists/:id', to: 'watchlists#create', as:'watchlist_path'
   match '/watchlists', to:'watchlists#index', as:'watchlists'
   match '/watchlists/delete/:id', to:'watchlists#delete'
+  match '/my-products', to: 'products#list_my_products', as: 'myproducts_path'
 
   resources :products
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :bids
   
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
