@@ -3,7 +3,8 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if signed_in?
-      @products = current_user.products
+      @products =Product.all
+      #@products = current_user.products
       @search = Hash.new
       respond_to do |format|
         format.html # index.html.erb
