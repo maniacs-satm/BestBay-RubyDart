@@ -11,7 +11,7 @@ BestBay::Application.routes.draw do
   match '/bids/:id', to: 'bids#create', as: 'bid_path'
   match '/search-product', to: 'products#search', as: 'search_path'
   match '/watchlists/:id', to: 'watchlists#create', as:'watchlist_path'
-  match '/watchlists', to:'watchlists#index', as:'watchlists'
+  match '/watchlists', to:'watchlists#index'
   match '/watchlists/delete/:id', to:'watchlists#delete'
   match '/my-products', to: 'products#list_my_products', as: 'myproducts_path'
 
