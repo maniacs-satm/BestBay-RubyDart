@@ -1,3 +1,14 @@
+<head xmlns="http://www.w3.org/1999/html">
+  <style type = "text/css">
+      body {background-color: #ffc40d;}
+  </style>
+</head>
+<body>
+<div class="row">
+  <aside class="span4">
+    <section></section>
+  </aside>
+</div>
 <h1>My Watch List</h1>
 <body>
 		<% (@products.size).times do|i| %>
@@ -6,4 +17,5 @@
   	    	<h1><%= button_to "Delete", :controller => "watchlists",:action => "delete", :id => @products[i].id %></h1>
   	  		<% end %>
   		<% end %>
+</body>
 </body>
