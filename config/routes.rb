@@ -10,6 +10,7 @@ BestBay::Application.routes.draw do
   match '/post_product', to: 'products#new'
   match '/bids/:id', to: 'bids#create', as: 'bid_path'
   match '/search-product', to: 'products#search', as: 'search_path'
+  match '/my-products', to: 'products#list_my_products', as: 'myproducts_path'
 
   resources :products
   resources :users

@@ -4,7 +4,6 @@ class ProductsController < ApplicationController
   def index
     if signed_in?
       @products =Product.all
-      #@products = current_user.products
       @search = Hash.new
       respond_to do |format|
         format.html # index.html.erb
@@ -14,6 +13,24 @@ class ProductsController < ApplicationController
       redirect_to root_url
     end
   end
+
+  # this method collects all products associated with current_user
+  #
+  def list_my_products
+    if signed_in?
+      @products = current_user.products
+      @search = Hash.new
+	  
+	  render 'list_my_products'
+#respond_to do |format|
+#  format.html # index.html.erb
+#       format.json { render json: @products }
+#      end
+    else
+      redirect_to root_url
+    end
+  end
+
 
   # GET /products/1
   # GET /products/1.json
