@@ -12,7 +12,7 @@
           <% if signed_in? %>
 
               <li class="header-text">Welcome <%= current_user.name %></li>
-
+              <li><%= link_to "My watch list",:controller => "watchlists", :action => "index" %></li>
               <li id="fat-menu" class="dropdown">
                 <a class="btn btn-primary" href="#"><i class="icon-user icon-white"></i> My Account</a>
                 <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#"><span class="caret"></span></a>

@@ -114,5 +114,15 @@ class ProductsController < ApplicationController
     render 'index'
   end
 
+  def add_to_watchlist
+    @product = Product.find(params[:id])
+    @product.users << current_user
+
+    redirect_to root_url
+  end
+
+  def show_watchlist
+    render 'watchlist'
+  end
 
 end

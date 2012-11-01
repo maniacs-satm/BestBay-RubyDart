@@ -8,6 +8,7 @@ class Product < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many   :bids
+
   
   validates :title, presence: true, length: { maximum: 200,
                                               too_long: "title must have at most %{count} characters"}
@@ -16,5 +17,5 @@ class Product < ActiveRecord::Base
 
   
 
-
+  has_and_belongs_to_many :users
 end

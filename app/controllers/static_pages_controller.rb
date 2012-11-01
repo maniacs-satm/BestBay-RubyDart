@@ -1,6 +1,10 @@
 class StaticPagesController < ApplicationController
 
   def home
+  	puts "#####################################"
+  	puts watchlists_path
+  	puts bids_path
+    @products = Product.all   
   end
 
   def help
@@ -8,4 +12,5 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+
 end
