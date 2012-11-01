@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-  # GET /products
-  # GET /products.json
+  # this method display all products created by all users
   def index
     if signed_in?
       @products =Product.all
@@ -62,8 +61,6 @@ class ProductsController < ApplicationController
       @product = current_user.products.build(params[:product])
       @product.current_price = @product.start_price;
       @product.user_name = current_user.name
-   
-
 
       respond_to do |format|
         if @product.save
