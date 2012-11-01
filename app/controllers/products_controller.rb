@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     if signed_in?
-      @products = current_user.products
+      @products =Product.all
       @search = Hash.new
       respond_to do |format|
         format.html # index.html.erb
@@ -13,6 +13,24 @@ class ProductsController < ApplicationController
       redirect_to root_url
     end
   end
+
+  # this method collects all products associated with current_user
+  #
+  def list_my_products
+    if signed_in?
+      @products = current_user.products
+      @search = Hash.new
+	  
+	  render 'list_my_products'
+#respond_to do |format|
+#  format.html # index.html.erb
+#       format.json { render json: @products }
+#      end
+    else
+      redirect_to root_url
+    end
+  end
+
 
   # GET /products/1
   # GET /products/1.json
@@ -114,5 +132,15 @@ class ProductsController < ApplicationController
     render 'index'
   end
 
+  def add_to_watchlist
+    @product = Product.find(params[:id])
+    @product.users << current_user
+
+    redirect_to root_url
+  end
+
+  def show_watchlist
+    render 'watchlist'
+  end
 
 end
