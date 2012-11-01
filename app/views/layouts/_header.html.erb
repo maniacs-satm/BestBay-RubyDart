@@ -1,11 +1,13 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "BestBay", 'http://localhost:3000', id: "logo" %>
+      <%= link_to "BestBay", root_path, id: "logo" %>
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>
               <li class="header-text">Welcome <%= current_user.name %></li>
+              <li><%= link_to "My Watchlist",:controller => "watchlists", :action => "index" %></li>
+
               <li id="fat-menu" class="dropdown">
                 <a class="btn btn-primary dropdown-toggle" href="#" data-toggle="dropdown">
 					<i class="icon-user icon-white"></i> My Account <b class="caret"></b>

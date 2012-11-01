@@ -35,5 +35,5 @@ class User < ActiveRecord::Base
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
-
+  has_and_belongs_to_many :products
 end

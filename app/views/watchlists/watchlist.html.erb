@@ -1,0 +1,9 @@
+<h1>My Watch List</h1>
+<body>
+		<% (@products.size).times do|i| %>
+  	  		<% if @products[i] != nil %>
+  	    	<h1><%= @products[i].title %></h1>
+  	    	<h1><%= button_to "Delete", :controller => "watchlists",:action => "delete", :id => @products[i].id %></h1>
+  	  		<% end %>
+  		<% end %>
+</body>
