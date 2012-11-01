@@ -20,12 +20,7 @@ class ProductsController < ApplicationController
     if signed_in?
       @products = current_user.products
       @search = Hash.new
-	  
-	  render 'list_my_products'
-#respond_to do |format|
-#  format.html # index.html.erb
-#       format.json { render json: @products }
-#      end
+      render 'list_my_products'
     else
       redirect_to root_url
     end

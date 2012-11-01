@@ -10,6 +10,7 @@ class BidsController < ApplicationController
         else
           flash[:success] = "Successful bid"
           @product.current_price = @bid.bidding_price
+          UserMailer.bid_success_confirmation(current_user, @product).deliver
           @product.save
         end
         redirect_to :controller => 'products', :action => 'show'
