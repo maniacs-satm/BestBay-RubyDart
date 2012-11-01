@@ -7,30 +7,22 @@
 </head>
 <body>
 <div class="center hero-unit">
-  <%if signed_in?%>
-    <h1><em>All Products</div></em></h1>
-    <%@products.each do|product|%>
-      <li>
-          <%= link_to product.title,product %>
-          <%= button_to "Add to my watch list", :controller => "watchlists",:action => "create", :id => product.id %>
-      </li>
-    <%end%>
+  
     <div class="row">
     <aside class="span4">
      <section></section>
     </aside>
     </div>
-  <%else%>
-
     <h1><em>Welcome to the <div style="color: #8b0000">BESTBAY</div></em></h1>
-    <%= link_to image_tag("image.jpg", alt: "Rails") %>
+    <div class="span8 offset1">
+      <%= link_to image_tag("image.jpg", alt: "Rails") %>
+    </div>
     <div class="row">
     <aside class="span4">
       <section></section>
     </aside>
     </div>
-  <%end%>
-  <p><%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %></p>
+  <p><%= link_to "Sign up now!", signup_path, class: "btn-large btn-warning" %></p>
 
 </div>
 <body>

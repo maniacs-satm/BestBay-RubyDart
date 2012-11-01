@@ -59,5 +59,5 @@ gem 'devise'
 #gem 'ruby-debug-ide' #'0.4.6'
 
 gem 'paperclip'
-gem 'pg'
+#gem 'pg'
 gem 'aws-sdk'

@@ -1,6 +1,5 @@
 class ProductsController < ApplicationController
-  # GET /products
-  # GET /products.json
+  # this method display all products created by all users
   def index
     if signed_in?
       @products =Product.all
@@ -20,12 +19,7 @@ class ProductsController < ApplicationController
     if signed_in?
       @products = current_user.products
       @search = Hash.new
-	  
-	  render 'list_my_products'
-#respond_to do |format|
-#  format.html # index.html.erb
-#       format.json { render json: @products }
-#      end
+      render 'list_my_products'
     else
       redirect_to root_url
     end
@@ -67,8 +61,6 @@ class ProductsController < ApplicationController
       @product = current_user.products.build(params[:product])
       @product.current_price = @product.start_price;
       @product.user_name = current_user.name
-   
-
 
       respond_to do |format|
         if @product.save

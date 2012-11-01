@@ -9,7 +9,7 @@
               <li><%= link_to "My Watchlist",:controller => "watchlists", :action => "index" %></li>
 
               <li id="fat-menu" class="dropdown">
-                <a class="btn btn-primary dropdown-toggle" href="#" data-toggle="dropdown">
+                <a class="btn-primary dropdown-toggle" href="#" data-toggle="dropdown">
 					<i class="icon-user icon-white"></i> My Account <b class="caret"></b>
 				</a>
                 <ul class="dropdown-menu">
@@ -23,7 +23,7 @@
                 </ul>
               </li>
           <% else %>
-              <li><%= link_to "Sign in", signin_path, class: "btn btn-small btn-primary" %></li>
+              <li><%= link_to "Sign in", signin_path, class: "btn-middle btn" %></li>
           <% end %>
         </ul>
       </nav>

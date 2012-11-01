@@ -5,4 +5,10 @@ class UserMailer < ActionMailer::Base
     @user = user
     mail(:to => user.email, :subject => "Registered")
   end
+
+  def bid_success_confirmation(user, product)
+    @product = product
+    @user = user
+    mail(:to => user.email, :subject => "Bid successful!")
+  end
 end
