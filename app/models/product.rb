@@ -10,16 +10,8 @@ class Product < ActiveRecord::Base
   has_many   :bids
   has_many   :watchlists
 
-  
   validates :title, presence: true, length: { maximum: 200,
                                               too_long: "title must have at most %{count} characters"}
   validates :start_price, presence: true
   validates :category_id, presence:true
-
-  
-
-<<<<<<< HEAD
-=======
-  has_many :watchlists
->>>>>>> b618d7e5428e1fe4e846638239b6fa2a0b9ca2e7
 end
