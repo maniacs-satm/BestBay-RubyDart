@@ -1,6 +1,6 @@
-Sat, 03 Nov 2012 15:19:48 -0400
+Sat, 03 Nov 2012 16:43:50 -0400
 ./Rakefile	Tue, 30 Oct 2012 18:24:48 -0400
-./Gemfile	Thu, 01 Nov 2012 13:32:36 -0400
+./Gemfile	Sat, 03 Nov 2012 15:55:26 -0400
 ./app/mailers/user_mailer.rb	Thu, 01 Nov 2012 13:31:07 -0400
 ./app/models/user.rb	Sat, 03 Nov 2012 15:04:58 -0400
 ./app/models/watchlist.rb	Sat, 03 Nov 2012 15:04:58 -0400
@@ -219,7 +219,7 @@ Sat, 03 Nov 2012 15:19:48 -0400
 ./config/environments/production.rb	Wed, 31 Oct 2012 04:16:48 -0400
 ./config/environments/test.rb	Tue, 30 Oct 2012 18:24:48 -0400
 ./config/environment.rb	Tue, 30 Oct 2012 18:24:48 -0400
-./db/schema.rb	Sat, 03 Nov 2012 15:04:58 -0400
+./db/schema.rb	Sat, 03 Nov 2012 15:37:15 -0400
 ./db/migrate/20121018191934_add_user_id_product_id_to_bid.rb	Tue, 30 Oct 2012 18:24:48 -0400
 ./db/migrate/20121025195758_add_category_id_to_products.rb	Tue, 30 Oct 2012 18:24:48 -0400
 ./db/migrate/20121016055609_add_user_name_to_products.rb	Tue, 30 Oct 2012 18:24:48 -0400
@@ -227,7 +227,6 @@ Sat, 03 Nov 2012 15:19:48 -0400
 ./db/migrate/20121003174013_add_remember_token_to_users.rb	Tue, 30 Oct 2012 18:24:48 -0400
 ./db/migrate/20121025160943_add_category_to_products.rb	Tue, 30 Oct 2012 18:24:48 -0400
 ./db/migrate/20121103145955_drop_products_users.rb	Sat, 03 Nov 2012 15:04:58 -0400
-./db/migrate/20121103144429_drop_products_users.rb	Sat, 03 Nov 2012 15:04:58 -0400
 ./db/migrate/20121025173523_create_categories.rb	Tue, 30 Oct 2012 18:24:48 -0400
 ./db/migrate/20121016063022_fix_colum_name_of_product_user_id.rb	Tue, 30 Oct 2012 18:24:48 -0400
 ./db/migrate/20120930023157_add_password_digest_to_users.rb	Tue, 30 Oct 2012 18:24:48 -0400
