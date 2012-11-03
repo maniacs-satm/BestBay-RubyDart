@@ -59,3 +59,17 @@ ActiveRecord::Schema.define(:version => 20121103145955) do
   add_index "watchlists", ["user_id", "created_at"], :name => "index_watchlists_on_user_id_and_created_at"
 
 end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+    t.string   "password_digest"
+    t.string   "remember_token"
+  end
+
+  add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+end
+

@@ -112,7 +112,7 @@ class ProductsController < ApplicationController
     @products = Array.new
 
     if q
-      all = current_user.products
+      all = Product.all
       if !all.empty?
         all.each do |p|
           if p[:description] =~ /#{q}/i
