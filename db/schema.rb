@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102235927) do
+ActiveRecord::Schema.define(:version => 20121103145955) do
 
   create_table "bids", :force => true do |t|
     t.datetime "bidding_time"
@@ -44,11 +44,6 @@ ActiveRecord::Schema.define(:version => 20121102235927) do
     t.integer  "image_file_size"
     t.string   "user_name"
     t.integer  "category_id"
-  end
-
-  create_table "products_users", :id => false, :force => true do |t|
-    t.integer "product_id"
-    t.integer "user_id"
   end
 
 # Could not dump table "users" because of following StandardError
