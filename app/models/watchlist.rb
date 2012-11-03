@@ -1,3 +1,6 @@
+# Model - Watchlist
+#
+#
 class Watchlist < ActiveRecord::Base
   attr_accessible :product_id, :user_id
   belongs_to :product

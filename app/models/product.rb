@@ -8,6 +8,7 @@ class Product < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many   :bids
+  has_many   :watchlists
 
   
   validates :title, presence: true, length: { maximum: 200,
@@ -17,6 +18,4 @@ class Product < ActiveRecord::Base
 
   
 
-  #has_and_belongs_to_many :users
-  has_many :watchlists
 end
