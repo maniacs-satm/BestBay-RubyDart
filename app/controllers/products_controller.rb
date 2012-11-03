@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   def index
     if signed_in?
       @products =Product.all
+      #@products.sort_by!{|a, b| a[:id] <=> b[:id]}
       @search = Hash.new
       respond_to do |format|
         format.html # index.html.erb
