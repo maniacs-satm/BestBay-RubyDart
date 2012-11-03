@@ -46,20 +46,6 @@ ActiveRecord::Schema.define(:version => 20121103145955) do
     t.integer  "category_id"
   end
 
-# Could not dump table "users" because of following StandardError
-#   Unknown type 'array' for column 'selling_products'
-
-  create_table "watchlists", :force => true do |t|
-    t.integer  "product_id"
-    t.integer  "user_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  add_index "watchlists", ["user_id", "created_at"], :name => "index_watchlists_on_user_id_and_created_at"
-
-end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -71,5 +57,13 @@ end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
 
-end
+  create_table "watchlists", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
+  add_index "watchlists", ["user_id", "created_at"], :name => "index_watchlists_on_user_id_and_created_at"
+
+end
