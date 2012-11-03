@@ -1,10 +1,12 @@
 class WatchlistsController < ApplicationController
   def create
     @product = Product.find(params[:id])
-    if @product.users.include? (current_user)
+    puts Watchlist.find(:all, :conditions =>{:product_id => @product.id, :user_id => current_user.id}).size
+    if Watchlist.find(:all, :conditions =>{:product_id => @product.id, :user_id => current_user.id}).size != 0
       flash[:notice] = "Product already in watchlist"
     else
-      @product.users << current_user
+      @watchlist = Watchlist.new user_id: current_user.id, product_id: @product.id
+      @watchlist.save
       flash[:success] = "Add successfully"
     end
     redirect_to controller: 'products', action: 'index'

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121031154938) do
+ActiveRecord::Schema.define(:version => 20121103145955) do
 
   create_table "bids", :force => true do |t|
     t.datetime "bidding_time"
@@ -46,11 +46,6 @@ ActiveRecord::Schema.define(:version => 20121031154938) do
     t.integer  "category_id"
   end
 
-  create_table "products_users", :id => false, :force => true do |t|
-    t.integer "product_id"
-    t.integer "user_id"
-  end
-
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
@@ -61,5 +56,14 @@ ActiveRecord::Schema.define(:version => 20121031154938) do
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"
+
+  create_table "watchlists", :force => true do |t|
+    t.integer  "product_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "watchlists", ["user_id", "created_at"], :name => "index_watchlists_on_user_id_and_created_at"
 
 end

@@ -243,11 +243,9 @@
   
     <li><a href="./AttachmentTest.html">AttachmentTest</a>
   
-    <li><a href="./AttachmentTest/AttachmentTest.html">AttachmentTest::AttachmentTest</a>
+    <li><a href="./AttachmentTest/Paperclip.html">AttachmentTest::Paperclip</a>
   
-    <li><a href="./AttachmentTest/AttachmentTest/Paperclip.html">AttachmentTest::AttachmentTest::Paperclip</a>
-  
-    <li><a href="./AttachmentTest/AttachmentTest/Paperclip/Test.html">AttachmentTest::AttachmentTest::Paperclip::Test</a>
+    <li><a href="./AttachmentTest/Paperclip/Test.html">AttachmentTest::Paperclip::Test</a>
   
     <li><a href="./Test.html">Test</a>
   
@@ -291,13 +289,15 @@
   
     <li><a href="./UploadedFileAdapterTest/UploadedFile.html">UploadedFileAdapterTest::UploadedFile</a>
   
+    <li><a href="./AddCategoryIdToProducts.html">AddCategoryIdToProducts</a>
+  
+    <li><a href="./AddCategoryToProducts.html">AddCategoryToProducts</a>
+  
     <li><a href="./AddImageToProducts.html">AddImageToProducts</a>
   
     <li><a href="./AddPasswordDigestToUsers.html">AddPasswordDigestToUsers</a>
   
     <li><a href="./AddRememberTokenToUsers.html">AddRememberTokenToUsers</a>
-  
-    <li><a href="./AddSellingProductsToUsers.html">AddSellingProductsToUsers</a>
   
     <li><a href="./AddUserIdProductIdToBid.html">AddUserIdProductIdToBid</a>
   
@@ -321,15 +321,27 @@
   
     <li><a href="./Bid.html">Bid</a>
   
+    <li><a href="./BidsController.html">BidsController</a>
+  
     <li><a href="./Book.html">Book</a>
+  
+    <li><a href="./Category.html">Category</a>
   
     <li><a href="./ContentTypeDetectorTest.html">ContentTypeDetectorTest</a>
   
     <li><a href="./CreateBids.html">CreateBids</a>
   
+    <li><a href="./CreateCategories.html">CreateCategories</a>
+  
     <li><a href="./CreateProducts.html">CreateProducts</a>
   
     <li><a href="./CreateUsers.html">CreateUsers</a>
+  
+    <li><a href="./CreateWatchlists.html">CreateWatchlists</a>
+  
+    <li><a href="./DropProductIdFromCategories.html">DropProductIdFromCategories</a>
+  
+    <li><a href="./DropProductsUsers.html">DropProductsUsers</a>
   
     <li><a href="./Dummy.html">Dummy</a>
   
@@ -391,7 +403,13 @@
   
     <li><a href="./ProductsHelper.html">ProductsHelper</a>
   
+    <li><a href="./ProductsUsers.html">ProductsUsers</a>
+  
     <li><a href="./RailsCommandHelpers.html">RailsCommandHelpers</a>
+  
+    <li><a href="./RemoveCategoryFromProducts.html">RemoveCategoryFromProducts</a>
+  
+    <li><a href="./RemoveProductIdFromCategories.html">RemoveProductIdFromCategories</a>
   
     <li><a href="./S3LiveTest.html">S3LiveTest</a>
   
@@ -421,6 +439,8 @@
   
     <li><a href="./User.html">User</a>
   
+    <li><a href="./UserMailer.html">UserMailer</a>
+  
     <li><a href="./UsersController.html">UsersController</a>
   
     <li><a href="./UsersHelper.html">UsersHelper</a>
@@ -432,6 +452,10 @@
     <li><a href="./ValidateAttachmentSizeMatcherTest.html">ValidateAttachmentSizeMatcherTest</a>
   
     <li><a href="./ValidatorsTest.html">ValidatorsTest</a>
+  
+    <li><a href="./Watchlist.html">Watchlist</a>
+  
+    <li><a href="./WatchlistsController.html">WatchlistsController</a>
   
     <li><a href="./WelcomeHelper.html">WelcomeHelper</a>
   
@@ -484,16 +508,15 @@
 
           
           <div class="method-source-code" id="create-source">
-            <pre><span class="ruby-comment"># File app/controllers/sessions_controller.rb, line 8</span>
+            <pre><span class="ruby-comment"># File app/controllers/sessions_controller.rb, line 6</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-identifier">user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by_email</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:session</span>][<span class="ruby-value">:email</span>].<span class="ruby-identifier">downcase</span>)
   <span class="ruby-keyword">if</span> <span class="ruby-identifier">user</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">authenticate</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:session</span>][<span class="ruby-value">:password</span>])
     <span class="ruby-identifier">sign_in</span> <span class="ruby-identifier">user</span>
-    <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&quot;Congratulation! You are successfully registered.&quot;</span>
     <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'products'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'index'</span>
   <span class="ruby-keyword">else</span>
     <span class="ruby-identifier">flash</span>[<span class="ruby-value">:notice</span>] = <span class="ruby-string">&quot;Invalid Email/Password combination&quot;</span>
-    <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'users'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>
+    <span class="ruby-identifier">render</span> <span class="ruby-string">'new'</span>
   <span class="ruby-keyword">end</span>
 <span class="ruby-keyword">end</span></pre>
           </div><!-- create-source -->
@@ -522,7 +545,7 @@
 
           
           <div class="method-source-code" id="destroy-source">
-            <pre><span class="ruby-comment"># File app/controllers/sessions_controller.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/controllers/sessions_controller.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
   <span class="ruby-identifier">sign_out</span>
   <span class="ruby-identifier">redirect_to</span> <span class="ruby-identifier">root_url</span>
@@ -553,9 +576,8 @@
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File app/controllers/sessions_controller.rb, line 4</span>
+            <pre><span class="ruby-comment"># File app/controllers/sessions_controller.rb, line 3</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
-
 <span class="ruby-keyword">end</span></pre>
           </div><!-- new-source -->
           
