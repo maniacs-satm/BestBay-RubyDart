@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   def index
     if signed_in?
       @products =Product.all
+      #@products.sort_by!{|a, b| a[:id] <=> b[:id]}
       @search = Hash.new
       respond_to do |format|
         format.html # index.html.erb
@@ -59,6 +60,7 @@ class ProductsController < ApplicationController
   def create
     if signed_in?
       @product = current_user.products.build(params[:product])
+      @product.user_id = current_user.id
       @product.current_price = @product.start_price;
       @product.user_name = current_user.name
 

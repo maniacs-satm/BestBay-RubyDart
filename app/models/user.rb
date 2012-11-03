@@ -35,4 +35,8 @@ class User < ActiveRecord::Base
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
+<<<<<<< HEAD
+=======
+  has_many :watchlists
+>>>>>>> b618d7e5428e1fe4e846638239b6fa2a0b9ca2e7
 end
