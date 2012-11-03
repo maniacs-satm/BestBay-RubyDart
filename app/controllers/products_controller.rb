@@ -17,7 +17,7 @@ class ProductsController < ApplicationController
   #
   def list_my_products
     if signed_in?
-      @products = current_user.products
+      @products = Product.find(:all, :conditions => { :user_id => current_user.id} )
       @search = Hash.new
       render 'list_my_products'
     else
