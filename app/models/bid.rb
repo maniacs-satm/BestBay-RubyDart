@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: bids
+#
+#  id            :integer          not null, primary key
+#  bidding_time  :datetime
+#  bidding_price :float
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  user_id       :integer
+#  product_id    :integer
+#
+
 # Rdoc for Bid table
 #
 # == Bidding
