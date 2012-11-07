@@ -1,5 +1,18 @@
+##
+# This is the controller of the model of products. All features and methods relates to products is listed here.
+#
+#
 class ProductsController < ApplicationController
-  # this method display all products created by all users
+  # This method will display all products created on the website
+  # It requires the user to log in
+  #
+  # * *Handles* :
+  #   - GET /products
+  # * *Redirects* :
+  #   - root_url(home page) -> if the user has not signed in yet
+  # * *Renders* :
+  #   - a list view of all products -> if the user has signed in already
+  #
   def index
     if signed_in?
       @products =Product.all
@@ -14,8 +27,13 @@ class ProductsController < ApplicationController
     end
   end
 
-  # this method collects all products associated with current_user
-  #
+  # This method collects all products created by the current signed in user
+  # * *Handles* :
+  #   - when users click "my product list" under the draw down menu in header
+  # * *Renders* :
+  #   - a list view of the products created by the current user+ -> if the user has signed in already
+  # * *Redirects* :
+  #   - root_url(home page) -> if the user has not signed in yet
   def list_my_products
     if signed_in?
       @products = Product.find(:all, :conditions => { :user_id => current_user.id} )
@@ -26,9 +44,16 @@ class ProductsController < ApplicationController
     end
   end
 
-
-  # GET /products/1
-  # GET /products/1.json
+  # Showing a view of single product and allows user to bid on it.
+  # We do not expect user to type the id manually. User click on an item on the procut list and to be redirect to this.
+  # * *Handles* :
+  #   - GET /products/:id
+  #   - GET /products/:id.json
+  # * *Renders* :
+  #   - a view of the product corresponding to id with every attributes of the product
+  #   - allows user to bid on it
+  # * *Raises* :
+  #   - +SQLException+ -> if :id if not valid.
   def show
     @product = Product.find(params[:id])
     @productOwner = User.find(@product.user_id)
@@ -39,8 +64,10 @@ class ProductsController < ApplicationController
     end
   end
 
-  # GET /products/new
-  # GET /products/new.json
+  # Creates a new product with empty attributes.
+  # * *Handles* :
+  #   - GET /products/new
+  #   - GET /products/new.json
   def new
     @product = Product.new
 
@@ -50,13 +77,31 @@ class ProductsController < ApplicationController
     end
   end
 
-  # GET /products/1/edit
+  # Edit properties of the product corresponding with the id. 
+  # Not all the properties is editable. 
+  # * *Renders* :
+  #   - +product_edit.html+ -> a form view to edit different attributes
+  # * *Handles* :
+  #   - GET /products/:id/edit
+  # * *Editables* :
+  #   - title
+  #   - description
+  #   - image
+  #   - catagory
+  # * *Raises* :
+  #   - +SQLException+ -> if :id if not valid.
   def edit
     @product = Product.find(params[:id])
   end
 
-  # POST /products
-  # POST /products.json
+  # Create a new product with attributes typed in
+  # This requires user to log in
+  # * *Handles* :
+  #   - POST /products
+  #   - POST /products.json
+  # * *Redirects* :
+  #   - product_url(show page) -> if the product is created successfully
+  #   - stays in the same page -> if the product is unable to created
   def create
     if signed_in?
       @product = current_user.products.build(params[:product])
@@ -80,8 +125,13 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PUT /products/1
-  # PUT /products/1.json
+  # Update information of a product
+  # * *Handles* :
+  #   - PUT /products/1
+  #   - PUT /products/1.json
+  # * *Redirects* :
+  #   - product_url(show page) -> if the product is updated successfully
+  #   - stays in the same page -> if the product is unable to updated
   def update
     @product = Product.find(params[:id])
 
@@ -96,8 +146,11 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1
-  # DELETE /products/1.json
+  # Delete a product
+  # Do not render any pages
+  # * *Handles* :
+  #   - DELETE /products/1
+  #   - DELETE /products/1.json
   def destroy
     @product = Product.find(params[:id])
     #TODO: should check product id here.
