@@ -99,6 +99,8 @@
   
     <li class="file"><a href="./public/robots_txt.html">robots</a>
   
+    <li class="file"><a href="./tmp/restart_txt.html">restart</a>
+  
     <li class="file"><a href="./vendor/plugins/paperclip/Appraisals.html">Appraisals</a>
   
     <li class="file"><a href="./vendor/plugins/paperclip/Gemfile.html">Gemfile</a>
@@ -249,9 +251,11 @@
   
     <li><a href="./AttachmentTest.html">AttachmentTest</a>
   
-    <li><a href="./AttachmentTest/Paperclip.html">AttachmentTest::Paperclip</a>
+    <li><a href="./AttachmentTest/AttachmentTest.html">AttachmentTest::AttachmentTest</a>
   
-    <li><a href="./AttachmentTest/Paperclip/Test.html">AttachmentTest::Paperclip::Test</a>
+    <li><a href="./AttachmentTest/AttachmentTest/Paperclip.html">AttachmentTest::AttachmentTest::Paperclip</a>
+  
+    <li><a href="./AttachmentTest/AttachmentTest/Paperclip/Test.html">AttachmentTest::AttachmentTest::Paperclip::Test</a>
   
     <li><a href="./Test.html">Test</a>
   
@@ -304,6 +308,8 @@
     <li><a href="./AddPasswordDigestToUsers.html">AddPasswordDigestToUsers</a>
   
     <li><a href="./AddRememberTokenToUsers.html">AddRememberTokenToUsers</a>
+  
+    <li><a href="./AddSellingProductsToUsers.html">AddSellingProductsToUsers</a>
   
     <li><a href="./AddUserIdProductIdToBid.html">AddUserIdProductIdToBid</a>
   
@@ -478,6 +484,8 @@
 
   <div id="description" class="description">
     
+<p>This module defines methods for session create and delete</p>
+
   </div><!-- description -->
 
   
@@ -509,12 +517,13 @@
 
         <div class="method-description">
           
-          
+          <p><a href="SessionsHelper.html#method-i-current_user">#current_user</a>
+getter</p>
           
 
           
           <div class="method-source-code" id="current_user-source">
-            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 21</span>
+            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 27</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">current_user</span>
   <span class="ruby-ivar">@current_user</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">find_by_remember_token</span>(<span class="ruby-identifier">cookies</span>[<span class="ruby-value">:remember_token</span>])
 <span class="ruby-keyword">end</span></pre>
@@ -539,12 +548,13 @@
 
         <div class="method-description">
           
-          
+          <p><a href="SessionsHelper.html#method-i-current_user">#current_user</a>
+setter</p>
           
 
           
           <div class="method-source-code" id="current_user-3D-source">
-            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 14</span>
+            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">current_user=</span>(<span class="ruby-identifier">user</span>)
  <span class="ruby-ivar">@current_user</span> = <span class="ruby-identifier">user</span>
 <span class="ruby-keyword">end</span></pre>
@@ -574,7 +584,7 @@
 
           
           <div class="method-source-code" id="current_user-3F-source">
-            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 18</span>
+            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 22</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">current_user?</span>(<span class="ruby-identifier">user</span>)
   <span class="ruby-identifier">user</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">current_user</span>
 <span class="ruby-keyword">end</span></pre>
@@ -604,7 +614,7 @@
 
           
           <div class="method-source-code" id="redirect_back_or-source">
-            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 37</span>
+            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 44</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">redirect_back_or</span>(<span class="ruby-identifier">default</span>)
   <span class="ruby-identifier">redirect_to</span>(<span class="ruby-identifier">session</span>[<span class="ruby-value">:return_to</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">default</span>)
   <span class="ruby-identifier">session</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:return_to</span>)
@@ -630,14 +640,13 @@
 
         <div class="method-description">
           
-          
+          <p>sign in user</p>
           
 
           
           <div class="method-source-code" id="sign_in-source">
-            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 4</span>
+            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 6</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">sign_in</span>(<span class="ruby-identifier">user</span>)
-
   <span class="ruby-identifier">cookies</span>.<span class="ruby-identifier">permanent</span>[<span class="ruby-value">:remember_token</span>] = <span class="ruby-identifier">user</span>.<span class="ruby-identifier">remember_token</span>
   <span class="ruby-keyword">self</span>.<span class="ruby-identifier">current_user</span> = <span class="ruby-identifier">user</span>
 <span class="ruby-keyword">end</span></pre>
@@ -662,7 +671,7 @@
 
         <div class="method-description">
           
-          
+          <p>sign out current session</p>
           
 
           
@@ -693,12 +702,12 @@
 
         <div class="method-description">
           
-          
+          <p>check if user is signed in or not</p>
           
 
           
           <div class="method-source-code" id="signed_in-3F-source">
-            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 10</span>
+            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 12</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">signed_in?</span>
   <span class="ruby-operator">!</span><span class="ruby-identifier">current_user</span>.<span class="ruby-identifier">nil?</span>
 <span class="ruby-keyword">end</span></pre>
@@ -728,7 +737,7 @@
 
           
           <div class="method-source-code" id="signed_in_user-source">
-            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 25</span>
+            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 37</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">signed_in_user</span>
   <span class="ruby-keyword">unless</span> <span class="ruby-identifier">signed_in?</span>
     <span class="ruby-identifier">store_location</span>
@@ -761,7 +770,7 @@
 
           
           <div class="method-source-code" id="store_location-source">
-            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 42</span>
+            <pre><span class="ruby-comment"># File app/helpers/sessions_helper.rb, line 49</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">store_location</span>
   <span class="ruby-identifier">session</span>[<span class="ruby-value">:return_to</span>] = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">url</span>
 <span class="ruby-keyword">end</span></pre>

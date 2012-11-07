@@ -4,7 +4,7 @@ describe Product do
 
     before do
       @product = Product.new(title: 'Sample Product', starting_price:90.00,
-                       description: 'hello world!', time_left: 100, owner_id:1,
+                       description: 'hello world!', time_left: 100, user_id:1,
                        current_price:0.00)
     end
 
