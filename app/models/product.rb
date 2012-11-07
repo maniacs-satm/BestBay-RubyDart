@@ -14,4 +14,5 @@ class Product < ActiveRecord::Base
                                               too_long: "title must have at most %{count} characters"}
   validates :start_price, presence: true
   validates :category_id, presence:true
+  validates :user_id, presence:true
 end
