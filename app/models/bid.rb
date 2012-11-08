@@ -12,7 +12,7 @@
 #
 
 class Bid < ActiveRecord::Base
-  attr_accessible :bidding_price, :bidding_time
+  attr_accessible :bidding_price, :bidding_time, :user_id, :product_id
 
   belongs_to :user
   belongs_to :products
