@@ -161,7 +161,12 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
-
+ # Search for a product
+  # * *Handles* :
+  #   - Post /search-product
+  # * *Renders* :
+  #   - products/index -> if find the item
+  #
   def search
     q = params[:query]
     @products = Array.new
@@ -177,17 +182,6 @@ class ProductsController < ApplicationController
       end
     end
     render 'index'
-  end
-
-  def add_to_watchlist
-    @product = Product.find(params[:id])
-    @product.users << current_user
-
-    redirect_to root_url
-  end
-
-  def show_watchlist
-    render 'watchlist'
   end
 
 end

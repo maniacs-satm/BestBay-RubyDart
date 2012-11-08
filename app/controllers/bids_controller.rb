@@ -1,5 +1,18 @@
+##
+# This is the controller of the model of bid. All features and methods relates to bids is listed here.
+#
+#
 class BidsController < ApplicationController
-
+  # This method will create a bid
+  # It requires the user to log in
+  #
+  # * *Handles* :
+  #   - GET '/bids/:id'
+  # * *Redirects* :
+  #   - products#show -> if the user has signed in already
+  # * *Redirects* :
+  #   - root_url(home) -> if the user has not signed in yet
+  #
   def create
      if signed_in?
         @bid = Bid.new(params[:bid])
