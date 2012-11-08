@@ -1,0 +1,6 @@
+Wed, 07 Nov 2012 18:40:34 -0500
+app/models/bid.rb	Wed, 07 Nov 2012 18:39:51 -0500
+app/models/category.rb	Wed, 07 Nov 2012 18:20:44 -0500
+app/models/product.rb	Wed, 07 Nov 2012 18:20:44 -0500
+app/models/user.rb	Wed, 07 Nov 2012 18:20:44 -0500
+app/models/watchlist.rb	Wed, 07 Nov 2012 18:20:44 -0500

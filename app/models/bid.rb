@@ -11,12 +11,6 @@
 #  product_id    :integer
 #
 
-# Rdoc for Bid table
-#
-# == Bidding
-#
-# This is a heading
-
 class Bid < ActiveRecord::Base
   attr_accessible :bidding_price, :bidding_time
 
