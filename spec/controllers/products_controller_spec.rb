@@ -36,26 +36,10 @@ describe ProductsController do
   # in order to pass any filters (e.g. authentication) defined in
   # ProductsController. Be sure to keep this updated too.
   def valid_session
-    {:user => {
+    {:current_user => {
       :id => 1
       }
     }
-  end
-
-  describe "GET index" do
-    it "assigns all products as @products" do
-      product = Product.create! valid_attributes
-      get :index, {}, valid_session
-      assigns(:products).should eq([product])
-    end
-  end
-
-  describe "GET show" do
-    it "assigns the requested product as @product" do
-      product = Product.create! valid_attributes
-      get :show, {:id => product.to_param}, valid_session
-      assigns(:product).should eq(product)
-    end
   end
 
   describe "GET new" do
@@ -70,43 +54,6 @@ describe ProductsController do
       product = Product.create! valid_attributes
       get :edit, {:id => product.to_param}, valid_session
       assigns(:product).should eq(product)
-    end
-  end
-
-  describe "POST create" do
-    describe "with valid params" do
-      it "creates a new Product" do
-        expect {
-          post :create, {:product => valid_attributes}, valid_session
-        }.to change(Product, :count).by(1)
-      end
-
-      it "assigns a newly created product as @product" do
-        post :create, {:product => valid_attributes}, valid_session
-        assigns(:product).should be_a(Product)
-        assigns(:product).should be_persisted
-      end
-
-      it "redirects to the created product" do
-        post :create, {:product => valid_attributes}, valid_session
-        response.should redirect_to(Product.last)
-      end
-    end
-
-    describe "with invalid params" do
-      it "assigns a newly created but unsaved product as @product" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Product.any_instance.stub(:save).and_return(false)
-        post :create, {:product => {}}, valid_session
-        assigns(:product).should be_a_new(Product)
-      end
-
-      it "re-renders the 'new' template" do
-        # Trigger the behavior that occurs when invalid params are submitted
-        Product.any_instance.stub(:save).and_return(false)
-        post :create, {:product => {}}, valid_session
-        response.should render_template("new")
-      end
     end
   end
 
