@@ -55,20 +55,20 @@ describe "User Pages" do
       #it { should have_selector('em',    text: "Edit your profile") }
     end
 
-    describe "with invalid information" do
-      before { click_button 'Save changes' }
+#    describe "with invalid information" do
+#      before { click_button 'Save changes' }
+#      it { should have_content('error') }
+#    end
 
-      it { should have_content('error') }
-    end
-
-    describe "with valid information" do
-      let(:new_email) { "new@example.com" }
-      before do
-        fill_in "Email",            with: new_email
-        fill_in "Password",         with: user.password
-        fill_in "Confirm Password", with: user.password
-        click_button "Save changes"
-      end
-    end
+ #   describe "with valid information" do
+ #     let(:new_email) { "new@example.com" }
+ #     before do
+ #       fill_in "Email",            with: new_email
+  #      fill_in "Password",         with: user.password
+  #      fill_in "Confirm Password", with: user.password
+  #      click_button "Save changes"
+  #    end
+  #    it { user.email should_be new_email}
+  #  end
   end
 end
