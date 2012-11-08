@@ -48,9 +48,18 @@ describe Product do
       it { should_not be_valid }
     end
 
-    describe "when user is not present" do
-      before { @product.user_id = ' ' }
+    describe "when user_id is not present" do
+      before { @product.user_id = '' }
       it { should_not be_valid }
     end
 
+    describe "when category_id is not present" do
+      before { @product.category_id = '' }
+      it { should_not be_valid }
+    end
+
+    describe "when start_price is not present" do
+      before { @product.start_price = '' }
+      it { should_not be_valid }
+    end
   end
