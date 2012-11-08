@@ -1,11 +1,18 @@
-# Rdoc for Bid table
+# == Schema Information
 #
-# == Bidding
+# Table name: bids
 #
-# This is a heading
+#  id            :integer          not null, primary key
+#  bidding_time  :datetime
+#  bidding_price :float
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
+#  user_id       :integer
+#  product_id    :integer
+#
 
 class Bid < ActiveRecord::Base
-  attr_accessible :bidding_price, :bidding_time
+  attr_accessible :bidding_price, :bidding_time, :user_id, :product_id
 
   belongs_to :user
   belongs_to :products

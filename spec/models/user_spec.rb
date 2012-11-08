@@ -8,18 +8,19 @@
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #  password_digest :string(255)
+#  remember_token  :string(255)
 #
 
 require 'spec_helper'
 
 describe User do
-
   before do
-    @user = User.new(name: 'foo', email: 'foo@bar.com',
-                     password: 'foobar', password_confirmation: 'foobar')
+    @user = FactoryGirl.build(:user) 
   end
 
   subject { @user }
+
+  it { should be_valid }
 
   # test columns
   it { should respond_to(:name) }
@@ -27,8 +28,6 @@ describe User do
   it { should respond_to(:password_digest) }
   it { should respond_to(:password) }
   it { should respond_to(:password_confirmation) }
-
-  it { should be_valid }
 
   describe "when name is not present" do
     before { @user.name = " " }
@@ -70,7 +69,6 @@ describe User do
       user_with_same_email = @user.dup
       user_with_same_email.save
     end
-
     it { should_not be_valid }
   end
 

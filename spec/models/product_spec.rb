@@ -1,11 +1,29 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id                 :integer          not null, primary key
+#  title              :string(255)
+#  start_price        :float
+#  description        :string(255)
+#  user_id            :integer
+#  time_left          :integer
+#  current_price      :float
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  image_file_name    :string(255)
+#  image_content_type :string(255)
+#  image_file_size    :integer
+#  user_name          :string(255)
+#  category_id        :integer
+#
+
 require 'spec_helper'
 
 describe Product do
 
     before do
-      @product = Product.new(title: 'Sample Product', start_price:90.00,
-                       description: 'hello world!', time_left: 100, user_id:1,
-                       current_price:0.00, category_id: 1)
+      @product = FactoryGirl.create(:product)
     end
 
     subject { @product }
