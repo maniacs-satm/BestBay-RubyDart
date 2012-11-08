@@ -1,7 +1,9 @@
-##
+# === SessionHelper
+#
 # This module defines methods for session create and delete
+
 module SessionsHelper
-  
+
   # sign in user
   def sign_in(user)
     cookies.permanent[:remember_token] = user.remember_token
