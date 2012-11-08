@@ -24,14 +24,22 @@ describe ProductsController do
   # Product. As you add validations to Product, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    {
+      :title => "title", 
+      :start_price => 100, 
+      :category_id => 1, 
+      :user_id => 1
+    }
   end
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
   # ProductsController. Be sure to keep this updated too.
   def valid_session
-    {}
+    {:user => {
+      :id => 1
+      }
+    }
   end
 
   describe "GET index" do
