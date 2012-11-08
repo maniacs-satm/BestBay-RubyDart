@@ -14,6 +14,11 @@
 require 'spec_helper'
 
 describe Bid do
+  before do
+    @bid = FactoryGirl.create(:bid)
+  end
+
+  subject { @bid }
 
   it { should respond_to(:bidding_time) }
   it { should respond_to(:bidding_price) }
@@ -26,5 +31,18 @@ describe Bid do
     it { should_not be_valid }
   end
 
+  describe "when bidding_time is not present" do
+    before { @bid.bidding_time = nil }
+    it { should_not be_valid }
+  end
 
+  describe "when user_id is not present" do
+    before { @bid.user_id = nil }
+    it { should_not be_valid }
+  end
+
+  describe "when product_id is not present" do
+    before { @bid.product_id = nil }
+    it { should_not be_valid }
+  end
 end
