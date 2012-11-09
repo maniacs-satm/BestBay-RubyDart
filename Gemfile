@@ -37,4 +37,5 @@ gem 'rspec-rails'
 gem 'devise' 
 gem 'paperclip'
 gem 'aws-sdk'
-gem "simple-navigation", "~> 3.9.0"
+gem 'simple-navigation', '~> 3.9.0'
+gem 'haml', '~> 3.1.7'

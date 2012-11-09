@@ -3,3 +3,5 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
 BestBay::Application.initialize!
+
+config.gem "simple-navigation"
