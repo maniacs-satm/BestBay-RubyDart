@@ -25,6 +25,6 @@ FactoryGirl.define do
     user_id        1
     current_price  18
     category_id    2
-    time_left      20
+    bid_until      "12/28/2012"
   end
 end
