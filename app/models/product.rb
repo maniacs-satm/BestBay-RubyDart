@@ -7,7 +7,7 @@
 #  start_price        :float
 #  description        :string(255)
 #  user_id            :integer
-#  time_left          :integer
+#  bid_until          :string(255)
 #  current_price      :float
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
