@@ -196,3 +196,12 @@ input, textarea, select, .uneditable-input {
     @extend .error;
 }
 
+#new_product_form {
+    margin: 0px auto;
+    width: 60%;
+    textarea {
+        resize: vertical;
+        max-height: 80px;    
+    }
+}
+
