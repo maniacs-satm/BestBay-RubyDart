@@ -98,13 +98,15 @@ footer {
     margin-top: 45px;
     padding-top: 5px;
     border-top: 1px solid $grayMediumLight;
-    color: lightGray;
+    color: darkred;
+
     a {
-        color: #555;
-
-            color: $yellow;
-            background-color: $white;
-
+        display: block;
+        background-color: transparent;
+    }
+    a:hover {
+        background-color: green;
+        text-decoration: none;
     }
     small {
         float: left;
