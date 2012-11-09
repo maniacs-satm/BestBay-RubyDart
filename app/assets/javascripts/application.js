@@ -11,7 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require bootstrap
+//= require jquery_ujs
 //= require jquery
-
+//= require jquery-ui
 //= require_tree .
 

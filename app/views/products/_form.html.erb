@@ -1,10 +1,16 @@
-<%= form_for(@product) do |f| %>
-<head xmlns="http://www.w3.org/1999/html">
-    <style type = "text/css">
-        body {background-color: #ffc40d;}
-    </style>
-</head>
-<body>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.9.1/themes/base/jquery-ui.css" />
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+<script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+<style type = "text/css">
+      body {background-color: #ffc40d;}
+</style>
+<script>
+  $(function() {
+    $( "#datepicker" ).datepicker({ minDate: 0});
+  });
+</script>
+
+<%= form_for(@product, :html => {:id => "new_product_form"}) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h2>
@@ -22,20 +28,20 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :start_price %><br />
-    <%= f.text_field :start_price %>
-  </div>
-  <div class="field">
     <%= f.label :description %><br />
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :time_left %><br />
-    <%= f.text_field :time_left %>
+    <%= f.text_area :description %>
   </div>
   <div class="field">
     <%= f.label :category_id %>
     <%= collection_select(:product, :category_id, Category.all, :id, :content) %>
+  </div>
+  <div class="field">
+    <%= f.label :start_price %><br />
+    <%= f.text_field :start_price %>
+  </div>
+  <div class="field">
+    <%= f.label :time_left %><br />
+    <%= f.text_field :time_left, :id => "datepicker" %>
   </div>
   <div class="field">
     <%= f.label :image %><br />
@@ -44,6 +50,5 @@
   <div class="actions">
     <%= f.submit %>
   </div>
-</body>
 <% end %>
 
