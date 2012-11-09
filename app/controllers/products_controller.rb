@@ -16,10 +16,6 @@ class ProductsController < ApplicationController
   def index
     if signed_in?
       @products =Product.all
-      @products.each do |p|
-        p[:time_left] = (Date.strptime(p.bid_until, '%m/%d/%Y')-Date.today).to_i/1.day 
-      end
-
       #@products.sort_by!{|a, b| a[:id] <=> b[:id]}
       @search = Hash.new
       if params[:category_id] != nil

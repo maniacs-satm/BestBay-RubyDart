@@ -1,31 +1,19 @@
-<head xmlns="http://www.w3.org/1999/html">
-  <style type = "text/css">
-      body {background-color: #ffc40d;}
-  </style>
-</head>
-<body>
-<div class="row">
-  <aside class="span4">
-    <section></section>
-  </aside>
-</div>
-
-<div class="progress progress-danger progress-striped active">
-  <div class="bar" style="width: 100%;"></div>
-</div>
+<style type = "text/css">
+    body {background-color: #ffc40d;}
+</style>
 
 <div class = "container-fluid">
     <div class = "row-fluid">
       <div class = "span2">
         <div class = "example_content" id = "example_3">
-          <div id = "top_navigation"><%=render_navigation%></div>
-  <div class = "clear_float"></div>  
-</div>
-</div>
+          <div id = "top_navigation"><%=render_navigation%>
+          </div>
+          <div class = "clear_float"></div>  
+        </div>
+      </div>
 
 
-
-<div class = "span10">
+      <div class = "span10">
           <% @products.each do |product| %>
             <% if product.category.id == @category.id then %>
               <div class="productIndexDiv">
@@ -35,7 +23,7 @@
             <p class='title'><%= product.title %></p>
             <p class="price">$<%= product.current_price %> at BestBay</p>
             <p class='pricePrev'>$<%= product.start_price %></p>
-            <b><%= product.time_left %> days left</b><br>
+            <b><%= (Date.strptime(product.bid_until, '%m/%d/%Y') - Date.today).to_i %> days left</b><br>
             <%= link_to 'Show', product %>
             <% if product.user_id == current_user.id %>
               <%= link_to 'Edit', edit_product_path(product) %>
@@ -45,9 +33,11 @@
             </div>
             <%end%>
           <%end%>
+      </div>
+    </div>
 </div>
-</div>
-</div>
+
+
 <br />
 <div class="center hero-unit">
 <p>

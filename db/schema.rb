@@ -46,6 +46,11 @@ ActiveRecord::Schema.define(:version => 20121109214950) do
     t.integer  "category_id"
   end
 
+  create_table "products_users", :id => false, :force => true do |t|
+    t.integer "product_id"
+    t.integer "user_id"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
