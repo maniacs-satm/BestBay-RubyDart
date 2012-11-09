@@ -32,7 +32,7 @@ describe Product do
     it { should respond_to(:title) }
     it { should respond_to(:start_price) }
     it { should respond_to(:description) }
-    it { should respond_to(:time_left) }
+    it { should respond_to(:bid_until) }
     it { should respond_to(:current_price) }
     it { should respond_to(:user_id)}
 

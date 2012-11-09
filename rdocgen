@@ -1,0 +1,1 @@
+rdoc Gemfile app/ spec/ -x app/controllers/application_controller.rb -x app/helpers/application_helper.rb -x app/helpers/welcome_helper.rb -x app/helpers/welcome_helper.rb -o rdoc

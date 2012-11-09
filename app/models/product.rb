@@ -24,7 +24,7 @@ class Product < ActiveRecord::Base
                   :user_id, 
                   :user_name,  
                   :start_price, 
-                  :time_left, 
+                  :bid_until, 
                   :title, 
                   :image, 
                   :category_id

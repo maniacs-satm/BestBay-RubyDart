@@ -22,14 +22,14 @@
       <p class='title'><%= product.title %></p>
       <p class="price">$<%= product.current_price %> at BestBay</p>
       <p class='pricePrev'>$<%= product.start_price %></p>
-      <b><%= product.time_left %> days left</b><br>
+      <b><%= (Date.strptime(product.bid_until, '%m/%d/%Y') - Date.today).to_i %> days left</b><br>
       <%= link_to 'Show', product %>
       <% if product.user_id == current_user.id %>
       <%= link_to 'Edit', edit_product_path(product) %>
       <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
       <br><%= link_to "Add to my watch list", :controller => "watchlists",:action => "create", :id => product.id %>
-  </div>
+    </div>
 <% end %>
 <br />
 <div class="center hero-unit">
