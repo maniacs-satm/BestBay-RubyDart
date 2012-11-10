@@ -18,6 +18,11 @@ class ProductsController < ApplicationController
       @products =Product.all
       #@products.sort_by!{|a, b| a[:id] <=> b[:id]}
       @search = Hash.new
+      if params[:category_id] != nil
+        @category = Category.find(params[:category_id])
+      else
+        @category = Category.find(1)
+      end
       respond_to do |format|
         format.html # index.html.erb
         format.json { render json: @products }

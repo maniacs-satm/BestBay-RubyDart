@@ -195,6 +195,6 @@ DEPENDENCIES
   rails (= 3.2.7)
   rspec-rails
   sass-rails (~> 3.2.3)
-  simple-navigation (~> 3.9.0)
+  simple-navigation
   sqlite3
   uglifier (>= 1.0.3)
