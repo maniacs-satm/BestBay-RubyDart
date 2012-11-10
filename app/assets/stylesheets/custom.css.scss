@@ -98,7 +98,7 @@ footer {
     margin-top: 45px;
     padding-top: 5px;
     border-top: 1px solid $grayMediumLight;
-    color: darkred;
+    color: gray;
 
     a {
         display: block;
@@ -117,6 +117,7 @@ footer {
         li {
             float: left;
             margin-left: 10px;
+            margin-top: 5px;
         }
     }
 }
