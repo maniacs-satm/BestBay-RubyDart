@@ -10,7 +10,6 @@ $grayMediumLight: #eaeaea;
     box-sizing: border-box;
 }
 
-
 /* universal */
 
 html {
@@ -91,7 +90,6 @@ p {
     color: #FF8F00;
 }
 
-
 /* footer */
 
 footer {
@@ -103,13 +101,16 @@ footer {
     a {
         display: block;
         background-color: transparent;
+        float: left;
     }
     a:hover {
-        background-color: green;
         text-decoration: none;
     }
     small {
         float: left;
+        b {
+            padding-left: 5px;
+        }
     }
     ul {
         float: right;
