@@ -1,2 +1,2 @@
-rake db:test:prepare
+bundle exec rake db:test:prepare
 rspec spec/

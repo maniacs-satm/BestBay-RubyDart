@@ -15,7 +15,7 @@
 
       <div class = "span10">
           <% @products.each do |product| %>
-            <% if product.category.id == @category.id then %>
+            <% if @category == nil || product.category.id == @category.id then %>
               <div class="productIndexDiv">
             <% if product.image.exists? then %>
               <%= image_tag product.image.url(:thumb), :class => 'productSmallImg' %> </br>
