@@ -24,7 +24,14 @@ FactoryGirl.define do
     description    "this is a product test"
     user_id        1
     current_price  18
-    category_id    2
+    category_id    1
     bid_until      "12/28/2012"
   end
+
+  factory :category do
+    content "Art"
+  end
+
 end
+
+

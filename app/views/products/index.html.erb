@@ -15,7 +15,7 @@
 
       <div class = "span10">
           <% @products.each do |product| %>
-            <% if product.category.id == @category.id then %>
+            <% if @category == nil || product.category.id == @category.id then %>
               <div class="productIndexDiv">
             <% if product.image.exists? then %>
               <%= image_tag product.image.url(:thumb), :class => 'productSmallImg' %> </br>
@@ -29,7 +29,9 @@
               <%= link_to 'Edit', edit_product_path(product) %>
               <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
+            <% if product.user_id != current_user.id %>
             <br><%= link_to "Add to my watch list", :controller => "watchlists",:action => "create", :id => product.id %>
+            <% end %>
             </div>
             <%end%>
           <%end%>

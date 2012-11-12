@@ -49,8 +49,9 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>. 
     #
+    primary.item "all", "All", "/products", :highlights_on => %r(/products)
     Category.all.each do |category|
-      primary.item category, category.content, "/products?category_id=#{category.id}"
+      primary.item category, category.content, "/products?category_id=#{category.id}", :highlights_on => %r(/products?category_id=#{category.id})
     end
 
     

@@ -20,8 +20,8 @@ class ProductsController < ApplicationController
       @search = Hash.new
       if params[:category_id] != nil
         @category = Category.find(params[:category_id])
-      else
-        @category = Category.find(1)
+      #else
+       # @category = Category.find(1)
       end
       respond_to do |format|
         format.html # index.html.erb
@@ -95,8 +95,20 @@ class ProductsController < ApplicationController
   #   - catagory
   # * *Raises* :
   #   - +SQLException+ -> if :id if not valid.
+  # * *Redirects* :
+  #   - root_url(home page) -> if the user not signed in yet
+  #   - products_url(product list page) -> if the user is not the owner of the product
   def edit
     @product = Product.find(params[:id])
+    if signed_in?
+      if current_user.id == @product.user_id
+        @product
+      else
+        redirect_to root_url
+      end
+    else
+      redirect_to root_url
+    end
   end
 
   # Create a new product with attributes typed in
