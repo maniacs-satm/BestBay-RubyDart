@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(:version => 20121109214950) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
   add_index "categories", ["created_at"], :name => "index_categories_on_product_id_and_created_at"
 
   create_table "products", :force => true do |t|
@@ -63,7 +62,6 @@ ActiveRecord::Schema.define(:version => 20121109214950) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
   add_index "watchlists", ["user_id", "created_at"], :name => "index_watchlists_on_user_id_and_created_at"
 
 end
