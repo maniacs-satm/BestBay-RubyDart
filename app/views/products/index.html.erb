@@ -29,7 +29,9 @@
               <%= link_to 'Edit', edit_product_path(product) %>
               <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
+            <% if product.user_id != current_user.id %>
             <br><%= link_to "Add to my watch list", :controller => "watchlists",:action => "create", :id => product.id %>
+            <% end %>
             </div>
             <%end%>
           <%end%>
