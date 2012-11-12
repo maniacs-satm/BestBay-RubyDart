@@ -7,7 +7,7 @@
 #  start_price        :float
 #  description        :string(255)
 #  user_id            :integer
-#  time_left          :integer
+#  bid_until          :string(255)
 #  current_price      :float
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
@@ -24,7 +24,7 @@ class Product < ActiveRecord::Base
                   :user_id, 
                   :user_name,  
                   :start_price, 
-                  :time_left, 
+                  :bid_until, 
                   :title, 
                   :image, 
                   :category_id

@@ -1,36 +1,42 @@
-# === SessionHelper
+# This module defines methods for session create and delete.
 #
-# This module defines methods for session create and delete
 
 module SessionsHelper
 
-  # sign in user
+  # This method will sign in user and add remember_token to user cookie.
+  #
+  # *param* - user
   def sign_in(user)
     cookies.permanent[:remember_token] = user.remember_token
     self.current_user = user
   end
 
-  # check if user is signed in or not
+  # This method will check if current_user is signed in or not
+  #
   def signed_in?
     !current_user.nil?
   end
 
-  # current_user setter
+  # This method will set current_user
+  #
+  # *param* - user
   def current_user=(user)
    @current_user = user
   end
 
-  # 
+  # This method will check if an user is current_user.
+  #
+  # *param* - user
   def current_user?(user)
     user == current_user
   end
 
-  # current_user getter
+  # This method will return current_user.
   def current_user
     @current_user ||= User.find_by_remember_token(cookies[:remember_token])
   end
 
-  # sign out current session
+  # This method will sign out current_user.
   def sign_out
     self.current_user = nil
     cookies.delete(:remember_token)

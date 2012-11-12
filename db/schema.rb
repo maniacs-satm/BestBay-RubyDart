@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121102235927) do
+ActiveRecord::Schema.define(:version => 20121109214950) do
 
   create_table "bids", :force => true do |t|
     t.datetime "bidding_time"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(:version => 20121102235927) do
     t.float    "start_price"
     t.string   "description"
     t.integer  "user_id"
-    t.integer  "time_left"
+    t.string   "bid_until"
     t.float    "current_price"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false

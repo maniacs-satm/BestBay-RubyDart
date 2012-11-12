@@ -98,13 +98,15 @@ footer {
     margin-top: 45px;
     padding-top: 5px;
     border-top: 1px solid $grayMediumLight;
-    color: lightGray;
+    color: darkred;
+
     a {
-        color: #555;
-
-            color: $yellow;
-            background-color: $white;
-
+        display: block;
+        background-color: transparent;
+    }
+    a:hover {
+        background-color: green;
+        text-decoration: none;
     }
     small {
         float: left;
@@ -194,5 +196,14 @@ input, textarea, select, .uneditable-input {
 .field_with_errors {
     @extend .control-group;
     @extend .error;
+}
+
+#new_product_form {
+    margin: 0px auto;
+    width: 60%;
+    textarea {
+        resize: vertical;
+        max-height: 80px;    
+    }
 }
 

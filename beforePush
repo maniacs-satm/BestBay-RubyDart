@@ -1,0 +1,2 @@
+bundle exec rake db:test:prepare
+rspec spec/
