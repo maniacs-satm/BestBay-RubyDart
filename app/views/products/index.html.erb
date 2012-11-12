@@ -2,35 +2,47 @@
     body {background-color: #ffc40d;}
 </style>
 
-<h1><i>Listing products</i></h1>
-
-<% @products.each do |product| %>
-  <div class="productIndexDiv">
-    <% if product.image.exists? %>
-        <%= image_tag product.image.url(:thumb), :class => 'productSmallImg' %> </br>
-    <% end %>
-    <p class='title'><%= product.title %></p>
-    <p class="price">$<%= product.current_price %> at BestBay</p>
-    <p class='pricePrev'>$<%= product.start_price %></p>
-    <% days = (Date.strptime(product.bid_until, '%m/%d/%Y') - Date.today).to_i %>
-    <% if days > 0 %>
-      <b><%= days %> days left</b><br>
-    <% else %>
-      Bid closed<br>
-    <% end %>
-    <%= link_to 'Show', product %>
-    <% if product.user_id == current_user.id %>
-      <%= link_to 'Edit', edit_product_path(product) %>
-      <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-    <% end %>
-    <br>
-    <% if Watchlist.find(:first, :conditions => ["user_id = ? and product_id = ?", current_user.id, product.id]) %>
-      <p>Already in Watchlist</p>
-    <% elsif product.user_id != current_user.id %>
-      <%= link_to "Add to my watch list", :controller => "watchlists",:action => "create", :id => product.id %>
-    <% end %>
+<div class = "container-fluid">
+  <div class = "row-fluid">
+    <div class = "span2">
+      <div class = "example_content" id = "example_3">
+        <div id = "top_navigation"><%=render_navigation%></div>
+        <div class = "clear_float"></div>  
+      </div>
+    </div>
+    <div class = "span10">
+      <% @products.each do |product| %>
+        <% if @category == nil || product.category.id == @category.id then %>
+          <div class="productIndexDiv">
+            <% if product.image.exists? %>
+                <%= image_tag product.image.url(:thumb), :class => 'productSmallImg' %> </br>
+            <% end %>
+            <p class='title'><%= product.title %></p>
+            <p class="price">$<%= product.current_price %> at BestBay</p>
+            <p class='pricePrev'>$<%= product.start_price %></p>
+            <% days = (Date.strptime(product.bid_until, '%m/%d/%Y') - Date.today).to_i %>
+            <% if days > 0 %>
+              <b><%= days %> days left</b><br>
+            <% else %>
+              Bid closed<br>
+            <% end %>
+            <%= link_to 'Show', product %>
+            <% if product.user_id == current_user.id %>
+              <%= link_to 'Edit', edit_product_path(product) %>
+              <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+            <br>
+            <% if Watchlist.find(:first, :conditions => ["user_id = ? and product_id = ?", current_user.id, product.id]) %>
+              <p>Already in Watchlist</p>
+            <% elsif product.user_id != current_user.id %>
+              <%= link_to "Add to my watch list", :controller => "watchlists",:action => "create", :id => product.id %>
+            <% end %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
 
 <div class="center hero-unit">
 <p>

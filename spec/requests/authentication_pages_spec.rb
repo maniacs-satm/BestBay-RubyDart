@@ -24,14 +24,17 @@ describe "Authentication" do
 
     describe "with valid information" do
       let(:user) { FactoryGirl.create(:user) }
+      let(:product) {FactoryGirl.create(:product)}
+      let(:category) {FactoryGirl.create(:category)}
+      
       before do
         fill_in "Email",    with: user.email
         fill_in "Password", with: user.password
         click_button "Sign in"
       end
 
-
       before { sign_in user }
+
 
       it { should have_link('Edit Profile', href: edit_user_path(user)) }
       it { should have_link('Sign out', href: signout_path) }

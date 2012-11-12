@@ -3,6 +3,7 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.7'
 gem 'bootstrap-sass', '2.0.4'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'simple-navigation'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -36,4 +37,5 @@ gem 'factory_girl_rails'
 gem 'rspec-rails' 
 gem 'devise' 
 gem 'paperclip'
+gem 'pg'
 gem 'aws-sdk'
