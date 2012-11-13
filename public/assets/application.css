@@ -5572,61 +5572,66 @@ p {
   color: #FF8F00;
 }
 
+/* line 93, ../../app/assets/stylesheets/custom.css.scss */
+.form-search {
+  margin: 0;
+}
+
 /* footer */
-/* line 95, ../../app/assets/stylesheets/custom.css.scss */
+/* line 99, ../../app/assets/stylesheets/custom.css.scss */
 footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: darkred;
 }
-/* line 101, ../../app/assets/stylesheets/custom.css.scss */
+/* line 105, ../../app/assets/stylesheets/custom.css.scss */
 footer a {
   display: block;
   background-color: transparent;
   float: left;
 }
-/* line 106, ../../app/assets/stylesheets/custom.css.scss */
+/* line 110, ../../app/assets/stylesheets/custom.css.scss */
 footer a:hover {
   text-decoration: none;
 }
-/* line 109, ../../app/assets/stylesheets/custom.css.scss */
+/* line 113, ../../app/assets/stylesheets/custom.css.scss */
 footer small {
   float: left;
 }
-/* line 111, ../../app/assets/stylesheets/custom.css.scss */
+/* line 115, ../../app/assets/stylesheets/custom.css.scss */
 footer small b {
   padding-left: 5px;
 }
-/* line 115, ../../app/assets/stylesheets/custom.css.scss */
+/* line 119, ../../app/assets/stylesheets/custom.css.scss */
 footer ul {
   float: right;
   list-style: none;
 }
-/* line 118, ../../app/assets/stylesheets/custom.css.scss */
+/* line 122, ../../app/assets/stylesheets/custom.css.scss */
 footer ul li {
   float: left;
   margin-left: 10px;
 }
 
-/* line 125, ../../app/assets/stylesheets/custom.css.scss */
+/* line 129, ../../app/assets/stylesheets/custom.css.scss */
 .welcome {
   overflow: auto;
   width: 100%;
 }
-/* line 129, ../../app/assets/stylesheets/custom.css.scss */
+/* line 133, ../../app/assets/stylesheets/custom.css.scss */
 .welcome .left-panel {
   float: left;
   width: 45%;
 }
-/* line 133, ../../app/assets/stylesheets/custom.css.scss */
+/* line 137, ../../app/assets/stylesheets/custom.css.scss */
 .welcome .right-panel {
   float: left;
   width: 45%;
 }
 
 /* miscellaneous */
-/* line 141, ../../app/assets/stylesheets/custom.css.scss */
+/* line 145, ../../app/assets/stylesheets/custom.css.scss */
 .debug_dump {
   clear: both;
   float: left;
@@ -5638,23 +5643,23 @@ footer ul li {
 }
 
 /* sidebar */
-/* line 152, ../../app/assets/stylesheets/custom.css.scss */
+/* line 156, ../../app/assets/stylesheets/custom.css.scss */
 aside section {
   padding: 10px 0;
   border-top: 1px solid #eeeeee;
 }
-/* line 155, ../../app/assets/stylesheets/custom.css.scss */
+/* line 159, ../../app/assets/stylesheets/custom.css.scss */
 aside section:first-child {
   border: 0;
   padding-top: 0;
 }
-/* line 159, ../../app/assets/stylesheets/custom.css.scss */
+/* line 163, ../../app/assets/stylesheets/custom.css.scss */
 aside section span {
   display: block;
   margin-bottom: 3px;
   line-height: 1;
 }
-/* line 164, ../../app/assets/stylesheets/custom.css.scss */
+/* line 168, ../../app/assets/stylesheets/custom.css.scss */
 aside section h1 {
   font-size: 1.6em;
   text-align: left;
@@ -5662,14 +5667,14 @@ aside section h1 {
   margin-bottom: 3px;
 }
 
-/* line 173, ../../app/assets/stylesheets/custom.css.scss */
+/* line 177, ../../app/assets/stylesheets/custom.css.scss */
 .gravatar {
   float: left;
   margin-right: 10px;
 }
 
 /* forms */
-/* line 180, ../../app/assets/stylesheets/custom.css.scss */
+/* line 184, ../../app/assets/stylesheets/custom.css.scss */
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -5681,21 +5686,21 @@ input, textarea, select, .uneditable-input {
   box-sizing: border-box;
 }
 
-/* line 189, ../../app/assets/stylesheets/custom.css.scss */
+/* line 193, ../../app/assets/stylesheets/custom.css.scss */
 #error_explanation {
   color: #f00;
 }
-/* line 191, ../../app/assets/stylesheets/custom.css.scss */
+/* line 195, ../../app/assets/stylesheets/custom.css.scss */
 #error_explanation ul {
   list-style: none;
 }
 
-/* line 202, ../../app/assets/stylesheets/custom.css.scss */
+/* line 206, ../../app/assets/stylesheets/custom.css.scss */
 #new_product_form {
   margin: 0px auto;
   width: 60%;
 }
-/* line 205, ../../app/assets/stylesheets/custom.css.scss */
+/* line 209, ../../app/assets/stylesheets/custom.css.scss */
 #new_product_form textarea {
   resize: vertical;
   max-height: 80px;
