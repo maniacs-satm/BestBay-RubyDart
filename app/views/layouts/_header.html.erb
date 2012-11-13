@@ -1,7 +1,20 @@
 <header class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
-      <%= link_to "BestBay", root_path, id: "logo" %>
+      <% if signed_in? %>
+        <ul class='nav pull-left'>
+          <li><a href='<%= root_path %>'><i class='icon-home icon-white'></i></a></li>
+          <li><a href='<%= new_product_path %>'><i class="icon-plus icon-white"></i> New Product</a></li>
+          <li><%= form_tag 'search-product', :class => "form-search" do %>
+            <%= text_field_tag :query, nil, :placeholder => 'Search here ...', :class => 'search-query input-medium' %>
+            <%= button_tag(:type => 'submit', :class => "btn") do %>
+              <i class="icon-search"></i>
+            <% end %>
+          <% end %></li>
+        </ul>
+      <% else %>
+        <%= link_to "BestBay", root_path, id: "logo" %>
+      <% end %>
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>

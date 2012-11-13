@@ -44,12 +44,3 @@
   </div>
 </div>
 
-<div class="center hero-unit">
-<p>
-  <%= form_tag 'search-product' do %>
-    <%= text_field_tag :query, nil, :placeholder => 'Search here ...' %>
-    <%= submit_tag "Search" , class: "btn btn-inverse" %>
-  <% end %>
-</p>
-<%= link_to 'New Product', new_product_path, class: "btn btn-large btn-danger" %>
-</div>
