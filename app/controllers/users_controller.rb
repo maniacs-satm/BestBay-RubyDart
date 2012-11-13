@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       UserMailer.registration_confirmation(@user).deliver
       sign_in @user
       flash[:success] = 'Welcome to BestBay!'
-      redirect_to @user
+      redirect_to root_path
     else
       render 'new'
     end
