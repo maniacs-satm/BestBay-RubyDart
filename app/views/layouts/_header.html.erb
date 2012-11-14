@@ -6,7 +6,7 @@
           <li><a href='<%= root_path %>'><i class='icon-home icon-white'></i></a></li>
           <li><a href='<%= new_product_path %>'><i class="icon-plus icon-white"></i> New Product</a></li>
           <li><%= form_tag 'search-product', :id => "_form-narrow", :class => "form-search" do %>
-            <%= text_field_tag :query, nil, :placeholder => 'Search here ...', :class => 'search-query input-medium' %>
+            <%= text_field_tag :query, nil, :placeholder => 'Search here ...', :id => 'search-bar', :class => 'search-query input-medium' %>
             <%= button_tag(:type => 'submit', :class => "btn") do %>
               <i class="icon-search"></i>
             <% end %>
