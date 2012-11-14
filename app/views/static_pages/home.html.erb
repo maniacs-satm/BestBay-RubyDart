@@ -1,19 +1,8 @@
-<head>
 <style type = "text/css">
   body {background-color: #8b0000;}
-  body {background-image:url('image.jpg');}
-
 </style>
-</head>
-<body>
 <div class="center hero-unit">
-  
-    <div class="row">
-    <aside class="span4">
-     <section></section>
-    </aside>
-    </div>
-    <h1><em>Welcome to the <div style="color: #8b0000">BESTBAY</div></em></h1>
+  <h1><em>Welcome to the <div style="color: #8b0000">BESTBAY</div></em></h1>
   <div class="span8 offset1">
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
@@ -22,21 +11,15 @@
         <div class="item"><%= link_to image_tag("watch.jpg",:size=>"80 * 64") %></div>
         <div class="item"><%= link_to image_tag("1280-1024.jpg", :size => " 80 * 64 ") %></div>
       </div>
-      <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
-      <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
     </div>
   </div>
-    <!--div class="span8 offset1">
-      <!--%= link_to image_tag("image.jpg", alt: "Rails") %>
-    </div-->
-    <div class="row">
+  
+  <div class="row">
     <aside class="span4">
       <section></section>
     </aside>
-    </div>
+   </div>
   <p><%= link_to "Sign up now!", signup_path, class: "btn-large btn-warning" %></p>
-
 </div>
-<body>
-
-

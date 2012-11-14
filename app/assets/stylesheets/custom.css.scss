@@ -13,11 +13,12 @@ $grayMediumLight: #eaeaea;
 /* universal */
 
 html {
-  overflow-y: scroll;
+  
 }
 
 body {
   padding-top: 100px;
+  background-color: #fa8072;
 }
 
 section {
@@ -34,7 +35,6 @@ textarea {
     margin-bottom: 20px;
   }
 }
-
 
 
 /*typography */
