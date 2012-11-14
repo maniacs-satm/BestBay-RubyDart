@@ -192,7 +192,7 @@ class ProductsController < ApplicationController
       all = Product.all
       if !all.empty?
         all.each do |p|
-          if p[:description] =~ /#{q}/i
+          if (p[:description] =~ /#{q}/i) or (p[:title] =~ /#{q}/i)
             @products << p
           end
         end
