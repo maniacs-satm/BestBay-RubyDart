@@ -12,7 +12,7 @@
       <nav>
         <ul class="nav pull-right">
           <% if signed_in? %>
-          <li><%= form_tag 'search-product', :id => "_form-narrow", :class => "form-search" do %>
+          <li><%= form_tag '/search-product', :id => "_form-narrow", :class => "form-search" do %>
             <%= text_field_tag :query, nil, :placeholder => 'Search here ...', :id => 'search-bar', :class => 'search-query input-medium' %>
             <%= button_tag(:type => 'submit', :class => "btn") do %>
               <i class="icon-search"></i>
