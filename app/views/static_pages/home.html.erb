@@ -16,7 +16,7 @@
               <% else %>
                 <div class="item"><%= link_to image_tag(product.image.url(:thumb), :class => 'productSmallImg'), { :controller => 'products', :action => 'show', :id => product.id}%></div>
               <% end %>
-              <% @cnt++ %>
+              <% @cnt = @cnt + 1 %>
             <% end %>
       </div>
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
