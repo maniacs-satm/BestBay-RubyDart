@@ -6,10 +6,17 @@
   <div class="span8 offset1">
     <div id="myCarousel" class="carousel slide">
       <div class="carousel-inner">
-        <div class="active item"><%= link_to image_tag("image.jpg", :size => " 80 * 64 ") %></div>
-        <div class="item"><%= link_to image_tag("book.jpg",:size=>"80 * 64") %></div>
-        <div class="item"><%= link_to image_tag("watch.jpg",:size=>"80 * 64") %></div>
-        <div class="item"><%= link_to image_tag("1280-1024.jpg", :size => " 80 * 64 ") %></div>
+
+        <% @products = Product.all %>
+            <% @products.sort_by &:created_at %>
+            <% @cnt = 0 %>
+            <% @products.each do |product| %>
+              <% if @cnt == 0 %>
+                <div class="active item"><%= link_to image_tag(product.image.url(:thumb), :class => 'productSmallImg'), { :action => 'show', :id => product.id}%></div>
+              <% else %>
+                <div class="item"><%= link_to image_tag(product.image.url(:thumb), :class => 'productSmallImg'), { :action => 'show', :id => product.id}%></div>
+              <% end %>
+            <% end %>
       </div>
         <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
         <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
