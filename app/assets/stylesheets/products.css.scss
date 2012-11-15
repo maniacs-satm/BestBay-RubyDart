@@ -60,15 +60,27 @@ img.productSmallImg:hover {
 
 .productIndexDiv {
   display: inline-block;
-  width: 250px;
+  width: 200px;
   border-bottom: 1px dashed #e3e3e3;
   position:relative;
   background-color: rgba(235, 235, 235, 0.6);
-  padding: 5px;
+  padding: 8px;
   margin: 10px;
   min-height: 437px;
   vertical-align: top;
 }
+
+.hero-unit {
+  padding: 60px;
+  margin-bottom: 30px;
+  background-color: #fffaf0;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 2px;
+  min-height: 1px;
+}
+
+
 
 p.pricePrev {
   color: #969696;

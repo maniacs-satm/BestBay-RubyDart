@@ -47,7 +47,7 @@
           <b>Time left:</b>
             <%= (Date.strptime(@product.bid_until, '%m/%d/%Y') - Date.today).to_i %> days
           <% else %>
-            <b>Bid closed<b>
+            <b>Bid closed</b>
           <% end %>
         </p>
         <p>
