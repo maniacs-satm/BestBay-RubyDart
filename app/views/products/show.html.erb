@@ -26,6 +26,7 @@
         $<%= @product.current_price %>
       </p>
 
+      <% if signed_in? %>
       <p>
       <%= form_for @bid, :url => bid_path  do |f| %>
           <%= f.label :bidding_price %>
@@ -33,6 +34,7 @@
           <%= f.submit "Bid", class: "btn btn-danger" %>
         <% end %>
       </p>
+      <% end %>
 
       <p>
         <b>Description:</b>
