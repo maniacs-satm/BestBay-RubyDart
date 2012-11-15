@@ -18,7 +18,7 @@ html {
 
 body {
   padding-top: 100px;
-  background-color: #fa8072;
+  background-color: #97BF69 !important;
 }
 
 section {
@@ -85,9 +85,15 @@ p {
 }
 
 .header-text {
-    padding-top: 9px;
-    margin-right: 20px;
     color: #FF8F00;
+}
+
+#_form-narrow {
+    margin-bottom: 0;
+}
+
+#search-bar {
+    width: 200px;
 }
 
 /* footer */
