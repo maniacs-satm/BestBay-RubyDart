@@ -8,29 +8,28 @@
 <h1><i>Listing products</i></h1>
 
 <div class = "container-fluid">
-    <div class = "row-fluid">
-      <div class="hero-unit" style="overflow: auto;">
-      <div class = "span2 offset5">
+
+
+
+
+  <div class = "row-fluid">
+    <!--div class="hero-unit" style="overflow: auto; width: 90%; display: table-cell;"-->
+      <div class = "span2 offset5" >
         <div class = "example_content" id = "example_3">
-          <div id = "top_navigation"><%=render_navigation %>
+          <div id = "top_navigation">
+             <%=render_navigation%>
           </div>
-          <div class = "clear_float"></div>  
+          <div class = "clear_float"></div>
         </div>
       </div>
-      </div>
+    <!--/div-->
 
 
-      <!--div class = "span10">
-          <!--% @products.each do |product| %>
-            <!--% if @category == nil || product.category.id == @category.id then %>
-            <div class="productIndexDiv">
-            <!--% if product.image.exists? then %>
-              <!--%= image_tag product.image.url(:thumb), :class => 'productSmallImg' %> </br>
-=======
-           </div-->
     <div class = "span10">
       <% @products.each do |product| %>
+
         <% if @category == nil || product.category.id == @category.id then %>
+
           <div class="productIndexDiv">
             <% if product.image.exists? then%>
                 <%= link_to image_tag(product.image.url(:thumb), :class => 'productSmallImg'), { :action => 'show', :id => product.id}%> </br>
@@ -62,4 +61,5 @@
     </div>
   </div>
 </div>
+</body>
 
