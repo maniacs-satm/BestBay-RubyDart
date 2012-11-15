@@ -21,7 +21,9 @@
         Bid closed<br>
       <% end %>
       <%= link_to 'Show', product %>
+      <% if days > 0 %>
       <%= link_to 'Edit', edit_product_path(product) %>
+      <% end %>
       <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   <% end %>
