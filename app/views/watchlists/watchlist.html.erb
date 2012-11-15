@@ -2,6 +2,7 @@
   <style type = "text/css">
       body {background-color: #ffc40d;}
   </style>
+
 </head>
 <body>
 <div class="row">
@@ -13,8 +14,23 @@
 <body>
 		<% (@products.size).times do|i| %>
   	  		<% if @products[i] != nil %>
-  	    	<h1><%= @products[i].title %></h1>
-  	    	<h1><%= button_to "Delete", :controller => "watchlists",:action => "delete", :id => @products[i].id %></h1>
+  	    	<div class="productIndexDiv">
+            <% if @products[i].image.exists? %>
+                <%= link_to image_tag(@products[i].image.url(:thumb), :class => 'productSmallImg'), {:controller => 'products', :action => 'show', :id => @products[i].id}%> </br>
+            <% end %>
+            <p class='title'><%= @products[i].title %></p>
+            <p class="price">$<%= @products[i].current_price %> at BestBay</p>
+            <p class='pricePrev'>$<%= @products[i].start_price %></p>
+            <% days = (Date.strptime(@products[i].bid_until, '%m/%d/%Y') - Date.today).to_i %>
+            <% if days > 0 %>
+              <b><%= days %> days left</b><br>
+            <% else %>
+              Bid closed<br>
+            <% end %>
+            <%= link_to 'Show', @products[i] %>
+            <%= link_to "Delete", {:controller => "watchlists", :action => "delete", :id => @products[i].id}, class: "btn btn-info" %>
+          </div>
+  	    	
   	  		<% end %>
   		<% end %>
 </body>
