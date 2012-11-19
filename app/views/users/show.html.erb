@@ -1,11 +1,11 @@
 <div class="container">
   <div class="center hero-unit">
     <h1>My profile</h1>
-    <p>User name: <%= current_user.name %></p>
-    <p>Email: <%= current_user.email %></p>
-    <p>Join time: <%= current_user.created_at %></p>
+    <p><i>User name: </i><%= current_user.name %></p>
+    <p><i>Email: </i><%= current_user.email %></p>
+    <p><i>Join time: </i><%= current_user.created_at %></p>
 
-    <%= link_to "Edit", edit_user_path(current_user) %> |
-    <%= link_to "Back", products_path %>
+    <%= link_to "Edit", edit_user_path(current_user),  class: "btn btn-info"%> |
+    <%= link_to "Back", products_path, class: "btn btn-info" %>
   </div>
 </div>
