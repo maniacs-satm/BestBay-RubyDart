@@ -1,21 +1,32 @@
 <style type = "text/css">
     body {background-color: #ffc40d;}
 </style>
+<body>
+<h1><i>Listing products</i></h1>
 
 <div class = "container-fluid">
-  <div class = "row-fluid">
-    <div class = "span2">
-      <div class = "example_content" id = "example_3">
-        <div id = "top_navigation"><%= render_navigation %></div>
-        <div class = "clear_float"></div>  
+
+  <div  class = "row-fluid">
+    <!--div class="hero-unit" style="overflow: auto;  display: table-cell;"-->
+      <div class = "span2 offset5" >
+        <div class = "example_content" id = "example_3">
+          <div id = "top_navigation" style = "background-color: #ffc0cb;">
+             <%=render_navigation%>
+          </div>
+          <div class = "clear_float"></div>
+        </div>
       </div>
-    </div>
+    <!--/div-->
+
+
     <div class = "span10">
       <% @products.each do |product| %>
+
         <% if @category == nil || product.category.id == @category.id then %>
+
           <div class="productIndexDiv">
-            <% if product.image.exists? %>
-                <%= image_tag product.image.url(:thumb), :class => 'productSmallImg' %> </br>
+            <% if product.image.exists? then%>
+                <%= link_to image_tag(product.image.url(:thumb), :class => 'productSmallImg'), { :action => 'show', :id => product.id}%> </br>
             <% end %>
             <p class='title'><%= product.title %></p>
             <p class="price">$<%= product.current_price %> at BestBay</p>
@@ -28,12 +39,13 @@
             <% end %>
             <%= link_to 'Show', product %>
             <% if product.user_id == current_user.id %>
+            <%if days > 0 %>
               <%= link_to 'Edit', edit_product_path(product) %>
+            <% end %>
               <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
-            <br>
             <% if Watchlist.find(:first, :conditions => ["user_id = ? and product_id = ?", current_user.id, product.id]) %>
-              <p>Already in Watchlist</p>
+              Already in Watchlist
             <% elsif product.user_id != current_user.id %>
               <%= link_to "Add to my watch list", :controller => "watchlists",:action => "create", :id => product.id %>
             <% end %>
@@ -43,4 +55,5 @@
     </div>
   </div>
 </div>
+</body>
 

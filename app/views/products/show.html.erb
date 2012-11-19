@@ -1,58 +1,65 @@
 <div id='productTable'>
   <table>
-  <tr>
-    <td id="productImage">
-      <% if @product.image.exists? then %>
-          <%= image_tag @product.image.url(:small), :class => 'productLargeImg'%> </br>
-      <% end %>
-    </td>
-    <td id="productInfo">
-      <p class="title">
-        <b><%= @product.title %></b>
-      </p>
+    <tr>
+      <td id="productImage">
+        <% if @product.image.exists? then %>
+        <%= image_tag @product.image.url(:small), :class => 'productLargeImg'%> </br>
+        <% end %>
+      </td>
+      <td id="productInfo">
+        <p class="title">
+          <b><%= @product.title %></b>
+        </p>
 
-      <p>
-        <b>by:</b>
-        <%= link_to @product.user_name, @productOwner%>
-      </p>
+        <p>
+          <b>by:</b>
+          <%= link_to @product.user_name, @productOwner%>
+        </p>
 
-      <p id="productPrice" class="price">
-        <b>Start price:</b>
-        <%= @product.start_price %>
-      </p>
+        <p id="productPrice" class="price">
+          <b>Start price:</b>
+          <%= @product.start_price %>
+        </p>
 
-      <p id="currentPrice" class="price">
-        <b>Current price:</b>
-        $<%= @product.current_price %>
-      </p>
+        <p id="currentPrice" class="price">
+          <b>Current price:</b>
+          $<%= @product.current_price %>
+        </p>
 
-      <p>
-      <%= form_for @bid, :url => bid_path  do |f| %>
+        <% days = (Date.strptime(@product.bid_until, '%m/%d/%Y') - Date.today).to_i %>
+        <% if days > 0 && signed_in? %>
+        <p>
+          <%= form_for @bid, :url => bid_path  do |f| %>
           <%= f.label :bidding_price %>
           <%= f.text_field :bidding_price %>
           <%= f.submit "Bid", class: "btn btn-danger" %>
+          <% end %>
+        </p>
         <% end %>
-      </p>
 
-      <p>
-        <b>Description:</b>
-        <%= @product.description %>
-      </p>
+        <p>
+          <b>Description:</b>
+          <%= @product.description %>
+        </p>
 
-      <p>
-        <b>Time left:</b>
-        <%= (Date.strptime(@product.bid_until, '%m/%d/%Y') - Date.today).to_i %> days
-      </p>
-      <p>
-        <b>Category:</b>
-        <%= Category.find(@product.category_id).content%>
-      </p>
-    </td>
-  </tr>
-</table>
+        <p>
+          <% if days > 0 %>
+          <b>Time left:</b>
+            <%= (Date.strptime(@product.bid_until, '%m/%d/%Y') - Date.today).to_i %> days
+          <% else %>
+            <b>Bid closed</b>
+          <% end %>
+        </p>
+        <p>
+          <b>Category:</b>
+          <%= Category.find(@product.category_id).content%>
+        </p>
+      </td>
+    </tr>
+  </table>
 
 </div>
-<% if @product.user_id == current_user.id %>
+<% if signed_in? && @product.user_id == current_user.id && days > 0%>
 <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %> |
 <% end %>
 <%= link_to 'Back', products_path, class: "btn btn-info" %>
