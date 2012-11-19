@@ -3,6 +3,16 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
+//#cBox {
+  //position: absolute;
+  //top: 200px;
+  //left: 10px;
+//}
+
+//body {
+  //position: relative;
+//}
+
 img.productLargeImg {
   transition: min-height 2s;
   -moz-transition: min-height 2s; /* Firefox 4 */
@@ -77,7 +87,7 @@ img.productSmallImg:hover {
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 2px;
-  min-height: 1px;
+  min-height: 3px;
 }
 
 

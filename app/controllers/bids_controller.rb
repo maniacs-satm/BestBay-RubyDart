@@ -26,6 +26,7 @@ class BidsController < ApplicationController
           UserMailer.bid_success_confirmation(current_user, @product).deliver
           @product.save
         end
+
         redirect_to :controller => 'products', :action => 'show'
      else
        redirect_to root_url
@@ -33,7 +34,6 @@ class BidsController < ApplicationController
   end
 
   def show
-
   end
 
 end
