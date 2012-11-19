@@ -63,6 +63,8 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     @productOwner = User.find(@product.user_id)
     @bid = Bid.new
+    @reviews = Review.find(:all, :conditions => {:product_id => @product.id})
+    @review = Review.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }
