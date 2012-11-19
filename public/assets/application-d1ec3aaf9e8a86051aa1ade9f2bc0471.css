@@ -2043,7 +2043,7 @@ table .span12 {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/assets/glyphicons-halflings.png);
+  background-image: url(/assets/glyphicons-halflings-ce73c8428d8606e5cc8e4dbb66b33c4f.png);
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -2054,7 +2054,7 @@ table .span12 {
 
 /* line 28, ../../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194@cmucourse/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
 .icon-white {
-  background-image: url(/assets/glyphicons-halflings-white.png);
+  background-image: url(/assets/glyphicons-halflings-white-427bd9263e7d0e1d15c5052261363409.png);
 }
 
 /* line 32, ../../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194@cmucourse/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -5709,7 +5709,7 @@ input, textarea, select, .uneditable-input {
   resize: vertical;
   max-height: 80px;
 }
-/* line 5, ../../app/assets/stylesheets/products.css.scss */
+/* line 16, ../../app/assets/stylesheets/products.css.scss */
 img.productLargeImg {
   transition: min-height 2s;
   -moz-transition: min-height 2s;
@@ -5723,36 +5723,36 @@ img.productLargeImg {
   padding-right: 10px;
 }
 
-/* line 15, ../../app/assets/stylesheets/products.css.scss */
+/* line 26, ../../app/assets/stylesheets/products.css.scss */
 img.productLargeImg:hover {
   min-height: 200px;
 }
 
-/* line 20, ../../app/assets/stylesheets/products.css.scss */
+/* line 31, ../../app/assets/stylesheets/products.css.scss */
 img.productSmallImg {
   border: 1px solid #d3d3d3;
   padding: 0px;
   min-height: 200px;
 }
 
-/* line 26, ../../app/assets/stylesheets/products.css.scss */
+/* line 37, ../../app/assets/stylesheets/products.css.scss */
 img.productSmallImg:hover {
   border: 1px solid #d3d3d3;
   padding: 0px;
   min-height: 200px;
 }
 
-/* line 32, ../../app/assets/stylesheets/products.css.scss */
+/* line 43, ../../app/assets/stylesheets/products.css.scss */
 #productTable tr, td {
   vertical-align: bottom;
 }
 
-/* line 36, ../../app/assets/stylesheets/products.css.scss */
+/* line 47, ../../app/assets/stylesheets/products.css.scss */
 #productTable .price {
   color: #900;
 }
 
-/* line 40, ../../app/assets/stylesheets/products.css.scss */
+/* line 51, ../../app/assets/stylesheets/products.css.scss */
 #productTable .price b {
   font-size: 13px;
   font-family: Georgia;
@@ -5760,14 +5760,14 @@ img.productSmallImg:hover {
   font-weight: normal;
 }
 
-/* line 47, ../../app/assets/stylesheets/products.css.scss */
+/* line 58, ../../app/assets/stylesheets/products.css.scss */
 .title {
   font-size: 1.7em;
   font-weight: normal;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* line 53, ../../app/assets/stylesheets/products.css.scss */
+/* line 64, ../../app/assets/stylesheets/products.css.scss */
 #productTable #currentPrice {
   padding-bottom: 3px;
   font-family: verdana,arial,helvetica,sans-serif;
@@ -5775,7 +5775,7 @@ img.productSmallImg:hover {
   border-bottom: 2px solid #e3e3e3;
 }
 
-/* line 60, ../../app/assets/stylesheets/products.css.scss */
+/* line 71, ../../app/assets/stylesheets/products.css.scss */
 .productIndexDiv {
   display: inline-block;
   width: 200px;
@@ -5788,7 +5788,7 @@ img.productSmallImg:hover {
   vertical-align: top;
 }
 
-/* line 72, ../../app/assets/stylesheets/products.css.scss */
+/* line 83, ../../app/assets/stylesheets/products.css.scss */
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
@@ -5799,14 +5799,14 @@ img.productSmallImg:hover {
   min-height: 3px;
 }
 
-/* line 84, ../../app/assets/stylesheets/products.css.scss */
+/* line 95, ../../app/assets/stylesheets/products.css.scss */
 p.pricePrev {
   color: #969696;
   font-size: 15px;
   text-decoration: line-through;
 }
 
-/* line 90, ../../app/assets/stylesheets/products.css.scss */
+/* line 101, ../../app/assets/stylesheets/products.css.scss */
 .editBox {
   font-size: 20px;
   position: absolute;
@@ -5814,7 +5814,7 @@ p.pricePrev {
   right: 5px;
 }
 
-/* line 97, ../../app/assets/stylesheets/products.css.scss */
+/* line 108, ../../app/assets/stylesheets/products.css.scss */
 p.price {
   font-size: 18px;
   font-family: Georgia;
