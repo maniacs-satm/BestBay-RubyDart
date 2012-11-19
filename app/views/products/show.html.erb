@@ -57,9 +57,43 @@
       </td>
     </tr>
   </table>
-
 </div>
-<% if signed_in? && @product.user_id == current_user.id && days > 0%>
-<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %> |
+<% if @product.user_id == current_user.id && days > 0%>
+  <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %> |
 <% end %>
 <%= link_to 'Back', products_path, class: "btn btn-info" %>
+
+<% if !@reviews.empty? %>
+  <% @reviews.each do |r| %>
+    <hr>
+    <p class='title'><%= r.content %></p>
+      <%#= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
+<% end %>
+
+<hr>
+
+<br>
+<br>
+<%= form_for @review, :url => {:controller => 'reviews', :action => 'create', :id => @product.id } do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this reviewt from being saved:</h2>
+      <ul>
+        <% @review.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= button_tag(:type => 'submit', :class => 'btn') do %>
+      Add Review
+    <% end %>
+  </div>
+<% end %>
+
+
