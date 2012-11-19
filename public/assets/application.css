@@ -5784,11 +5784,10 @@ img.productSmallImg:hover {
   background-color: rgba(235, 235, 235, 0.6);
   padding: 8px;
   margin: 10px;
-  min-height: 437px;
   vertical-align: top;
 }
 
-/* line 72, ../../app/assets/stylesheets/products.css.scss */
+/* line 71, ../../app/assets/stylesheets/products.css.scss */
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
@@ -5799,14 +5798,14 @@ img.productSmallImg:hover {
   min-height: 3px;
 }
 
-/* line 84, ../../app/assets/stylesheets/products.css.scss */
+/* line 83, ../../app/assets/stylesheets/products.css.scss */
 p.pricePrev {
   color: #969696;
   font-size: 15px;
   text-decoration: line-through;
 }
 
-/* line 90, ../../app/assets/stylesheets/products.css.scss */
+/* line 89, ../../app/assets/stylesheets/products.css.scss */
 .editBox {
   font-size: 20px;
   position: absolute;
@@ -5814,7 +5813,7 @@ p.pricePrev {
   right: 5px;
 }
 
-/* line 97, ../../app/assets/stylesheets/products.css.scss */
+/* line 96, ../../app/assets/stylesheets/products.css.scss */
 p.price {
   font-size: 18px;
   font-family: Georgia;
