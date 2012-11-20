@@ -22,8 +22,7 @@ describe Review do
   subject { @review }
 
   it { should respond_to(:content) }
-  it { should respond_to(:from_user_id) }
-  it { should respond_to(:to_user_id) }
+  it { should respond_to(:user_id) }
   it { should respond_to(:product_id) }
   it { should be_valid }
 
@@ -33,12 +32,7 @@ describe Review do
   end
 
   describe "when from_user_id is not present" do
-    before { @review.from_user_id = nil }
-    it { should_not be_valid }
-  end
-
-  describe "when to_user_id is not present" do
-    before { @review.to_user_id = nil }
+    before { @review.user_id = nil }
     it { should_not be_valid }
   end
 

@@ -12,11 +12,10 @@
 #
 
 class Review < ActiveRecord::Base
-  attr_accessible :content, :from_user_id, :product_id, :to_user_id
+  attr_accessible :content, :user_id, :product_id
 
   validates :content,      presence: true
-  validates :from_user_id, presence: true
-  validates :to_user_id,   presence: true
+  validates :user_id,      presence: true
   validates :product_id,   presence: true
 
 end

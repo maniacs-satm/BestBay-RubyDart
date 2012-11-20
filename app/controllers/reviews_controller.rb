@@ -21,11 +21,10 @@ class ReviewsController < ApplicationController
        @review = Review.new(params[:review])
        @id = params[:id]
        @review.product_id = @id
-       @review.from_user_id = current_user.id
-       @review.to_user_id = 1
+       @review.user_id = current_user.id
+       @review.save
 
        flash[:success] = "Successful post review"
-       @review.save
 
        redirect_to :controller => 'products', :action => 'show', :id => @id
      else

@@ -34,8 +34,7 @@ FactoryGirl.define do
   # Review model
   factory :review do
     content        "This is a test review"
-    from_user_id   1
-    to_user_id     2
+    user_id   1
     product_id     1
   end
 
