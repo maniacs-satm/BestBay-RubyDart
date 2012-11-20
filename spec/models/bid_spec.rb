@@ -3,7 +3,6 @@
 # Table name: bids
 #
 #  id            :integer          not null, primary key
-#  bidding_time  :datetime
 #  bidding_price :float
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
@@ -20,7 +19,6 @@ describe Bid do
 
   subject { @bid }
 
-  it { should respond_to(:bidding_time) }
   it { should respond_to(:bidding_price) }
   it { should respond_to(:user_id) }
   it { should respond_to(:product_id) }
@@ -28,11 +26,6 @@ describe Bid do
 
   describe "when bidding_price is not present" do
     before { @bid.bidding_price = nil }
-    it { should_not be_valid }
-  end
-
-  describe "when bidding_time is not present" do
-    before { @bid.bidding_time = nil }
     it { should_not be_valid }
   end
 
