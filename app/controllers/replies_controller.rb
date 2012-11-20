@@ -1,21 +1,21 @@
 ##
-# This is the controller for review model. All features and methods relates to reviews are listed here.
+# This is the controller for reply model. All features and methods relates to replies are listed here.
 #
 #
 class RepliesController < ApplicationController
-  # This method will create a bid
+  
+  def new
+  end
+  # This method will create a reply
   # It requires the user to log in
   #
   # * *Handles* :
-  #   - GET '/bids/:id'
+  #   - GET '/replies/:id'
   # * *Redirects* :
   #   - products#show -> if the user has signed in already
   # * *Redirects* :
   #   - root_url(home) -> if the user has not signed in yet
   #
-  def new
-  end
-  
   def create
      if signed_in?
        @reply = Reply.new(params[:reply])

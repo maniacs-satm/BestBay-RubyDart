@@ -26,11 +26,15 @@ FactoryGirl.define do
     category_id    1
     bid_until      "12/28/2012"
   end
-
+  # Category model
   factory :category do
     content "Art"
   end
-
+  # Watchlist model
+  factory :watchlist do
+    product_id 1
+    user_id    1
+  end
   # Review model
   factory :review do
     content        "This is a test review"

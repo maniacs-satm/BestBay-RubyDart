@@ -3,18 +3,18 @@
 #
 #
 class ReviewsController < ApplicationController
-  # This method will create a bid
+  def new
+  end
+  # This method will create a review
   # It requires the user to log in
   #
   # * *Handles* :
-  #   - GET '/bids/:id'
+  #   - POST '/reviews/:id'
   # * *Redirects* :
   #   - products#show -> if the user has signed in already
   # * *Redirects* :
   #   - root_url(home) -> if the user has not signed in yet
   #
-  def new
-  end
   
   def create
      if signed_in?

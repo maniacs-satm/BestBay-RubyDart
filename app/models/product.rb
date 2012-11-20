@@ -36,7 +36,7 @@ class Product < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
   has_many   :bids
-  has_many   :watchlists
+  has_many   :watchlists, dependent: :destroy
 
   validates :title, presence: true, 
             length: { maximum: 200,
