@@ -38,6 +38,13 @@ FactoryGirl.define do
     to_user_id     2
     product_id     1
   end
+
+  # Reply model
+  factory :reply do
+    content       "This is a test review"
+    user_id       1
+    review_id     1
+  end
 end
 
 
