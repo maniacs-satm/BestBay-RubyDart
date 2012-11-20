@@ -65,6 +65,7 @@ class ProductsController < ApplicationController
     @bid = Bid.new
     @reviews = Review.find(:all, :conditions => {:product_id => @product.id})
     @review = Review.new
+    @reply = Reply.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }

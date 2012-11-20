@@ -67,7 +67,35 @@
   <% @reviews.each do |r| %>
     <hr>
     <p class='title'><%= r.content %></p>
-      <%#= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    <% @replies = Reply.find(:all, :conditions => {:review_id => r.id}) %>
+    <% unless @replies.empty? %>
+      <% @replies.each do |rp| %>
+        <hr>
+        <p align='right'><%= rp.content %></p>
+      <% end %>
+    <% end %>
+
+    <%= form_for @reply, :url => {:controller => 'replies', :action => 'create', :id => r.id } do |f| %>
+      <% if @reply.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
+          <ul>
+            <% @reply.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= f.text_area :content %>
+      </div>
+      <div class="actions">
+        <%= button_tag(:type => 'submit', :class => 'btn') do %>
+          Add Reply
+        <% end %>
+      </div>
+    <% end %>
   <% end %>
 <% end %>
 
