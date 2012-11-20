@@ -2,13 +2,12 @@
 #
 # Table name: reviews
 #
-#  id           :integer          not null, primary key
-#  content      :string(255)
-#  from_user_id :integer
-#  to_user_id   :integer
-#  product_id   :integer
-#  created_at   :datetime         not null
-#  updated_at   :datetime         not null
+#  id         :integer          not null, primary key
+#  content    :string(255)
+#  user_id    :integer
+#  product_id :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
 #
 
 require 'spec_helper'
