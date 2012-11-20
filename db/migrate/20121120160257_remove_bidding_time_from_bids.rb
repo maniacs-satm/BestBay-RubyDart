@@ -4,6 +4,6 @@ class RemoveBiddingTimeFromBids < ActiveRecord::Migration
   end
 
   def down
-    add_column :bids, :bidding_time, datetime
+    add_column :bids, :bidding_time, :datetime
   end
 end
