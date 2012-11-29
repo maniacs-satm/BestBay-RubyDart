@@ -17,6 +17,8 @@ BestBay::Application.routes.draw do
   match '/reviews/create/:id', to: 'reviews#create', as: 'create_review_path'
   match '/bidding-history', to: 'bids#list'
   match '/replies/create/:id', to: 'replies#create', as: 'create_reply_path'
+  match 'users/delete/:id', to:'users#delete'
+
 
   resources :products
   resources :users
