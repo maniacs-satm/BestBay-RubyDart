@@ -9,7 +9,6 @@
   <h1><i>Listing products</i></h1>
   <% @products.each do |product| %>
     <div class="productIndexDiv">
-      <%= will_paginate%>
       <% if product.image.exists? then %>
         <%= image_tag product.image.url(:thumb), :class => 'productSmallImg' %> </br>
       <% end %>
