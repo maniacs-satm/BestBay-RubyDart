@@ -1,0 +1,77 @@
+<div id='reviewListDiv'>
+  <div id='reviewListHeader'>Product Reviews</div>
+  <% if !@reviews.empty? %>
+    <% @reviews.each do |r| %>
+      <div class='reviewDiv'>
+        <div class='reviewCreatedAt'>
+          <%= r.created_at.strftime("Review created: %m/%d/%Y") %>
+        </div>
+        <div class='reviewCreatedBy'>
+          <% @r_onwer = User.find(r.user_id) %>
+          Reviewed by: <%= link_to @r_onwer.name, @r_onwer%>
+        </div>
+        <div class='reviewContent'>
+          <%= r.content %>
+        </div>
+        <% @replies = Reply.find(:all, :conditions => {:review_id => r.id}) %>
+        <% unless @replies.empty? %>
+          <% @replies.each do |rp| %>
+            <div class='replyDiv'>
+              <div class='replyContentDiv'>
+                <%= rp.content %>
+              </div>
+              <div class='replyInfoDiv'>
+                <% @rp_onwer = User.find(rp.user_id) %>
+                Replied by: <%= link_to @rp_onwer.name, @rp_onwer%> <%= r.created_at.strftime(": %m/%d/%Y") %>
+              </div> 
+            </div>
+          <% end %>
+        <% end %>
+
+        <div class='replyInputDiv'>
+          <%= form_for @reply, :url => {:controller => 'replies', :action => 'create', :id => r.id } do |f| %>
+            <% if @reply.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
+                <ul><% @reply.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="field inputContent">
+              <%= f.text_area :content, :rows => 1 %>
+            </div> 
+            <div class="actions">
+              <%= button_tag(:type => 'submit', :class => 'btn btn-info') do %>
+                Add Reply
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+    <% end %>
+  <% end %>
+</div>
+
+<%= form_for @review, :url => {:controller => 'reviews', :action => 'create', :id => @product.id } do |f| %>
+  <% if @review.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this reviewt from being saved:</h2>
+      <ul>
+        <% @review.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field reviewInputBox">
+    <%= f.text_area :content, :rows => 5 %>
+  </div>
+
+  <div class="actions">
+    <%= button_tag(:type => 'submit', :class => 'btn btn-info') do %>
+      Add Review
+    <% end %>
+  </div>
+<% end %>
