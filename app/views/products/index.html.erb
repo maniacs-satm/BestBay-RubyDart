@@ -9,22 +9,27 @@
   <div  class = "row-fluid">
     <!--div class="hero-unit" style="overflow: auto;  display: table-cell;"-->
       <div class = "span2 offset5" >
+
         <div class = "example_content" id = "example_3">
-          <div id = "top_navigation" style = "background-color: #ffc0cb;">
+
+          <div  id = "top_navigation" style = "background-color: #dcdcdc;">
              <%=render_navigation%>
           </div>
+
           <div class = "clear_float"></div>
-        </div>
+         </div>
+
       </div>
     <!--/div-->
 
 
-    <div class = "span10">
-      <%= will_paginate @products %>
+    <div class = "span10" >
+      <div class="pagination pagination-centered">
+      <%= will_paginate %>
+      </div>
       <% @products.each do |product| %>
 
         <% if @category == nil || product.category.id == @category.id then %>
-
           <div class="productIndexDiv">
             <% if product.image.exists? then%>
                 <%= link_to image_tag(product.image.url(:thumb), :class => 'productSmallImg'), { :action => 'show', :id => product.id}%> </br>
@@ -53,7 +58,10 @@
           </div>
         <% end %>
       <% end %>
-      <%= will_paginate @products %>
+
+      <div class="pagination pagination-centered">
+        <%= will_paginate %>
+      </div>
     </div>
   </div>
 </div>
