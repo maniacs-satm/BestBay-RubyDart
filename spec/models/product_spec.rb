@@ -25,7 +25,9 @@ describe Product do
     before do
       @product = FactoryGirl.create(:product)
     end
-
+    let!(:watchlist) do
+      FactoryGirl.create(:watchlist, :product_id => @product.id, :user_id => @product.user_id )
+    end
     subject { @product }
 
     # test columns
@@ -61,5 +63,13 @@ describe Product do
     describe "when start_price is not present" do
       before { @product.start_price = '' }
       it { should_not be_valid }
+    end
+    it "should destroy associated watchlists" do
+      watchlists = @product.watchlists.dup
+      @product.destroy
+      watchlists.should_not be_empty
+      watchlists.each do |w|
+        Watchlist.find_by_id(w.id).should be_nil
+      end
     end
   end

@@ -11,10 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121119183413) do
+ActiveRecord::Schema.define(:version => 20121120185449) do
 
   create_table "bids", :force => true do |t|
-    t.datetime "bidding_time"
     t.float    "bidding_price"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
@@ -51,13 +50,20 @@ ActiveRecord::Schema.define(:version => 20121119183413) do
     t.integer "user_id"
   end
 
+  create_table "replies", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "review_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "reviews", :force => true do |t|
     t.string   "content"
-    t.integer  "from_user_id"
-    t.integer  "to_user_id"
+    t.integer  "user_id"
     t.integer  "product_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "users", :force => true do |t|

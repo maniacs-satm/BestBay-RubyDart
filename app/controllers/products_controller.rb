@@ -15,7 +15,9 @@ class ProductsController < ApplicationController
   #
   def index
     if signed_in?
-      @products =Product.all
+      #@products =Product.all
+      @products = Product.paginate(:page => params[:page], :per_page => 6)
+
       #@products.sort_by!{|a, b| a[:id] <=> b[:id]}
       @search = Hash.new
       if params[:category_id] != nil
@@ -65,6 +67,7 @@ class ProductsController < ApplicationController
     @bid = Bid.new
     @reviews = Review.find(:all, :conditions => {:product_id => @product.id})
     @review = Review.new
+    @reply = Reply.new
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @product }

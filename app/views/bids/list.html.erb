@@ -1,0 +1,37 @@
+<% provide(:title, 'Bidding history') %>
+<h1>My bidding history</h1>
+
+<% unless @history.empty? %>
+  <table id="ver-zebra">
+    <colgroup>
+      <col class="vzebra-even" />
+      <col class="vzebra-odd" />
+      <col class="vzebra-even" />
+      <col class="vzebra-odd" />
+      <col class="vzebra-even" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col" width="1%">No</th>
+        <th scope="col" width="30%">Time</th>
+        <th scope="col" width="30%">Product</th>
+        <th scope="col" width="30%">Bidding Price</th>
+        <th scope="col" width="9%">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @history.each_with_index do |h, id| %>
+        <% @p = Product.find(:first, :conditions => {:id => h.product_id}) %>
+        <tr>
+          <td><%= id+1 %></td>
+          <td><%= h.created_at.to_s(:create_time) %></td>
+          <td class="entry-edit"><%= link_to "#{@p.title}", product_path(h.product_id) %></td>
+          <td><%= h.bidding_price %></td>
+          <td><%=  %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>You don't have any bids yet.</p>
+<% end %>

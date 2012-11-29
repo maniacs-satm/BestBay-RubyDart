@@ -11,7 +11,6 @@ FactoryGirl.define do
 
   # Bid model
   factory :bid do
-    bidding_time   "2012-11-08 05:03:35"
     bidding_price  15
     user_id        1
     product_id     1
@@ -27,18 +26,29 @@ FactoryGirl.define do
     category_id    1
     bid_until      "12/28/2012"
   end
-
+  # Category model
   factory :category do
     content "Art"
   end
-
+  # Watchlist model
+  factory :watchlist do
+    product_id 1
+    user_id    1
+  end
   # Review model
   factory :review do
     content        "This is a test review"
-    from_user_id   1
-    to_user_id     2
+    user_id   1
     product_id     1
   end
+
+  # Reply model
+  factory :reply do
+    content       "This is a test review"
+    user_id       1
+    review_id     1
+  end
+
 end
 
 
