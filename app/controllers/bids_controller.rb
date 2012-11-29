@@ -22,6 +22,9 @@ class BidsController < ApplicationController
           flash[:notice] = "Invalid bid"
         else
           flash[:success] = "Successful bid"
+          @bid.user_id = current_user.id
+          @bid.product_id = @product.id
+          @bid.save
           @product.current_price = @bid.bidding_price
           UserMailer.bid_success_confirmation(current_user, @product).deliver
           @product.save
@@ -34,6 +37,10 @@ class BidsController < ApplicationController
   end
 
   def show
+  end
+
+  def list
+    @history = Bid.find(:all, :conditions => {:user_id => current_user.id})
   end
 
 end

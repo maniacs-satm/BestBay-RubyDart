@@ -1,111 +1,115 @@
 <div id='productTable'>
-  <table>
-    <tr>
-      <td id="productImage">
-        <% if @product.image.exists? then %>
-        <%= image_tag @product.image.url(:small), :class => 'productLargeImg'%> </br>
+<table>
+  <tr>
+    <td id="productImage">
+      <% if @product.image.exists? then %>
+      <%= image_tag @product.image.url(:small), :class => 'productLargeImg'%> </br>
+      <% end %>
+    </td>
+    <td id="productInfo">
+      <p class="title">
+        <b><%= @product.title %></b>
+      </p>
+
+      <p>
+        <b>by:</b>
+        <%= link_to @product.user_name, @productOwner%>
+      </p>
+
+      <p id="productPrice" class="price">
+        <b>Start price:</b>
+        <%= @product.start_price %>
+      </p>
+
+      <p id="currentPrice" class="price">
+        <b>Current price:</b>
+        $<%= @product.current_price %>
+      </p>
+
+      <% days = (Date.strptime(@product.bid_until, '%m/%d/%Y') - Date.today).to_i %>
+      <% if days > 0 && signed_in? %>
+      <p>
+        <%= form_for @bid, :url => bid_path  do |f| %>
+        <%= f.label :bidding_price %>
+        <%= f.text_field :bidding_price %>
+        <%= f.submit "Bid", class: "btn btn-danger" %>
         <% end %>
-      </td>
-      <td id="productInfo">
-        <p class="title">
-          <b><%= @product.title %></b>
-        </p>
+      </p>
+      <% end %>
 
-        <p>
-          <b>by:</b>
-          <%= link_to @product.user_name, @productOwner%>
-        </p>
+      <p>
+        <b>Description:</b>
+        <%= @product.description %>
+      </p>
 
-        <p id="productPrice" class="price">
-          <b>Start price:</b>
-          <%= @product.start_price %>
-        </p>
-
-        <p id="currentPrice" class="price">
-          <b>Current price:</b>
-          $<%= @product.current_price %>
-        </p>
-
-        <% days = (Date.strptime(@product.bid_until, '%m/%d/%Y') - Date.today).to_i %>
-        <% if days > 0 && signed_in? %>
-        <p>
-          <%= form_for @bid, :url => bid_path  do |f| %>
-          <%= f.label :bidding_price %>
-          <%= f.text_field :bidding_price %>
-          <%= f.submit "Bid", class: "btn btn-danger" %>
-          <% end %>
-        </p>
+      <p>
+        <% if days > 0 %>
+        <b>Time left:</b>
+          <%= (Date.strptime(@product.bid_until, '%m/%d/%Y') - Date.today).to_i %> days
+        <% else %>
+          <b>Bid closed</b>
         <% end %>
-
-        <p>
-          <b>Description:</b>
-          <%= @product.description %>
-        </p>
-
-        <p>
-          <% if days > 0 %>
-          <b>Time left:</b>
-            <%= (Date.strptime(@product.bid_until, '%m/%d/%Y') - Date.today).to_i %> days
-          <% else %>
-            <b>Bid closed</b>
-          <% end %>
-        </p>
-        <p>
-          <b>Category:</b>
-          <%= Category.find(@product.category_id).content%>
-        </p>
-      </td>
-    </tr>
-  </table>
+      </p>
+      <p>
+        <b>Category:</b>
+        <%= Category.find(@product.category_id).content%>
+      </p>
+    </td>
+  </tr>
+</table>
 </div>
 <% if @product.user_id == current_user.id && days > 0%>
-  <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %> |
+<%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %> |
 <% end %>
 <%= link_to 'Back', products_path, class: "btn btn-info" %>
 
 <div id='reviewListDiv'>
-<div id='reviewListHeader'>
-  Product Reviews
-</div>
-<% if !@reviews.empty? %>
+  <div id='reviewListHeader'>
+    Product Reviews
+  </div>
+  <% if !@reviews.empty? %>
   <% @reviews.each do |r| %>
     <div class='reviewDiv'>
       <div class='reviewCreatedAt'>
-      <%= r.created_at.strftime("Review created: %m/%d/%Y") %>
+        <%= r.created_at.strftime("Review created: %m/%d/%Y") %>
       </div>
       <div class='reviewCreatedBy'>
-      <% @r_onwer = User.find(r.from_user_id) %>
-      by: <%= link_to @r_onwer.name, @r_owner%>
+        <% @r_onwer = User.find(r.from_user_id) %>
+        by: <%= link_to @r_onwer.name, @r_owner%>
       </div>
       <div class='reviewContent'>
         <%= r.content %>
       </div>
     </div>
-  <% end %>
-<% end %>
 
-<br>
-<br>
-<%= form_for @review, :url => {:controller => 'reviews', :action => 'create', :id => @product.id } do |f| %>
-  <% if @review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@review.errors.count, "error") %> prohibited this reviewt from being saved:</h2>
-      <ul>
-        <% @review.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
+  <% @replies = Reply.find(:all, :conditions => {:review_id => r.id}) %>
+  <% unless @replies.empty? %>
+    <% @replies.each do |rp| %>
+      <hr>
+      <p align='right'><%= rp.content %></p>
+    <% end %>
+  <% end %>
+
+  <%= form_for @reply, :url => {:controller => 'replies', :action => 'create', :id => r.id } do |f| %>
+    <% if @reply.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@reply.errors.count, "error") %> prohibited this reply from being saved:</h2>
+        <ul>
+          <% @reply.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.text_area :content %>
+    </div>
+    <div class="actions">
+      <%= button_tag(:type => 'submit', :class => 'btn') do %>
+        Add Reply
+      <% end %>
     </div>
   <% end %>
-  <div class="field reviewInputBox">
-    <%= f.text_area :content, :rows => 5%>
-  </div>
-
-  <div class="actions">
-    <%= button_tag(:type => 'submit', :class => 'btn') do %>
-      Add Review
-    <% end %>
-  </div>
 </div>
 <% end %>
 
