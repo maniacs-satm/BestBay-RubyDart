@@ -11,11 +11,9 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(:version => 20121120185449) do
-=======
+
 ActiveRecord::Schema.define(:version => 20121129002021) do
->>>>>>> 927ec7209ba834e5072db5a3550286e077071201
+
 
   create_table "bids", :force => true do |t|
     t.float    "bidding_price"
