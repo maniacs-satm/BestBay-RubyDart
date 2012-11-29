@@ -11,9 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
 ActiveRecord::Schema.define(:version => 20121129002021) do
-
 
   create_table "bids", :force => true do |t|
     t.float    "bidding_price"
@@ -47,12 +45,9 @@ ActiveRecord::Schema.define(:version => 20121129002021) do
     t.integer  "category_id"
   end
 
-  create_table "replies", :force => true do |t|
-    t.string   "content"
-    t.integer  "user_id"
-    t.integer  "review_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+  create_table "products_users", :id => false, :force => true do |t|
+    t.integer "product_id"
+    t.integer "user_id"
   end
 
   create_table "replies", :force => true do |t|
