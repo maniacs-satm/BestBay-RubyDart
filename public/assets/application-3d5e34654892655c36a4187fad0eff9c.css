@@ -2043,7 +2043,7 @@ table .span12 {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/assets/glyphicons-halflings.png);
+  background-image: url(/assets/glyphicons-halflings-ce73c8428d8606e5cc8e4dbb66b33c4f.png);
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -2054,7 +2054,7 @@ table .span12 {
 
 /* line 28, ../../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194@cmucourse/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
 .icon-white {
-  background-image: url(/assets/glyphicons-halflings-white.png);
+  background-image: url(/assets/glyphicons-halflings-white-427bd9263e7d0e1d15c5052261363409.png);
 }
 
 /* line 32, ../../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194@cmucourse/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -5906,18 +5906,17 @@ div.reviewCreatedBy {
 div.reviewContent {
   padding: 10px;
   line-height: 20px;
-  border-bottom: 2px solid #F2721E;
+  border-bottom: 1px solid #F2721E;
   margin-botton: 20px;
-  font-size: 17px;
 }
 
-/* line 122, ../../app/assets/stylesheets/products.css.scss */
+/* line 121, ../../app/assets/stylesheets/products.css.scss */
 div.reviewCreatedAt {
   float: right;
   color: #666;
 }
 
-/* line 127, ../../app/assets/stylesheets/products.css.scss */
+/* line 126, ../../app/assets/stylesheets/products.css.scss */
 #reviewListHeader {
   border-bottom: 5px solid #F2721E;
   padding-bottom: 12px;
@@ -5926,59 +5925,11 @@ div.reviewCreatedAt {
   font-weight: bold;
 }
 
-/* line 135, ../../app/assets/stylesheets/products.css.scss */
+/* line 134, ../../app/assets/stylesheets/products.css.scss */
 #reviewListDiv {
   margin-top: 40px;
   border: 1px solid #A4A4A4;
   padding: 20px;
-}
-
-/* line 141, ../../app/assets/stylesheets/products.css.scss */
-div.reviewDiv {
-  border-bottom: 3px solid #F2721E;
-}
-
-/* line 145, ../../app/assets/stylesheets/products.css.scss */
-div.replyDiv {
-  padding: 10px;
-  margin-top: 5px;
-  padding-bottom: 15px;
-}
-
-/* line 150, ../../app/assets/stylesheets/products.css.scss */
-div.replyInfoDiv {
-  float: right;
-  border-right: 1px solid #F2721E;
-  border-bottom: 1px solid #F2721E;
-  padding: 3px;
-}
-
-/* line 157, ../../app/assets/stylesheets/products.css.scss */
-div.replyContentDiv {
-  border-right: 1px solid #F2721E;
-  padding: 3px;
-}
-
-/* line 161, ../../app/assets/stylesheets/products.css.scss */
-textarea {
-  margin-top: 3px;
-}
-
-/* line 165, ../../app/assets/stylesheets/products.css.scss */
-div.replyButton {
-  position: absolute;
-  top: 20%;
-  right: 5px;
-}
-
-/* line 171, ../../app/assets/stylesheets/products.css.scss */
-div.inputContent {
-  width: 90%;
-}
-
-/* line 175, ../../app/assets/stylesheets/products.css.scss */
-div.replyInputDiv {
-  position: relative;
 }
 /* line 1, ../../app/assets/stylesheets/scaffolds.css.scss */
 body {

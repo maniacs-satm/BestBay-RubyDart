@@ -2043,7 +2043,7 @@ table .span12 {
   *margin-right: .3em;
   line-height: 14px;
   vertical-align: text-top;
-  background-image: url(/assets/glyphicons-halflings.png);
+  background-image: url(/assets/glyphicons-halflings-ce73c8428d8606e5cc8e4dbb66b33c4f.png);
   background-position: 14px 14px;
   background-repeat: no-repeat;
 }
@@ -2054,7 +2054,7 @@ table .span12 {
 
 /* line 28, ../../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194@cmucourse/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
 .icon-white {
-  background-image: url(/assets/glyphicons-halflings-white.png);
+  background-image: url(/assets/glyphicons-halflings-white-427bd9263e7d0e1d15c5052261363409.png);
 }
 
 /* line 32, ../../../../../../../../../usr/local/rvm/gems/ruby-1.9.3-p194@cmucourse/gems/bootstrap-sass-2.0.4.0/vendor/assets/stylesheets/bootstrap/_sprites.scss */
@@ -5709,74 +5709,6 @@ input, textarea, select, .uneditable-input {
   resize: vertical;
   max-height: 80px;
 }
-
-/* table */
-/* line 220, ../../app/assets/stylesheets/custom.css.scss */
-#ver-zebra {
-  font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
-  font-size: 12px;
-  margin: 45px auto;
-  width: 80%;
-  text-align: left;
-  border-collapse: collapse;
-}
-
-/* line 229, ../../app/assets/stylesheets/custom.css.scss */
-#ver-zebra th {
-  font-size: 14px;
-  font-weight: normal;
-  padding: 12px 15px;
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
-  color: #039;
-}
-
-/* line 238, ../../app/assets/stylesheets/custom.css.scss */
-#ver-zebra td {
-  padding: 8px 15px;
-  border-right: 1px solid #fff;
-  border-left: 1px solid #fff;
-  color: #669;
-}
-
-/* line 245, ../../app/assets/stylesheets/custom.css.scss */
-.vzebra-odd {
-  background: #eff2ff;
-}
-
-/* line 249, ../../app/assets/stylesheets/custom.css.scss */
-.vzebra-even {
-  background: #e8edff;
-}
-
-/* line 253, ../../app/assets/stylesheets/custom.css.scss */
-.vzebra-hidden td td:hover {
-  background: transparent;
-}
-
-/* line 257, ../../app/assets/stylesheets/custom.css.scss */
-#ver-zebra #vzebra-adventure, #ver-zebra #vzebra-children {
-  background: #d0dafd;
-  border-bottom: 1px solid #c8d4fd;
-}
-
-/* line 261, ../../app/assets/stylesheets/custom.css.scss */
-#ver-zebra #vzebra-comedy, #ver-zebra #vzebra-action {
-  background: #dce4ff;
-  border-bottom: 1px solid #d6dfff;
-}
-
-/* line 265, ../../app/assets/stylesheets/custom.css.scss */
-#ver-zebra tr:hover td {
-  color: #339;
-  background: #d0dafd;
-}
-
-/* line 269, ../../app/assets/stylesheets/custom.css.scss */
-#ver-zebra .entry-edit a:hover {
-  color: #2E2EFE;
-  background: transparent;
-}
 /* line 5, ../../app/assets/stylesheets/products.css.scss */
 img.productLargeImg {
   transition: min-height 2s;
@@ -5891,94 +5823,8 @@ p.price {
 }
 
 /* line 104, ../../app/assets/stylesheets/products.css.scss */
-#review_content {
+review_content {
   height: 100px;
-}
-
-/* line 108, ../../app/assets/stylesheets/products.css.scss */
-div.reviewCreatedBy {
-  color: #F2721E;
-  font-weight: bold;
-  line-height: 20px;
-}
-
-/* line 114, ../../app/assets/stylesheets/products.css.scss */
-div.reviewContent {
-  padding: 10px;
-  line-height: 20px;
-  border-bottom: 2px solid #F2721E;
-  margin-botton: 20px;
-  font-size: 17px;
-}
-
-/* line 122, ../../app/assets/stylesheets/products.css.scss */
-div.reviewCreatedAt {
-  float: right;
-  color: #666;
-}
-
-/* line 127, ../../app/assets/stylesheets/products.css.scss */
-#reviewListHeader {
-  border-bottom: 5px solid #F2721E;
-  padding-bottom: 12px;
-  font-size: 17px;
-  font-family: Trebuchet,"Trebuchet MS";
-  font-weight: bold;
-}
-
-/* line 135, ../../app/assets/stylesheets/products.css.scss */
-#reviewListDiv {
-  margin-top: 40px;
-  border: 1px solid #A4A4A4;
-  padding: 20px;
-}
-
-/* line 141, ../../app/assets/stylesheets/products.css.scss */
-div.reviewDiv {
-  border-bottom: 3px solid #F2721E;
-}
-
-/* line 145, ../../app/assets/stylesheets/products.css.scss */
-div.replyDiv {
-  padding: 10px;
-  margin-top: 5px;
-  padding-bottom: 15px;
-}
-
-/* line 150, ../../app/assets/stylesheets/products.css.scss */
-div.replyInfoDiv {
-  float: right;
-  border-right: 1px solid #F2721E;
-  border-bottom: 1px solid #F2721E;
-  padding: 3px;
-}
-
-/* line 157, ../../app/assets/stylesheets/products.css.scss */
-div.replyContentDiv {
-  border-right: 1px solid #F2721E;
-  padding: 3px;
-}
-
-/* line 161, ../../app/assets/stylesheets/products.css.scss */
-textarea {
-  margin-top: 3px;
-}
-
-/* line 165, ../../app/assets/stylesheets/products.css.scss */
-div.replyButton {
-  position: absolute;
-  top: 20%;
-  right: 5px;
-}
-
-/* line 171, ../../app/assets/stylesheets/products.css.scss */
-div.inputContent {
-  width: 90%;
-}
-
-/* line 175, ../../app/assets/stylesheets/products.css.scss */
-div.replyInputDiv {
-  position: relative;
 }
 /* line 1, ../../app/assets/stylesheets/scaffolds.css.scss */
 body {
