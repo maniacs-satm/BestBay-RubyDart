@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20121120185449) do
+=======
+ActiveRecord::Schema.define(:version => 20121129002021) do
+>>>>>>> 927ec7209ba834e5072db5a3550286e077071201
 
   create_table "bids", :force => true do |t|
     t.float    "bidding_price"
@@ -45,9 +49,12 @@ ActiveRecord::Schema.define(:version => 20121120185449) do
     t.integer  "category_id"
   end
 
-  create_table "products_users", :id => false, :force => true do |t|
-    t.integer "product_id"
-    t.integer "user_id"
+  create_table "replies", :force => true do |t|
+    t.string   "content"
+    t.integer  "user_id"
+    t.integer  "review_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "replies", :force => true do |t|
@@ -69,10 +76,11 @@ ActiveRecord::Schema.define(:version => 20121120185449) do
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                         :null => false
+    t.datetime "updated_at",                         :null => false
     t.string   "password_digest"
     t.string   "remember_token"
+    t.boolean  "admin",           :default => false
   end
 
   add_index "users", ["remember_token"], :name => "index_users_on_remember_token"

@@ -3,6 +3,7 @@
 <div class = "container-fluid">
   <div  class = "row-fluid">
       <div class = "span2 offset5" >
+
          <div class = "example_content" id = "example_3">
             <div  id = "top_navigation">
                 <div class="navbar-inner categorylist frame">
@@ -12,11 +13,13 @@
             <div class = "clear_float"></div>
          </div>
       </div>
-    <!--/div-->
-      <div class = "span10 offset5" >
-        <!--div class="pagination pagination-centered"-->
-            <!--%= will_paginate %-->
-        <!--/div-->
+
+
+
+    <div class = "span10" >
+      <div class="pagination pagination-centered">
+      <%= will_paginate %>
+      </div>
       <% @products.each do |product| %>
 
         <% if @category == nil || product.category.id == @category.id then %>
@@ -48,10 +51,9 @@
           </div>
         <% end %>
       <% end %>
-
-      <!--div class="pagination pagination-centered"-->
-        <!--%= will_paginate %-->
-      <!--/div-->
+      <div class="pagination pagination-centered">
+        <%= will_paginate %>
+      </div>
     </div>
   </div>
 </div>

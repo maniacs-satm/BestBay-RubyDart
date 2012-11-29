@@ -1,0 +1,15 @@
+<% provide(:title, 'All Users') %>
+
+<h1>List All Users</h1>
+<ul class = "row">
+  <%(@users.size).times do |i| %>
+    <p>
+      <% if @users[i] != nil%>
+        <b><%= @users[i].name%></b>
+        <% if @users[i] != current_user%>
+          <%= link_to "delete",:controller=> "users", :action=> "delete", :id => @users[i].id %>
+        <% end %>
+      <% end %>  
+    </p>
+  <% end %>
+</ul>

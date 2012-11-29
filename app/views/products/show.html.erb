@@ -58,9 +58,11 @@
   </tr>
 </table>
 </div>
+
 <% if @product.user_id == current_user.id && days > 0%>
 <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %> |
 <% end %>
+<<<<<<< HEAD
  <%= link_to 'Back', products_path, class: "btn btn-info" %>
 
 <div id='reviewListDiv'>
@@ -160,4 +162,9 @@
   </div>
  <% end %>
 </div>
+=======
 
+<%= link_to 'Back', products_path, class: "btn btn-info" %>
+>>>>>>> 927ec7209ba834e5072db5a3550286e077071201
+
+<%= render "review_form" %>

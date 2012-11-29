@@ -5,6 +5,7 @@
 class UsersController < ApplicationController
   before_filter :signed_in_user, only: [:edit, :update]
   before_filter :correct_user,   only: [:edit, :update]
+
 # This method will new a user
   #
   # * *Handles* :
@@ -13,6 +14,7 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
 # This method will create a user
   #
   # * *Handles* :
@@ -34,10 +36,44 @@ class UsersController < ApplicationController
     end
   end
 
+# This method will show a user
+  #
+  # * *Handles* :
+  #   - GET /users/:id
+  #
   def show
-
   end
-# This method will delete a user
+
+# *This method will index all users for administrator*
+  #
+  # * *Handles* :
+  #   - GET /users
+  #
+ def index
+   if (current_user.admin)
+       @users = User.all
+   else
+      redirect_to root_path
+   end
+ end
+
+# This method will delete a user for administrator
+  #
+  # * *Handles* :
+  #   - GET /users/delete/:id
+  #
+ def delete
+   if (current_user.admin)
+       user = User.find(params[:id])
+       user.destroy
+       @users = User.all
+       render 'index'
+    else
+      redirect_to root_path
+    end  
+ end
+
+# This method will redirect user to home page
   #
   # * *Handles* :
   #   - DELETE /users/1
@@ -50,6 +86,7 @@ class UsersController < ApplicationController
 
   def edit
   end
+
 # This method will update a user
   #
   # * *Handles* :
@@ -70,18 +107,19 @@ class UsersController < ApplicationController
     end
   end
 
-  private
 # This method will check whether a user is signed in
   #
   # * *Redirects* :
   #   - signin_url -> if not signed in
   #
+  private
   def signed_in_user
     unless signed_in?
       store_location
       redirect_to signin_url, notice: "Please sign in."
     end
   end
+
 # This method will check whether a user is the correct user
   #
   # * *Redirects* :
