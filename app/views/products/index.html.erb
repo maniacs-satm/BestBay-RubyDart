@@ -20,6 +20,7 @@
 
 
     <div class = "span10">
+      <%= will_paginate @products %>
       <% @products.each do |product| %>
 
         <% if @category == nil || product.category.id == @category.id then %>
@@ -52,6 +53,7 @@
           </div>
         <% end %>
       <% end %>
+      <%= will_paginate @products %>
     </div>
   </div>
 </div>

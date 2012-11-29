@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.7'
 gem 'bootstrap-sass', '2.0.4'
 gem 'bcrypt-ruby', '3.0.1'
+gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate', '0.0.6'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -36,7 +39,7 @@ gem 'factory_girl_rails'
 gem 'rspec-rails' 
 gem 'devise' 
 gem 'paperclip'
-gem 'pg'
+#gem 'pg'
 gem 'aws-sdk'
 gem 'simple-navigation', '~> 3.9.0'
 gem 'haml', '~> 3.1.7'
