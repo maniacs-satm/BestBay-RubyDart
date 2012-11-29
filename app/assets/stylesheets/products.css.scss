@@ -114,8 +114,9 @@ div.reviewCreatedBy {
 div.reviewContent {
   padding: 10px;
   line-height: 20px;
-  border-bottom: 1px solid #F2721E;
+  border-bottom: 2px solid #F2721E;
   margin-botton:20px;
+  font-size: 17px;
 }
 
 div.reviewCreatedAt {
@@ -135,4 +136,42 @@ div.reviewCreatedAt {
   margin-top: 40px;
   border: 1px solid #A4A4A4;
   padding: 20px;
+}
+
+div.reviewDiv {
+  border-bottom: 3px solid #F2721E;
+}
+
+div.replyDiv {
+  padding: 10px;
+  margin-top: 5px;
+  padding-bottom: 15px;
+}
+div.replyInfoDiv {
+  float: right;
+  border-right: 1px solid #F2721E;
+  border-bottom: 1px solid #F2721E;
+  padding: 3px;
+}
+
+div.replyContentDiv {
+  border-right: 1px solid #F2721E;
+  padding: 3px;
+}
+textarea {
+  margin-top:3px;
+}
+
+div.replyButton {
+  position:absolute;
+  top: 20%;
+  right:5px;
+}
+
+div.inputContent {
+  width: 90%;
+}
+
+div.replyInputDiv {
+  position:relative;
 }
