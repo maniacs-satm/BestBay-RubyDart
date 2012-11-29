@@ -100,3 +100,78 @@ p.price {
   font-weight: normal;
   color: #900;
 }
+
+#review_content {
+  height: 100px;
+}
+
+div.reviewCreatedBy {
+  color: #F2721E;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+div.reviewContent {
+  padding: 10px;
+  line-height: 20px;
+  border-bottom: 2px solid #F2721E;
+  margin-botton:20px;
+  font-size: 17px;
+}
+
+div.reviewCreatedAt {
+  float: right;
+  color: #666;
+}
+
+#reviewListHeader {
+  border-bottom: 5px solid #F2721E;
+  padding-bottom: 12px;
+  font-size: 17px;
+  font-family: Trebuchet,"Trebuchet MS";
+  font-weight: bold;
+}
+
+#reviewListDiv {
+  margin-top: 40px;
+  border: 1px solid #A4A4A4;
+  padding: 20px;
+}
+
+div.reviewDiv {
+  border-bottom: 3px solid #F2721E;
+}
+
+div.replyDiv {
+  padding: 10px;
+  margin-top: 5px;
+  padding-bottom: 15px;
+}
+div.replyInfoDiv {
+  float: right;
+  border-right: 1px solid #F2721E;
+  border-bottom: 1px solid #F2721E;
+  padding: 3px;
+}
+
+div.replyContentDiv {
+  border-right: 1px solid #F2721E;
+  padding: 3px;
+}
+textarea {
+  margin-top:3px;
+}
+
+div.replyButton {
+  position:absolute;
+  top: 20%;
+  right:5px;
+}
+
+div.inputContent {
+  width: 90%;
+}
+
+div.replyInputDiv {
+  position:relative;
+}

@@ -15,7 +15,8 @@ class ProductsController < ApplicationController
   #
   def index
     if signed_in?
-      @products =Product.all
+      #@products =Product.all
+      @products = Product.paginate(:page => params[:page], :per_page => 6)
       #@products.sort_by!{|a, b| a[:id] <=> b[:id]}
       @search = Hash.new
       if params[:category_id] != nil
