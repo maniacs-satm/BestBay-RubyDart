@@ -100,3 +100,39 @@ p.price {
   font-weight: normal;
   color: #900;
 }
+
+#review_content {
+  height: 100px;
+}
+
+div.reviewCreatedBy {
+  color: #F2721E;
+  font-weight: bold;
+  line-height: 20px;
+}
+
+div.reviewContent {
+  padding: 10px;
+  line-height: 20px;
+  border-bottom: 1px solid #F2721E;
+  margin-botton:20px;
+}
+
+div.reviewCreatedAt {
+  float: right;
+  color: #666;
+}
+
+#reviewListHeader {
+  border-bottom: 5px solid #F2721E;
+  padding-bottom: 12px;
+  font-size: 17px;
+  font-family: Trebuchet,"Trebuchet MS";
+  font-weight: bold;
+}
+
+#reviewListDiv {
+  margin-top: 40px;
+  border: 1px solid #A4A4A4;
+  padding: 20px;
+}

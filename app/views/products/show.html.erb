@@ -63,15 +63,26 @@
 <% end %>
 <%= link_to 'Back', products_path, class: "btn btn-info" %>
 
+<div id='reviewListDiv'>
+<div id='reviewListHeader'>
+  Product Reviews
+</div>
 <% if !@reviews.empty? %>
   <% @reviews.each do |r| %>
-    <hr>
-    <p class='title'><%= r.content %></p>
-      <%#= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <div class='reviewDiv'>
+      <div class='reviewCreatedAt'>
+      <%= r.created_at.strftime("Review created: %m/%d/%Y") %>
+      </div>
+      <div class='reviewCreatedBy'>
+      <% @r_onwer = User.find(r.from_user_id) %>
+      by: <%= link_to @r_onwer.name, @r_owner%>
+      </div>
+      <div class='reviewContent'>
+        <%= r.content %>
+      </div>
+    </div>
   <% end %>
 <% end %>
-
-<hr>
 
 <br>
 <br>
@@ -86,14 +97,16 @@
       </ul>
     </div>
   <% end %>
-  <div class="field">
-    <%= f.text_area :content %>
+  <div class="field reviewInputBox">
+    <%= f.text_area :content, :rows => 5%>
   </div>
+
   <div class="actions">
     <%= button_tag(:type => 'submit', :class => 'btn') do %>
       Add Review
     <% end %>
   </div>
+</div>
 <% end %>
 
 
