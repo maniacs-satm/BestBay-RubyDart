@@ -27,9 +27,10 @@
                 <li class="divider"></li>
                 <% myp = Product.find(:all, :conditions => { :user_id => current_user.id} ) %>
                 <% myw = Watchlist.find(:all, :conditions =>{ :user_id => current_user.id}) %>
-                <li><a href='/my-products'>My Products(<%= myp.count %>)</a></li>
+                <% myh = Bid.find(:all, :conditions => {:user_id => current_user.id}) %>
+                <li><a href='/my-products'>My Products(<%= myp.size %>)</a></li>
                 <li><a href='/watchlists'>My Watchlists(<%= myw.size %>)</a></li>
-                <li><a href='/bidding-history'>My bidding history</a></li>
+                <li><a href='/bidding-history'>My bidding history(<%= myh.size %>)</a></li>
                 <li class="divider"></li>
                 <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
               </ul>
