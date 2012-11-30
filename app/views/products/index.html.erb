@@ -1,26 +1,20 @@
-<style type = "text/css">
-    body {background-color: #ffc40d;}
-</style>
-<body>
+
 <h1><i>Listing products</i></h1>
 
 <div class = "container-fluid">
-
   <div  class = "row-fluid">
-    <!--div class="hero-unit" style="overflow: auto;  display: table-cell;"-->
       <div class = "span2 offset5" >
 
-        <div class = "example_content" id = "example_3">
-
-          <div  id = "top_navigation" style = "background-color: #dcdcdc;">
-             <%=render_navigation%>
-          </div>
-
-          <div class = "clear_float"></div>
+         <div class = "example_content" id = "example_3">
+            <div  id = "top_navigation">
+                <div class="navbar-inner categorylist frame">
+                  <%=render_navigation%>
+                </div>
+            </div>
+            <div class = "clear_float"></div>
          </div>
-
       </div>
-    <!--/div-->
+
 
 
     <div class = "span10" >
@@ -55,9 +49,8 @@
           </div>
         <% end %>
       <% end %>
-
     </div>
   </div>
 </div>
-</body>
+
 

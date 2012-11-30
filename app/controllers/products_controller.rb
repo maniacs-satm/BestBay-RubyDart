@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 ##
 # This is the controller of the model of products. All features and methods relates to products is listed here.
 #
@@ -15,9 +16,7 @@ class ProductsController < ApplicationController
   #
   def index
     if signed_in?
-      #@products =Product.all
-      @products = Product.paginate(:page => params[:page], :per_page => 6)
-      #@products.sort_by!{|a, b| a[:id] <=> b[:id]}
+      @products = Product.all.paginate(:page => params[:page], :per_page => 6)
       @search = Hash.new
       if params[:category_id] != nil
         @category = Category.find(params[:category_id])
@@ -202,6 +201,7 @@ class ProductsController < ApplicationController
         end
       end
     end
+    @products = @products.paginate(:page => params[:page], :per_page => 6)
     render 'index'
   end
 

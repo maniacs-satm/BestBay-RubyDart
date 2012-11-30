@@ -9,5 +9,5 @@
 
 # initialize Category table
 if Category.count == 0
-  Category.create([{content: "Art"}, {content: "Books"}, {content: "Electronics"}])
+  Category.create([{content: "Art"}, {content: "Books"}, {content: "Electronics"}, {content: "Beauty"}, {content: "Cloth & Accessories"}])
 end
