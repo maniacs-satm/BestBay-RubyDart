@@ -49,29 +49,12 @@ class UsersController < ApplicationController
   # * *Handles* :
   #   - GET /users
   #
- def index
-   if (current_user.admin)
-       @users = User.all
-   else
-      redirect_to root_path
-   end
- end
 
 # This method will delete a user for administrator
   #
   # * *Handles* :
   #   - GET /users/delete/:id
   #
- def delete
-   if (current_user.admin)
-       user = User.find(params[:id])
-       user.destroy
-       @users = User.all
-       render 'index'
-    else
-      redirect_to root_path
-    end  
- end
 
 # This method will redirect user to home page
   #
