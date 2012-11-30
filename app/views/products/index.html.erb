@@ -1,3 +1,4 @@
+
 <h1><i>Listing products</i></h1>
 
 <div class = "container-fluid">
@@ -17,9 +18,9 @@
 
 
     <div class = "span10" >
-      <!--div class="pagination pagination-centered">
-        <!--%= will_paginate %>
-      </div-->
+      <div class="pagination pagination-centered">
+        <%= will_paginate @products %>
+      </div>
       <% @products.each do |product| %>
 
         <% if @category == nil || product.category.id == @category.id then %>
@@ -51,9 +52,9 @@
           </div>
         <% end %>
       <% end %>
-      <!--div class="pagination pagination-centered">
-        <!--%= will_paginate %>
-      </div-->
+      <div class="pagination pagination-centered">
+        <%= will_paginate @products %>
+      </div>
     </div>
   </div>
 </div>
