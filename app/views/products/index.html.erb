@@ -18,8 +18,12 @@
 
 
     <div class = "span10" >
-      <% @products.each do |product| %>
 
+      <div class="pagination pagination-centered">
+        <%= will_paginate @products  %>
+      </div>
+
+      <% @products.each do |product| %>
         <% if @category == nil || product.category.id == @category.id then %>
           <div class="productIndexDiv">
             <% if product.image.exists? then%>
@@ -49,6 +53,11 @@
           </div>
         <% end %>
       <% end %>
+
+      <div class="pagination pagination-centered">
+        <%= will_paginate @products %>
+      </div>
+
     </div>
   </div>
 </div>
