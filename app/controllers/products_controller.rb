@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
   #
   def index
     if signed_in?
-      @products = Product.paginate(:page => params[:page], :per_page => 6)
+      @products = Product.all.paginate(:page => params[:page], :per_page => 6)
       @search = Hash.new
       if params[:category_id] != nil
         @category = Category.find(params[:category_id])

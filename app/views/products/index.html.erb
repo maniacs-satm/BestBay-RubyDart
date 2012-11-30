@@ -1,3 +1,4 @@
+
 <h1><i>Listing products</i></h1>
 
 <div class = "container-fluid">
@@ -18,7 +19,7 @@
 
     <div class = "span10" >
       <div class="pagination pagination-centered">
-        <%= will_paginate @products%>
+        <%= will_paginate @products %>
       </div>
       <% @products.each do |product| %>
 
@@ -52,7 +53,7 @@
         <% end %>
       <% end %>
       <div class="pagination pagination-centered">
-        <%= will_paginate %>
+        <%= will_paginate @products %>
       </div>
     </div>
   </div>
