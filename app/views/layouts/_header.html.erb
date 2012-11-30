@@ -25,8 +25,8 @@
               <ul class="dropdown-menu">
                 <li><%= link_to "Profile", user_path(current_user) %></li>
                 <li class="divider"></li>
-                <% myp = Product.find(:all, :conditions => { :user_id => current_user.id} )   %>
-                <li><a href='/my-products'>My Products(<%= myp.count %>)</a></li>
+                <%# myp = Product.find(:all, :conditions => { :user_id => current_user.id} )   %>
+                <li><a href='/my-products'>My Products()</a></li>
                 <li><a href='/watchlists'>My Watchlists</a></li>
                 <li><a href='/bidding-history'>My bidding history</a></li>
                 <li class="divider"></li>
