@@ -48,6 +48,13 @@ FactoryGirl.define do
     user_id       1
     review_id     1
   end
+  
+  # Administrator model
+  factory :administrator do
+    user_id  1
+    admin    false
+    status   true
+  end
 
 end
 
