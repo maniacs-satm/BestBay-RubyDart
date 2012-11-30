@@ -19,6 +19,7 @@ BestBay::Application.routes.draw do
   match '/replies/create/:id', to: 'replies#create', as: 'create_reply_path'
 
 
+
   resources :products
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
