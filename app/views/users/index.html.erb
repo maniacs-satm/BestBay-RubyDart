@@ -5,17 +5,19 @@
     <div class = "span10" >
       <% @users.each do |user| %>
        <p> 
-         <%=user.name%> 
+         <%= user.name %> 
          <% admin = Administrator.find_by_user_id(user.id)%>
          <% if admin.status && !admin.admin%>
            <%= link_to 'deactivate', {:controller => "users", :action => "deactivate", :id => user.id}%>
-         <% else if !admin.admin %>
+           <% else if !admin.status && !admin.admin %>
            <%= link_to "activate", {:controller => "users", :action => "activate", :id => user.id}%>
          <% end %>
        </p>
      <% end %>
+     <% end %>
     </div>
   </div>
 </div>
+
 
 
