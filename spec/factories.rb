@@ -8,7 +8,13 @@ FactoryGirl.define do
     password              "foobar"
     password_confirmation "foobar"
   end
-
+  
+  # administrator
+  factory :adminfromuser do
+    user_id 1
+    admin false
+    status true
+  end
   # Bid model
   factory :bid do
     bidding_price  15

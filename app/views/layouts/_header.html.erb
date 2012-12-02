@@ -5,7 +5,12 @@
         <ul class='nav pull-left'>
           <li><a href='<%= root_path %>'><i class='icon-home icon-white'></i> Home</a></li>
           <li><a href='<%= new_product_path %>'><i class="icon-plus icon-white"></i> New Product</a></li>
-        </ul>
+          <% if Administrator.find_by_user_id(current_user.id).admin%>
+            
+          <li><%= link_to "User Management", {:controller => "users", :action => "index"}%></li>
+          
+          <% end %>  
+      </ul>
       <% else %>
         <%= link_to "BestBay", root_path, id: "logo" %>
       <% end %>

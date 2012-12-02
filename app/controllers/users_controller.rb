@@ -29,6 +29,11 @@ class UsersController < ApplicationController
     if @user.save
       UserMailer.registration_confirmation(@user).deliver
       sign_in @user
+      @administrator = Administrator.new
+      @administrator.user_id = @user.id
+      @administrator.admin = false
+      @administrator.status = true
+      @administrator.save
       flash[:success] = 'Welcome to BestBay!'
       redirect_to root_path
     else
@@ -49,12 +54,34 @@ class UsersController < ApplicationController
   # * *Handles* :
   #   - GET /users
   #
-
-# This method will delete a user for administrator
+  def index
+    @users = User.all
+  end
+# This method will deactivate a user for administrator
   #
   # * *Handles* :
-  #   - GET /users/delete/:id
+  #   - GET /users/deactivate/:id
   #
+  def deactivate
+      admin = Administrator.find_by_user_id(params[:id])
+      admin.status = false
+      admin.save
+      @users = User.all
+      render 'index'
+  end
+# This method will activate a user for administrator
+  #
+  # * *Handles* :
+  #   - GET /users/activate/:id
+  #
+  def activate
+      admin = Administrator.find_by_user_id(params[:id])
+      admin.status = true
+      admin.save
+      @users = User.all
+      render 'index'
+  end
+
 
 # This method will redirect user to home page
   #
