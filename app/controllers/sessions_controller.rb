@@ -17,13 +17,24 @@ class SessionsController < ApplicationController
   #
   def create
     user = User.find_by_email(params[:session][:email].downcase)
-    if user && user.authenticate(params[:session][:password])
-      sign_in user
-
-        redirect_to :controller => 'products', :action => 'index'
+    if user
+        administrator = Administrator.find_by_user_id(user.id)
+    end
+    if user && user.authenticate(params[:session][:password]) && administrator
+       if administrator.status  
+        sign_in user
+        if administrator.admin
+            redirect_to :controller => 'users', :action => 'index'
+        else
+            redirect_to :controller => 'products', :action => 'index'
+        end
+       else 
+           flash[:notice] = "Inactive user"
+           render 'new'
+       end
     else
       flash[:notice] = "Invalid Email/Password combination"
-      render 'new'
+      render 'new'  
     end
   end
 

@@ -1,15 +1,23 @@
-<% provide(:title, 'All Users') %>
+<h1><i>Listing users</i></h1>
 
-<h1>List All Users</h1>
-<ul class = "row">
-  <%(@users.size).times do |i| %>
-    <p>
-      <% if @users[i] != nil%>
-        <b><%= @users[i].name%></b>
-        <% if @users[i] != current_user%>
-          <%= link_to "delete",:controller=> "users", :action=> "delete", :id => @users[i].id %>
-        <% end %>
-      <% end %>  
-    </p>
-  <% end %>
-</ul>
+<div class = "container-fluid">
+  <div  class = "row-fluid">
+    <div class = "span10" >
+      <% @users.each do |user| %>
+       <p> 
+         <%= user.name %> 
+         <% admin = Administrator.find_by_user_id(user.id)%>
+         <% if admin.status && !admin.admin%>
+           <%= link_to 'deactivate', {:controller => "users", :action => "deactivate", :id => user.id}%>
+           <% else if !admin.status && !admin.admin %>
+           <%= link_to "activate", {:controller => "users", :action => "activate", :id => user.id}%>
+         <% end %>
+       </p>
+     <% end %>
+     <% end %>
+    </div>
+  </div>
+</div>
+
+
+
