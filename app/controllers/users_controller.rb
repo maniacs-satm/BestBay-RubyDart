@@ -55,7 +55,11 @@ class UsersController < ApplicationController
   #   - GET /users
   #
   def index
-    @users = User.all
+    if Administrator.find_by_user_id(current_user.id).admin
+        @users = User.all
+    else
+        redirect_to root_path
+    end
   end
 # This method will deactivate a user for administrator
   #

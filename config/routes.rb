@@ -19,7 +19,7 @@ BestBay::Application.routes.draw do
   match '/replies/create/:id', to: 'replies#create', as: 'create_reply_path'
  match '/users/deactivate/:id', to: 'users#deactivate'
  match '/users/activate/:id', to: 'users#activate'
-
+ match '/products/destroy/:id', to:'products#destroy'
 
   resources :products
   resources :users

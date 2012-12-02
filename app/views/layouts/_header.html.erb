@@ -5,11 +5,6 @@
         <ul class='nav pull-left'>
           <li><a href='<%= root_path %>'><i class='icon-home icon-white'></i> Home</a></li>
           <li><a href='<%= new_product_path %>'><i class="icon-plus icon-white"></i> New Product</a></li>
-          <% if Administrator.find_by_user_id(current_user.id).admin%>
-            
-          <li><%= link_to "User Management", {:controller => "users", :action => "index"}%></li>
-          
-          <% end %>  
       </ul>
       <% else %>
         <%= link_to "BestBay", root_path, id: "logo" %>
@@ -29,6 +24,10 @@
 		  	  </a>
               <ul class="dropdown-menu">
                 <li><%= link_to "Profile", user_path(current_user) %></li>
+                <% if Administrator.find_by_user_id(current_user.id).admin%>
+                <li><%= link_to "User Management", {:controller => "users", :action => "index"}%></li>
+                <% end %>  
+ 
                 <li class="divider"></li>
                 <% myp = Product.find(:all, :conditions => { :user_id => current_user.id} ) %>
                 <% myw = Watchlist.find(:all, :conditions =>{ :user_id => current_user.id}) %>
