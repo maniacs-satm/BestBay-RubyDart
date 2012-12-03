@@ -27,7 +27,7 @@
       </p>
 
       <% days = (Date.strptime(@product.bid_until, '%m/%d/%Y') - Date.today).to_i %>
-      <% if days > 0 && signed_in? %>
+      <% if days > 0 && signed_in? && @product.user_id != current_user.id %>
       <p>
         <%= form_for @bid, :url => bid_path  do |f| %>
         <%= f.label :bidding_price %>
@@ -59,7 +59,7 @@
 </table>
 </div>
 
-<% if @product.user_id == current_user.id && days > 0%>
+<% if signed_in? && @product.user_id == current_user.id && days > 0%>
   <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-info" %> |
 <% end %>
 
