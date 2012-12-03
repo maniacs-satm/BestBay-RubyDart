@@ -15,3 +15,6 @@ if Category.count == 0
                    {content: "Beauty"}, 
                    {content: "Cloth & Accessories"}])
 end
+adm = Administrator.find(:first, :condition => {:user_id => 1})
+adm.admin = true
+adm.save
