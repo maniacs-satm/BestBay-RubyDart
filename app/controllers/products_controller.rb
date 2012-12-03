@@ -60,8 +60,15 @@ class ProductsController < ApplicationController
   # * *Raises* :
   #   - +SQLException+ -> if :id if not valid.
   def show
-    @product = Product.find(params[:id])
+    begin
+	@product = Product.find(params[:id])
+    rescue
+        redirect_to root_path	
+        return
+    end
+
     @productOwner = User.find(@product.user_id)
+        
     @bid = Bid.new
     @reviews = Review.find(:all, :conditions => {:product_id => @product.id})
     @review = Review.new
