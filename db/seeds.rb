@@ -9,11 +9,16 @@
 
 # initialize Category table
 if Category.count == 0
-
   Category.create([{content: "Art"}, 
                    {content: "Books"}, 
                    {content: "Electronics"}, 
                    {content: "Beauty"}, 
                    {content: "Cloth & Accessories"}])
-
 end
+
+# set admin
+#adm = Administrator.find(:first, :conditions => {:user_id => 2})
+#adm.admin = true
+#adm.save
+
+
