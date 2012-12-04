@@ -11,10 +11,9 @@ describe "Authentication" do
       before { click_button "Sign in" }
 
       it { should have_selector('title', text: 'Sign in') }
-<<<<<<< HEAD
-=======
+
       it { should have_link('Sign in', href: signin_path ) }
->>>>>>> ec432b79275baed2aef255563eb70451f2037376
+
 
       describe "after visiting another page" do
         before { click_link "Home" }
