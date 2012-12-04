@@ -6,23 +6,15 @@ Sponsored by: CMU SV
 
 -- Present by RubyDart 2012
 
-Team 1 : RubyDart
-Teammembers: Wenjun Zhang
-             Xintong Zhang
-             Wei Zhou
-             Yuze Lang
 
-Iteration 1:
+Team: RubyDart
+Team members: Wenjun Zhang,
+              Xintong Zhang,
+              Wei Zhou,
+              Yuze Lang
 
-Implemented story card:
-  1) Environment setting
-  2) Layout
-  3) User model
-  4) User sessions
-  5) User signup form
-  6) User signup success
-  7) User signup failure
-  8) User signin failure
-  9) User signout
-  10) Product model
-  11) Product image
+User must sign up or sign in first to use the website. Users include normal users and administrators. Normal users are as default and administrators are set up backended.
+
+After loggin in, normal users can sell, bid and reply a review. A seller can post, edit and delete a product. A consumer can browse, log out, add to watchlist, review and bid for a product. All users can get notifications and chat on the review board.
+
+An administrator can manage user accounts and bids. They can deactivate/activate a user and delete all invalid bids.    

@@ -14,6 +14,7 @@ if Category.count == 0
                    {content: "Electronics"}, 
                    {content: "Beauty"}, 
                    {content: "Cloth & Accessories"}])
+
 end
 
 # set admin
@@ -21,4 +22,6 @@ end
 #adm.admin = true
 #adm.save
 
+
+#end
 
