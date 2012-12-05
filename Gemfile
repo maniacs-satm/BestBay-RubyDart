@@ -20,9 +20,9 @@ group :development, :test do
    gem 'annotate', '2.5.0'
 end
 
-group :production do
-  gem 'pg'
-end
+#group :production do
+ # gem 'pg'
+#end
 
 
 # Gems used only for assets and not required
@@ -40,7 +40,7 @@ gem 'factory_girl_rails'
 gem 'rspec-rails' 
 gem 'devise' 
 gem 'paperclip'
-gem 'pg'
+#gem 'pg'
 gem 'aws-sdk'
 gem 'simple-navigation', '~> 3.9.0'
 gem 'haml', '~> 3.1.7'

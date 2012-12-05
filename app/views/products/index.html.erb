@@ -19,9 +19,9 @@
 
     <div class = "span10" >
 
-      <div class="pagination pagination-centered">
-        <%= will_paginate @products  %>
-      </div>
+      <!--div class="pagination pagination-centered">
+        <!--%= will_paginate @products  %>
+      </div-->
 
       <% @products.each do |product| %>
         <% if Administrator.find_by_user_id(product.user_id).status %>
@@ -59,9 +59,9 @@
        <% end %>
       <% end %>
      
-      <div class="pagination pagination-centered">
-        <%= will_paginate @products %>
-      </div>
+      <!--div class="pagination pagination-centered">
+        <!--%= will_paginate @products %>
+      </div-->
 
     </div>
   </div>
